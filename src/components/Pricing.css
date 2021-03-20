@@ -1,5 +1,5 @@
 .pricing__section{
-    padding: 100px 0 60px;
+    padding: 40px 0 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,17 +9,12 @@
     background:linear-gradient(45deg, #58c4bc 0%,#58c4bc 100%);
     box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
     width: 150px;
-    height: 500px;
+    height: 470px;
     margin-right: 20px;
     text-decoration: none;
     border-radius: 20px;
     align-content: center;
 }
-/* .pricing__container-card:nth-child(2){
-    transform: scale(1.05);
-    background: #242424;
-    margin: 0 24px;
-} */
 .pricing__container-card:hover{
     transform: scale(1.06);
     transition: all 0.3s ease-out;
@@ -102,11 +97,6 @@
         flex-direction: column;
         align-items: center;
     }
-    /* .pricing__container-card:nth-child(2){
-        transform: scale(1);
-        background: #242424;
-        margin: 24px;
-    } */
     .pricing__container-card:hover{
         transform: none;
     }

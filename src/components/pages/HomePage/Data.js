@@ -3,9 +3,9 @@ export const homeObjOne = {
   lightText: false,
   lightTextDesc: false,
   topLine: '',
-  headline: 'The Goal Of The Project',
+  headline: 'THE GOAL',
   description:
-    'Get access to our exclusive diamond card that allows you to  send unlimited transactions without getting charged any fees',
+    'Join us if you want to earn money while allowing the recycling of the various products you buy!',
   buttonLabel: 'Get Started',
   imgStart: '',
   img: 'images/img1.svg',
@@ -22,7 +22,7 @@ export const homeObjTwo = {
     'We have you covered no matter where you are located. Over 140 locations worldwide to ensure you have access anytime',
   buttonLabel: 'Start Now',
   imgStart: '',
-  img: 'images/6.svg',
+  img: 'images/recycle.png',
   alt: 'Vault'
 };
 
@@ -31,12 +31,12 @@ export const homeObjThree = {
   lightText: false,
   lightTextDesc: false,
   topLine: ' ',
-  headline: 'Super fast and simple onboarding process',
+  headline: 'SAVE THE WORLD',
   description:
-    "Get everything set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go.",
+    "With Back To Life, recycling will be profitable and the world will become cleaner with the increasing number of users.",
   buttonLabel: 'Start Now',
   imgStart: 'start',
-  img: 'images/img4.svg',
+  img: 'images/world.png',
   alt: 'Vault'
 };
 
@@ -50,6 +50,6 @@ export const homeObjFour = {
     'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
   buttonLabel: 'Sign Up Now',
   imgStart: 'start',
-  img: 'images/img3.svg',
+  img: 'images/trashpeople.png',
   alt: 'Vault'
 };

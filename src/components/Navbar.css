@@ -1,5 +1,5 @@
 .navbar {
-    background: #fc9583;
+     background: #fff; 
     height: 80px;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@
   }
   
   .navbar-logo {
-    color: #fff;
+    color: #fc9583;
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
@@ -38,6 +38,7 @@
   
   .navbar-icon {
     margin-right: 0.5rem;
+    
   }
   
   .nav-menu {
@@ -59,7 +60,7 @@
   }
   
   .nav-links {
-    color: #fff;
+    color: #fc9583;
     display: flex;
     align-items: center;
     text-decoration: none;

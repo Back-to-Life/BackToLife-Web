@@ -8,6 +8,8 @@ import Howtowork from './components/pages/Howtowork/Howtowork';
 import SignUp from './components/pages/SignUp/SignUp';
 import Footer from './components/pages//Footer/Footer';
 import Points from './components/pages/Points/Points';
+import SignIn from './components/pages/SignIn/SignIn';
+
 function App() {
   return (
     <Router>
@@ -17,8 +19,8 @@ function App() {
       <Route path='/myaccount' exact component={Myaccount}/>
       <Route path='/howtowork' exact component={Howtowork}/>
       <Route path='/points' exact component={Points}/>
-      <Route path='/sign-up' exact component={SignUp}/>
-
+      <Route path='/signup' exact component={SignUp}/>
+      <Route path='/login' exact component={SignIn}/>
     </Switch>
     <Footer/>
     </Router>

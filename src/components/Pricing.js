@@ -11,7 +11,7 @@ function Pricing() {
                 <div className="pricing__wrapper">
                     <h1 className="pricing__heading">Points by Recycling Types</h1>
                     < div className="pricing__container">
-                    <Link to='/sign-up' className='pricing__container-card'>
+                    <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/cam.svg'/>
@@ -27,7 +27,7 @@ function Pricing() {
                                 </Button> */}
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                     <img src='images/plastik.svg'/>
@@ -44,7 +44,7 @@ function Pricing() {
                                 </Button> */}
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/elektronik.svg'/>
@@ -60,7 +60,7 @@ function Pricing() {
                                 </Button> */}
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/pil.svg'/>
@@ -76,7 +76,7 @@ function Pricing() {
                                 </Button> */}
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/metal.svg'/>
@@ -92,7 +92,7 @@ function Pricing() {
                                 </Button> */}
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/organik.svg'/>
