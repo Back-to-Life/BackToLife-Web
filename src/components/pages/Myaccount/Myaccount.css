@@ -1,0 +1,140 @@
+
+ul.thumbs.animated{
+    display: none;
+}
+.carousel-root{
+    width: 370px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
+    border-radius: 20px; 
+    height: 512px;
+    background: #e5eeee;
+    padding-top: 30px;
+}
+.control-arrow{
+    display: none;
+}
+.carousel-status{
+    display: none;
+}
+.control-dots{
+    display: none;
+}
+.section_card{
+    padding: 65px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:linear-gradient(45deg, #58c4bc 0%,#58c4bc 100%);
+}
+.container_card{
+    background:linear-gradient(45deg, #e5eeee 0%,#e5eeee 100%);
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
+    width: 370px;
+    height: 512px;
+    margin-left: 30px; 
+    margin-right: 30px;
+    text-decoration: none;
+    border-radius: 20px;
+    align-content: center;
+}
+.card{
+    
+    background: #e5eeee;
+}
+.card img{
+    max-width: 270px;
+    margin: 0;
+}
+li.slide.selected{
+    background:#e5eeee ;
+    border-radius: 30px;
+} 
+
+.containerr{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 auto;
+}
+.heading{
+    color: #fc9583;
+    margin-bottom: 24px;
+}
+.container_cardInfo{
+    display: flex;
+    flex-direction: column;
+    height: 512px;
+    align-items: center;  
+ 
+}
+.container_cardInfo h3{
+    margin-top: 5px;
+    font-size: 24px;
+    color: #fc9583;
+}
+
+.ortala p{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    color: rgb(73, 71, 71);
+}
+.features{
+    margin: 0 32px;
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.features li{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.image{
+    margin: 24px 0;
+    width: 100px;
+    
+}
+.image img{
+    border-radius: 50%;
+    width: 100px;
+     border: 3px solid #58c4bc; 
+}
+.kucukresim img{
+    margin: 0;
+    max-width: 200px;
+}
+@media screen and (max-width:960px){
+    .containerr{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .carousel-root{
+        width: 100%;
+    }
+    .container_card{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .wrapper{
+        margin: 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li.slide{
+        background:#e5eeee ;
+        border-radius: 30px;
+    } 
+
+}
