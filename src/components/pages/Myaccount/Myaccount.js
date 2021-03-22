@@ -35,33 +35,6 @@ import {IconContext} from 'react-icons/lib';
             <IconContext.Provider value={{color:'#fff', size: 64}}>
             <div>
                
-            {/* <div className="background">
-                <div className="container">
-                <div className="pp">
-                    <img src="images/indir.jpeg" alt=""/>
-                    <h2>Welcome User</h2>
-                    <p>Let's contribute to nature</p>
-                </div>
-                    
-                <Carousel autoPlay axis="horizontal" infiniteLoop
-                    onChange={this.onChangeEvent}
-                    onClickItem={this.onClickItemEvent}
-                    onClickThumb={this.onClickThumbEvent}
-                    onSwipeStart={this.onSwipeStartEvent}
-                    onSwipeEnd={this.onSwipeEndEvent}
-                    onSwipeMove={this.onSwipeMoveEvent}>
-
-                        <div className="kart"><img src="images/card4.jpg" alt="kart"/></div>
-                        <div className="kart"><img src="images/card1.jpg" alt="kart"/></div>
-                        <div className="kart"><img src="images/card3.jpg" alt="kart"/></div>
-                        <div className="kart"><img src="images/card7.jpg" alt="kart"/></div>
-                </Carousel> 
-                <div className="pp up"></div>    
-
-                <div class="temizle"></div>
-            </div>
-                </div>
-                */}
                 <div className="section_card">
                     <div className="wrapper">
                      {/* <h1 className="heading"></h1> */}
