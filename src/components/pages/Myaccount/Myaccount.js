@@ -3,8 +3,6 @@ import './Myaccount.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import {IconContext} from 'react-icons/lib';
-import ImageUpload from '../../ImageUpload';
-import DataUpload from '../../DataUpload';
 
  class Myaccount extends React.Component {
 
@@ -71,9 +69,8 @@ import DataUpload from '../../DataUpload';
                             <div className="container_card">
                                 <div className="container_cardInfo">
                                     <div className="image">
-                                       <ImageUpload/>
+                                       
                                     </div>
-                                    <h3> <DataUpload/></h3>
                                     <ul className="features">
                                         <br/>
                                         <div className="ortala" align="center">

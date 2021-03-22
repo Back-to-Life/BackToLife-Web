@@ -1,30 +1,12 @@
 import React,{useCallback,useContext} from 'react';
 import { withRouter, Redirect } from "react-router";
-import app from "firebase";
-//import { AuthContext } from "C:/Users/serap/Desktop/Backtolife_website/src/components/pages/firebase";
 import { Link } from 'react-router-dom';
 import './SignUp.css'
 
 
 
-export default function SignIn({history}) {
- //const classes = useStyles();
+export default function SignIn() {
  
-const handleSignup = useCallback(
-  async event => {
-    event.preventDefault();
-    const { email, password } = event.target.elements;
-    try {
-      await app
-        .auth()
-        .createUserWithEmailAndPassword(email.value, password.value);
-      history.push("/");
-    } catch (error) {
-      alert(error);
-    }
-  },
-  [history]
-);
   return (
     
      
@@ -34,7 +16,7 @@ const handleSignup = useCallback(
         <div className="form-wrapper">
 
         <h1>Sign Up</h1>
-        <form onSubmit={handleSignup}  noValidate>
+        <form  noValidate>
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
           <input 
