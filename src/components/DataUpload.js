@@ -1,6 +1,6 @@
-// import React, { Component } from 'react'
+ import React, { Component } from 'react'
 
-// export class DataUpload extends Component {
+ export class DataUpload extends Component {
 //     constructor(){
 //         super();
 //         this.state = {
@@ -16,13 +16,13 @@
 //          })
 //         })
 //      }
-//     render() {
-//         return (
-//             <div>
-//                 <h3>Welcome {this.state.name}</h3>
-//             </div>
-//         )
-//     }
-// }
+     render() {
+         return (
+             <div>
+                 <h3>Welcome User</h3>
+             </div>
+         )
+     }
+ }
 
-// export default DataUpload
+ export default DataUpload

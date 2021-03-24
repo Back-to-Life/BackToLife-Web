@@ -3,6 +3,10 @@ import './Myaccount.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import {IconContext} from 'react-icons/lib';
+import ImageUpload from '../../ImageUpload';
+import Chart from '../../Chart/Chart.js';
+import DataUpload from '../../DataUpload';
+
 
  class Myaccount extends React.Component {
 
@@ -32,19 +36,18 @@ import {IconContext} from 'react-icons/lib';
 
     render() {
         return (
-            <IconContext.Provider value={{color:'#fff', size: 64}}>
-            <div>
-               
+            <IconContext.Provider value={{color:'#58c4bc', size: 64}}>
+            <div className="background">
                 <div className="section_card">
                     <div className="wrapper">
-                     {/* <h1 className="heading"></h1> */}
                         <div className="containerr">
                             <div className="container_card">
                                 <div className="container_cardInfo">
                                     <div className="image">
-                                       
+                                       <ImageUpload/>
                                     </div>
                                     <ul className="features">
+                                    <DataUpload/>
                                         <br/>
                                         <div className="ortala" align="center">
                                         <p>If you want to make money while contributing to nature, you are in the right place.</p>
@@ -78,20 +81,21 @@ import {IconContext} from 'react-icons/lib';
                             
                              <div className="container_card">
                                 <div className="container_cardInfo">
-                                   
-                                    <ul className="features">
-                                        <br/>
-                                        <li></li>
-                                    </ul>
+                                  
+                                    
                                 </div>
                             </div> 
                         </div>
-
                     </div>
                 </div>
-
+                            <div className="containerBigCard">
+                            <div className="container_big">
+                                <Chart/>
+                            </div>
+                            </div>
+                            
                            
-               </div>
+            </div>
                </IconContext.Provider>
         )
     }
