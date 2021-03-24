@@ -1,12 +1,25 @@
-
+.containerBigCard{
+    margin: 0 auto;
+}
+.container_big{
+    background:linear-gradient(45deg, #e5eeee 0%,#e5eeee 100%);
+    box-shadow: 0 6px 20px rgba(2, 4, 7, 0.2);
+    width: 94%;
+    height: 30%;
+    border-radius: 20px; 
+    margin-left: 40px; 
+    margin-right: 30px; 
+}
+.background{
+    background: #58c4bc;
+}
 ul.thumbs.animated{
     display: none;
 }
 .carousel-root{
-    width: 370px;
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
+    width: 100%;
     border-radius: 20px; 
-    height: 512px;
+    height: 100%;
     background: #e5eeee;
     padding-top: 30px;
 }
@@ -28,17 +41,15 @@ ul.thumbs.animated{
 }
 .container_card{
     background:linear-gradient(45deg, #e5eeee 0%,#e5eeee 100%);
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.2);
-    width: 370px;
-    height: 512px;
+    box-shadow: 0 6px 20px rgba(2, 4, 7, 0.2);
+    width: 30%;
+    height: 50%;
     margin-left: 30px; 
     margin-right: 30px;
-    text-decoration: none;
     border-radius: 20px;
     align-content: center;
 }
 .card{
-    
     background: #e5eeee;
 }
 .card img{
@@ -105,7 +116,7 @@ li.slide.selected{
 .image img{
     border-radius: 50%;
     width: 100px;
-     border: 3px solid #58c4bc; 
+    border: 3px solid #58c4bc; 
 }
 .kucukresim img{
     margin: 0;
@@ -125,6 +136,12 @@ li.slide.selected{
     .container_card{
         width: 90%;
         margin-bottom: 20px;
+    }
+    .section_card{
+        padding: 65px 0 10px;
+    }
+    .container_big{
+        margin-left: 30px;
     }
     .wrapper{
         margin: 0 30px;

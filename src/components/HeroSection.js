@@ -18,9 +18,6 @@ function HeroSection({
 
     return (
         <>
-        {/* <div className="loader hidden" >
-            <img src="images/743.gif" alt=""/>
-        </div>   */}
             <div className={lightBg ? 'home__hero-section' : 'home__hero_section darkBg'}>
                 <div className="container">
                     <div className="row home__hero-row" style={{
@@ -36,7 +33,7 @@ function HeroSection({
                             </div>
                         </div>
                         <div className="col">
-                        <Fade right duration={3000}>
+                        <Fade right duration={2000}>
                             <div className="home__hero-img-wrapper">
                                 <img src={img} alt={alt} className='home__hero-img'/>
                             </div>

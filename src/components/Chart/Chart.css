@@ -1,0 +1,9 @@
+.App > h1{
+    padding: 30px 30px 50px;
+    display: flex;
+    justify-content: center;
+    color: #fc9583;
+}
+.Bar{
+    padding-bottom: 20px;
+}
