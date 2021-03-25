@@ -12,6 +12,7 @@
 }
 .background{
     background: #58c4bc;
+    padding-bottom: 30px;
 }
 ul.thumbs.animated{
     display: none;
