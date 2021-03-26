@@ -6,9 +6,9 @@ import {IconContext} from 'react-icons/lib';
 import ImageUpload from '../../ImageUpload';
 import Chart from '../../Chart/Chart.js';
 import DataUpload from '../../DataUpload';
+import ProgressBar from '../../ProgressBar/ProgressBar';
 
-
- class Myaccount extends React.Component {
+class Myaccount extends React.Component {
 
      onChangeEvent = () => {
          console.log('onChange Event Triggered');
@@ -73,10 +73,11 @@ import DataUpload from '../../DataUpload';
                                <div className="card"><img src="images/card1.jpg" alt="kart"/></div> 
                                <div className="card"><img src="images/card3.jpg" alt="kart"/></div> 
                                <div className="card"><img src="images/card7.jpg" alt="kart"/></div> 
-                         
-
                              </Carousel>
+                             <h2>Total Earnings</h2>
+                             <ProgressBar/>
                              </div>
+                             
                              </div>
                             
                              <div className="container_card">
@@ -87,7 +88,11 @@ import DataUpload from '../../DataUpload';
                             </div> 
                         </div>
                     </div>
+                    <div className="gif">
+                            <img src="images/scroll.gif" alt=""/>
+                            </div>
                 </div>
+                          
                             <div className="containerBigCard">
                             <div className="container_big">
                                 <Chart/>
