@@ -89,7 +89,9 @@ li.slide.selected{
     font-size: 24px;
     color: #fc9583;
 }
-
+.container_cardInfo h2{
+    color: #0e425d;
+}
 .ortala p{
     margin-bottom: 10px;
     padding-left: 10px;
@@ -122,6 +124,12 @@ li.slide.selected{
 .kucukresim img{
     margin: 0;
     max-width: 200px;
+}
+.gif img{
+    width: 3%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1.5%;
 }
 @media screen and (max-width:960px){
     .containerr{
