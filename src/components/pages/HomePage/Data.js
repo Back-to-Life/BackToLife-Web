@@ -45,11 +45,11 @@ export const homeObjFour = {
   lightText: false,
   lightTextDesc: false,
   topLine: ' ',
-  headline: 'Every transaction is stored on our secure cloud database',
+  headline: 'Visit our Mobile App and start earning while recycling',
   description:
-    'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
-  buttonLabel: 'Sign Up Now',
+    'Convert recycling wastes to money in a few steps with a modern and useful interface and contribute to nature!',
+  buttonLabel: 'Get the Mobile App!',
   imgStart: 'start',
-  img: 'images/trashpeople.png',
+  img: 'images/mockup.png',
   alt: 'Vault'
 };
