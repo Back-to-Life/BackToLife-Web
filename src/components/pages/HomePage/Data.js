@@ -50,6 +50,6 @@ export const homeObjFour = {
     'Convert recycling wastes to money in a few steps with a modern and useful interface and contribute to nature!',
   buttonLabel: 'Get the Mobile App!',
   imgStart: 'start',
-  img: 'images/mockup.png',
+  img: 'images/mockup1.png',
   alt: 'Vault'
 };

@@ -5,7 +5,7 @@ function Points() {
     return (
         <> 
           <Pricing/>
-         
+          
         </>
     );
 }
