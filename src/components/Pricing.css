@@ -1,3 +1,18 @@
+.languagebuttonTr{
+    cursor: pointer;
+    color: #fc9583;
+    position: absolute;
+    right: 70px;
+}
+.languagebuttonEn{
+    cursor: pointer;
+    color: #fc9583;
+    position: absolute;
+    right: 10px;
+}
+.languagebuttonTr:hover, .languagebuttonEn:hover{
+    text-decoration: underline;
+}
 .pricing__section{
     padding: 40px 0 60px;
     display: flex;

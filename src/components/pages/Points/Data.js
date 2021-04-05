@@ -3,7 +3,7 @@ export const homeObjOne = {
   lightText: false,
   lightTextDesc: false,
   topLine: '',
-  headline: 'THE GOAL',
+  headline: 'Back To Life!',
   description:
     'Join us if you want to earn money while allowing the recycling of the various products you buy!',
   buttonLabel: 'Get Started',
@@ -19,7 +19,7 @@ export const homeObjTwo = {
   topLine: '',
   headline: 'HOW TO WORK',
   description:
-    'We have you covered no matter where you are located. Over 140 locations worldwide to ensure you have access anytime',
+    'In our system, which is scored according to the types of recycling waste, points are accumulated in your account according to the type and number of waste you discard, and after these points are calculated with the determined coefficients, they are accumulated as money in your account.',
   buttonLabel: 'Start Now',
   imgStart: '',
   img: 'images/recycle.png',
@@ -45,11 +45,11 @@ export const homeObjFour = {
   lightText: false,
   lightTextDesc: false,
   topLine: ' ',
-  headline: 'Every transaction is stored on our secure cloud database',
+  headline: 'Visit our Mobile App and start earning while recycling',
   description:
-    'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
-  buttonLabel: 'Sign Up Now',
+    'Convert recycling wastes to money in a few steps with a modern and useful interface and contribute to nature!',
+  buttonLabel: 'Get the Mobile App!',
   imgStart: 'start',
-  img: 'images/trashpeople.png',
+  img: 'images/mockup1.png',
   alt: 'Vault'
 };
