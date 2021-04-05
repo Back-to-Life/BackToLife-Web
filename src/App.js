@@ -9,7 +9,7 @@ import SignUp from './components/pages/SignUp/SignUp';
 import Footer from './components/pages//Footer/Footer';
 import Points from './components/pages/Points/Points';
 import SignIn from './components/pages/SignIn/SignIn';
-import appAdd from './components/pages/appAdd/appAdd';
+import AppAdd from './components/pages/AppAdd/AppAdd';
 function App() {
   return (
     <Router>

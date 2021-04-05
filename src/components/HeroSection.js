@@ -3,6 +3,7 @@ import {Button} from './Button'
 import {Link} from 'react-router-dom'
 import './HeroSection.css'
 import {Fade} from 'react-reveal';
+
 function HeroSection({
     lightBg,
     topLine,
@@ -15,7 +16,7 @@ function HeroSection({
     alt,
     imgStart
 }) {
-
+    
     return (
         <>
             <div className={lightBg ? 'home__hero-section' : 'home__hero_section darkBg'}>
