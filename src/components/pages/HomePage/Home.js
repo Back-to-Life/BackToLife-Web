@@ -10,7 +10,6 @@ function Home() {
            <HeroSection {...homeObjThree}/> 
            <HeroSection {...homeObjTwo}/>  
            <Pricing/>
-           {/* <HeroSection {...homeObjFour}/>  */}
            <AppAdd/>
         </>
     )

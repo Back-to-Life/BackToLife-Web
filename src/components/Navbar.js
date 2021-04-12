@@ -11,6 +11,7 @@ import { FaBars, FaTimes} from 'react-icons/fa'
 import { Button } from './Button'
 import './Navbar.css'
 import {IconContext} from 'react-icons/lib'
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -31,7 +32,12 @@ function Navbar() {
         showButton();
     }, []);
 
-    window.addEventListener('resize',showButton)
+    window.addEventListener('resize',showButton);
+
+    const {t, i18n} = useTranslation();
+    function TranslateClick(lang) {
+        i18n.changeLanguage(lang);
+    }
     return (
         <>
         <IconContext.Provider value={{color:'#fc9583'}}>
@@ -39,7 +45,7 @@ function Navbar() {
               <div className="navbar-container container">
                   <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
                       <FaRecycle className="navbar-icon"/>
-                      Back To Life
+                      {t('Navbar.icon')}
                   </Link>
                   <div className="menu-icon" onClick={handleClick}>
                       {click ? <FaTimes/> : <FaBars/>}
@@ -48,25 +54,25 @@ function Navbar() {
                       <li className="nav-item">
                           <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
-                              Home
+                              {t('Navbar.home')}
                           </Link>
                       </li>
                       <li className="nav-item">
                           <Link to='/howtowork' className='nav-links' onClick={closeMobileMenu}>
                               <VscServerProcess className="navbar-icon"/>
-                             How To Work
+                              {t('Navbar.work')}
                           </Link>
                       </li>
                       <li className="nav-item">
                           <Link to='/points' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlinePlusCircle className="navbar-icon"/>
-                             Points
+                              {t('Navbar.points')}
                           </Link>
                       </li>
                       <li className="nav-item">
                           <Link to='/myaccount' className='nav-links' onClick={closeMobileMenu}>
                               <CgProfile className="navbar-icon"/>
-                              My Account
+                              {t('Navbar.account')}
                           </Link>
                       </li>
                       <li className="nav-btn">
@@ -75,7 +81,7 @@ function Navbar() {
                                  
                                   <Button buttonStyle='btn--outline'>
                                   <FaRegIdCard className="navbar-icon"/>
-                                      SIGN UP</Button>
+                                  {t('Navbar.up')}</Button>
 
                               </Link>
                           ):(
@@ -89,7 +95,7 @@ function Navbar() {
                               <Link to='/login' className='btn-link' >
                                   <Button buttonStyle='btn--outline'>
                                   <GoSignIn className="navbar-icon"/>
-                                      SIGN IN</Button>
+                                  {t('Navbar.in')}</Button>
 
                               </Link>
                           ):(
@@ -98,6 +104,8 @@ function Navbar() {
                               </Link>
                           )}
                       </li>
+                      <a className="languagebuttonTr" onClick={()=>TranslateClick('tr')}><img src="images/turkey.png" alt=""/></a>
+                    <a className="languagebuttonEn" onClick={()=>TranslateClick('en')}><img src="images/united-kingdom.png"></img></a>
                   </ul>
                 </div> 
            </div>

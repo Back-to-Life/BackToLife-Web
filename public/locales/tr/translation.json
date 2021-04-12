@@ -10,5 +10,17 @@
          "8": "Kağıt Atık Geri Dönüşüm",
          "9": "Kazanılan puan:",
          "10": "Puan"
+    },
+    "Navbar":{
+        "icon": "Back To Life",
+        "home": "Anasayfa",
+        "work": "Nasıl Çalışır",
+        "points": "Puanlar",
+        "account": "Hesabım",
+        "up": "KAYIT OL",
+        "in": "GIRIŞ YAP"
+    },
+    "Home":{
+        "description": " daggsh"
     }
 }

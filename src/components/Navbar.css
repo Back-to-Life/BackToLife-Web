@@ -76,7 +76,26 @@
     display: none;
     /* color: #fff; */
   }
+  .languagebuttonTr{
+    cursor: pointer;
+    color: #fc9583;
+    position: absolute;
+    right: 40px;
+}
+.languagebuttonTr > img{
+  width: 20px;
+}
+.languagebuttonEn >img{
+  width: 20px;
+}
+.languagebuttonEn{
+    cursor: pointer;
+    color: #fc9583;
+    position: absolute;
+    right: 10px;
+}
 
+ 
 
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -97,7 +116,7 @@
   
     .nav-menu.active {
       /*background: #1c2237;*/
-      background: #fc9583;
+      background: #ffffff;
       left: 0;
       opacity: 1;
       transition: all 0.6s ease;

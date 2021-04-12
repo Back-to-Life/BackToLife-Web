@@ -3,6 +3,7 @@ import {Button} from './Button'
 import {Link} from 'react-router-dom'
 import './HeroSection.css'
 import {Fade} from 'react-reveal';
+import { useTranslation } from 'react-i18next';
 
 function HeroSection({
     lightBg,
@@ -16,7 +17,7 @@ function HeroSection({
     alt,
     imgStart
 }) {
-    
+    const {t, i18n} = useTranslation();
     return (
         <>
             <div className={lightBg ? 'home__hero-section' : 'home__hero_section darkBg'}>

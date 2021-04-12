@@ -10,5 +10,17 @@
          "8": "Paper Recycling",
          "9": "Points Earned:",
          "10": "Points"
+    },
+    "Navbar":{
+        "icon": "Back To Life",
+        "home": "Home",
+        "work": "How To Work",
+        "points": "Points",
+        "account": "My Account",
+        "up": "SIGN UP",
+        "in": "SIGN IN"
+    },
+    "Home":{
+        "description": "Join us if you want to earn money while allowing the recycling of the various products you buy!"
     }
 }
