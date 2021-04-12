@@ -10,5 +10,38 @@
          "8": "Paper Recycling",
          "9": "Points Earned:",
          "10": "Points"
+    },
+    "Navbar":{
+        "icon": "Back To Life",
+        "home": "Home",
+        "work": "How To Work",
+        "points": "Points",
+        "account": "My Account",
+        "up": "SIGN UP",
+        "in": "SIGN IN"
+    },
+    "Home":{
+        "header":"Back To Life!",
+        "description": "Join us if you want to earn money while allowing the recycling of the various products you buy!",
+        "button":"Get Started"
+    },
+    "Save":{
+        "header": "SAVE THE WORLD",
+        "description": "With Back To Life, recycling will be profitable and the world will become cleaner with the increasing number of users.",
+        "button": "Start Now"
+    },
+    "Work":{
+        "header": "HOW TO WORK",
+        "description": "In our system, which is scored according to the types of recycling waste, points are accumulated in your account according to the type and number of waste you discard, and after these points are calculated with the determined coefficients, they are accumulated as money in your account.",
+        "button": "Start Now"
+    },
+    "Mobile":{
+        "header": "Visit our Mobile App and start earning while recycling",
+        "description":"Convert recycling wastes to money in a few steps with a modern and useful interface and contribute to nature!"
+    },
+    "Account":{
+        "header":"Welcome",
+        "description": "If you want to make money while contributing to nature, you are in the right place.",
+        "earn": "Total Earnings"
     }
 }

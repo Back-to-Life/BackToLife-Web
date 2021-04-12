@@ -2,14 +2,11 @@ import React from 'react';
 import {IconContext} from 'react-icons/lib';
 import {Link} from 'react-router-dom';
 import './Pricing.css';
-
 import { useTranslation } from 'react-i18next';
 
 function Pricing() {
     const {t, i18n} = useTranslation();
-    function handleClick(lang) {
-        i18n.changeLanguage(lang);
-    }
+
     return (
         <IconContext.Provider value={{color:'#fff', size: 64}}>
         <div>
@@ -17,8 +14,7 @@ function Pricing() {
                 <div className="pricing__wrapper">
                 
                     <h1 className="pricing__heading">{t('Points.1')}</h1>
-                    <a className="languagebuttonTr" onClick={()=>handleClick('tr')}>Turkish</a>
-                    <a className="languagebuttonEn" onClick={()=>handleClick('en')}>English</a>
+                   
                     < div className="pricing__container">
                     <Link to='/' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">

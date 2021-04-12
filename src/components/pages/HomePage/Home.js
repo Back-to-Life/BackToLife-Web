@@ -1,16 +1,16 @@
 import React from 'react'
-import HeroSection from '../../HeroSection'
 import Pricing from '../../Pricing';
 import AppAdd from '../AppAdd/AppAdd';
-import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data'
+import HomeFirst from '../HomeFirst/HomeFirst';
+import HomeSecond from '../HomeSecond/HomeSecond';
+import HomeThird from '../HomeThird/HomeThird';
 function Home() {
     return (
         <>
-           <HeroSection {...homeObjOne}/> 
-           <HeroSection {...homeObjThree}/> 
-           <HeroSection {...homeObjTwo}/>  
+           <HomeFirst/>
+           <HomeSecond/>
+           <HomeThird/>
            <Pricing/>
-           {/* <HeroSection {...homeObjFour}/>  */}
            <AppAdd/>
         </>
     )

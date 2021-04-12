@@ -10,5 +10,39 @@
          "8": "Kağıt Atık Geri Dönüşüm",
          "9": "Kazanılan puan:",
          "10": "Puan"
+    },
+    "Navbar":{
+        "icon": "Back To Life",
+        "home": "Anasayfa",
+        "work": "Nasıl Çalışır",
+        "points": "Puanlar",
+        "account": "Hesabım",
+        "up": "KAYIT OL",
+        "in": "GIRIŞ YAP"
+    },
+    "Home":{
+        "header":"Back To Life!",
+        "description": "Satın aldığınız çeşitli ürünlerin geri dönüştürürken para kazanmak istiyorsanız bize katılın!",
+        "button":"Başlarken"
+    },
+    "Save":{
+        "header": "DÜNYAYI KORUYUN!",
+        "description": "Back To Life ile geri dönüşüm karlı olacak ve artan kullanıcı sayısı ile dünya daha temiz hale gelecektir.",
+        "button": "Başlayın!"
+    },
+    "Work":{
+        "header": "NASIL ÇALIŞIR",
+        "description": "Geri dönüşüm atık türlerine göre puanlandırılan sistemimizde attığınız atık türüne ve sayısına göre puanlar hesabınızda biriktirilir ve bu puanlar belirlenen katsayılar ile hesaplandıktan sonra para olarak hesabınızda biriktirilir.",
+        "button": "Başlayın!"
+    },
+    "Mobile":{
+        "header": "Mobil Uygulamamızı ziyaret edin ve geri dönüşüm yaparken kazanmaya başlayın",
+        "description":"Modern ve kullanışlı bir arayüz ile geri dönüşüm atıklarını birkaç adımda paraya dönüştürün ve doğaya katkıda bulunun!"
+    },
+    "Account":{
+        "header":"Hoşgeldiniz",
+        "description": "Doğaya katkı sağlarken para kazanmak istiyorsanız doğru yerdesiniz.",
+        "earn": "Toplam Kazanç"
     }
+
 }

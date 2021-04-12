@@ -4,12 +4,12 @@ import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/HomePage/Home';
 import Myaccount from './components/pages/Myaccount/Myaccount';
-import Howtowork from './components/pages/Howtowork/Howtowork';
+import Howtowork from './components/pages/HomeThird/HomeThird';
 import SignUp from './components/pages/SignUp/SignUp';
 import Footer from './components/pages//Footer/Footer';
 import Points from './components/pages/Points/Points';
 import SignIn from './components/pages/SignIn/SignIn';
-import AppAdd from './components/pages/AppAdd/AppAdd';
+
 function App() {
   return (
     <Router>

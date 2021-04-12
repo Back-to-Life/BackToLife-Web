@@ -3,6 +3,8 @@ import {MdPhotoLibrary} from 'react-icons/md'
 import {IconContext} from 'react-icons/lib'
 import {RiFolderUploadFill} from 'react-icons/ri'
 import './ImageUpload.css'
+
+
 export default class ImageUpload extends Component {
     render() {
         return (

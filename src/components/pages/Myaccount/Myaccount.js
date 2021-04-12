@@ -7,35 +7,11 @@ import ImageUpload from '../../ImageUpload';
 import Chart from '../../Chart/Chart.js';
 import DataUpload from '../../DataUpload';
 import ProgressBar from '../../ProgressBar/ProgressBar';
+import { useTranslation } from 'react-i18next';
 
-
-   class Myaccount extends React.Component {
-
-        onChangeEvent = () => {
-            console.log('onChange Event Triggered');
-        }
-   
-        onClickItemEvent = () => {
-            console.log('onClickItem Event Triggered');
-        }
-   
-        onClickThumbEvent = () => {
-            console.log('onClickThumb Event Triggered');
-        }
-   
-        onSwipeStartEvent = () => {
-            console.log('onSwipeStart Event Triggered');
-        }
-   
-        onSwipeEndEvent = () => {
-            console.log('onSwipeEnd Event Triggered');
-        }
-   
-        onSwipeMoveEvent = () => {
-            console.log('onSwipeMove Event Triggered');
-        }
-   
-       render() {
+    function Myaccount () {
+  
+        const {t, i18n} = useTranslation();
            return (
                <IconContext.Provider value={{color:'#58c4bc', size: 64}}>
                <div className="background">
@@ -51,7 +27,7 @@ import ProgressBar from '../../ProgressBar/ProgressBar';
                                        <DataUpload/>
                                            <br/>
                                            <div className="ortala" align="center">
-                                           <p>If you want to make money while contributing to nature, you are in the right place.</p>
+                                           <p>{t('Account.description')}</p>
                                            </div>
                                        </ul>
                                        <div className="kucukresim">
@@ -63,19 +39,14 @@ import ProgressBar from '../../ProgressBar/ProgressBar';
                                <div className="container_card">
                                <div className="container_cardInfo">
                                <Carousel autoPlay axis="horizontal" infiniteLoop
-                                  onChange={this.onChangeEvent}
-                                  onClickItem={this.onClickItemEvent}
-                                  onClickThumb={this.onClickThumbEvent}
-                                  onSwipeStart={this.onSwipeStartEvent}
-                                  onSwipeEnd={this.onSwipeEndEvent}
-                                  onSwipeMove={this.onSwipeMoveEvent}>
+                                 >
                                   
                                   <div className="card"><img src="images/card4.jpg" alt="kart"/></div> 
                                   <div className="card"><img src="images/card1.jpg" alt="kart"/></div> 
                                   <div className="card"><img src="images/card3.jpg" alt="kart"/></div> 
                                   <div className="card"><img src="images/card7.jpg" alt="kart"/></div> 
                                 </Carousel>
-                                <h2>Total Earnings</h2>
+                                <h2>{t('Account.earn')}</h2>
                                 <ProgressBar/>
                                 </div>
                                 
@@ -106,6 +77,6 @@ import ProgressBar from '../../ProgressBar/ProgressBar';
            )
        }
    
-   }
+   
 
 export default Myaccount;

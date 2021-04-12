@@ -1,6 +1,7 @@
  import React, { Component } from 'react'
+ import { useTranslation } from 'react-i18next';
 
- export class DataUpload extends Component {
+function DataUpload() {
 //     constructor(){
 //         super();
 //         this.state = {
@@ -16,13 +17,13 @@
 //          })
 //         })
 //      }
-     render() {
+const {t, i18n} = useTranslation();
          return (
              <div>
-                 <h3>Welcome User</h3>
+                 <h3>{t('Account.header')} User</h3>
              </div>
          )
-     }
+     
  }
 
  export default DataUpload
