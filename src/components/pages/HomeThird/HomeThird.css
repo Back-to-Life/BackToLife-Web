@@ -1,0 +1,43 @@
+.containerWork{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url("../../3.png");
+}
+.wrapperWork{
+   display: flex;
+   align-items: center;
+}
+.imgWork{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+.imgWork > img{
+    max-width: 550px;
+    
+}
+.headerWork{ 
+    max-width: 580px;
+    margin-bottom: 24px;
+    margin-left: 10%;
+}
+.headerWork h1{
+    font-size: 50px;
+    line-height: 1.1;
+    color: #fc9583;
+}
+.textWork{
+    margin-left: 10%;
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: justify;
+}
+.wrapperTextWork{
+    margin-top: 15%;
+}
+Button{
+    margin-left: 10%;
+}

@@ -74,16 +74,15 @@
   
   .menu-icon {
     display: none;
-    /* color: #fff; */
   }
   .languagebuttonTr{
     cursor: pointer;
-    color: #fc9583;
     position: absolute;
-    right: 40px;
+    right: 35px;
 }
 .languagebuttonTr > img{
-  width: 20px;
+  max-width: 20px;
+  
 }
 .languagebuttonEn >img{
   width: 20px;
@@ -92,7 +91,7 @@
     cursor: pointer;
     color: #fc9583;
     position: absolute;
-    right: 10px;
+    right: 8px;
 }
 
  

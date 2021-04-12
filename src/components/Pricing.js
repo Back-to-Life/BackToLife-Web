@@ -2,7 +2,6 @@ import React from 'react';
 import {IconContext} from 'react-icons/lib';
 import {Link} from 'react-router-dom';
 import './Pricing.css';
-
 import { useTranslation } from 'react-i18next';
 
 function Pricing() {

@@ -1,0 +1,43 @@
+.containerHome{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url("../../3.png");
+}
+.wrapperHome{
+   display: flex;
+   align-items: center;
+}
+.imgHome{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.imgHome > img{
+    max-width: 600px;
+    
+}
+.headerHome{ 
+    max-width: 580px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-left: 10%;
+}
+.headerHome h1{
+    color: #fc9583;
+}
+.textHome{
+    margin-left: 10%;
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: justify;
+}
+.wrapperTextHome{
+    margin-top: 15%;
+}
+Button{
+    margin-left: 10%;
+}
