@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 import {Button} from '../../Button';
+import { useTranslation } from 'react-i18next';
+
 import {
   FaFacebook,
   FaInstagram,
@@ -12,59 +14,34 @@ import {
 import { FaRecycle } from 'react-icons/fa';
 
 function Footer() {
+  const {t, i18n} = useTranslation();
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join our exclusive membership to receive the latest news and trends
+       {t('Footer.header')}
         </p>
-        <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
-        </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-             <Button buttonStyle='btn--outline'>Subscribe</Button>
-          </form>
-        </div>
+       
       </section>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>About Us</h2>
-            <Link to='/sign-up'>How it works</Link>
-            <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
-            <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link>
+            <h2>{t('Footer.about')}</h2>
+            <Link to='/signup'>{t('Footer.Link1')}</Link>
+            <Link to='/'>{t('Footer.Link2')}</Link>
+            <Link to='/howtowork'>{t('Footer.Link3')}</Link>
+            <Link to='/points'>{t('Footer.Link4')}</Link>
           </div>
           <div className='footer-link-items'>
-            <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            <h2>{t('Footer.Visit')}</h2>
+            <a href="https://play.google.com/store?hl=tr">Google Play</a>
+            <a href="https://www.apple.com/tr/app-store/">App Store</a>
           </div>
         </div>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
-            <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
-          </div>
-          <div className='footer-link-items'>
-            <h2>Social Media</h2>
-            <Link to='/'>Instagram</Link>
-            <Link to='/'>Facebook</Link>
-            <Link to='/'>Youtube</Link>
-            <Link to='/'>Twitter</Link>
+            <h2>{t('Footer.Social')}</h2>
+           <a href="https://www.instagram.com/">Instagram</a><a href="https://twitter.com/">Twitter</a><a href="https://tr-tr.facebook.com/">Facebook</a><a href="https://www.youtube.com/">YouTube</a>
           </div>
         </div>
       </div>
@@ -76,11 +53,11 @@ function Footer() {
               Back To Life
             </Link>
           </div>
-          <small className='website-rights'>Back To Life © 2020</small>
+          <small className='website-rights'>Back To Life © 2021</small>
           <div className='social-icons'>
             <Link
               className='social-icon-link'
-              to='/'
+              to='//www.facebook.com'
               target='_blank'
               aria-label='Facebook'
             >
@@ -88,7 +65,7 @@ function Footer() {
             </Link>
             <Link
               className='social-icon-link'
-              to='/'
+              to='//www.instagram.com'
               target='_blank'
               aria-label='Instagram'
             >
@@ -97,7 +74,7 @@ function Footer() {
             <Link
               className='social-icon-link'
               to={
-                '//www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A?view_as=subscriber'
+                '//www.youtube.com'
               }
               target='_blank'
               aria-label='Youtube'
@@ -106,7 +83,7 @@ function Footer() {
             </Link>
             <Link
               className='social-icon-link'
-              to='/'
+              to='//www.twitter.com'
               target='_blank'
               aria-label='Twitter'
             >
@@ -114,7 +91,7 @@ function Footer() {
             </Link>
             <Link
               className='social-icon-link'
-              to='/'
+              to='//www.linkedin.com'
               target='_blank'
               aria-label='LinkedIn'
             >

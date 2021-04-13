@@ -2,7 +2,11 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import './Chart.css'
+import { useTranslation } from 'react-i18next';
+
  const DynamicChart = () => {
+    const {t, i18n} = useTranslation();
+
      const [chartData, setChartData]  = useState({});
      const [employeeSalary, setEmployeeSalary] = useState([]);
      const [employeeAge, setEmployeeAge] = useState([]);
@@ -87,7 +91,7 @@ import './Chart.css'
        }, []);
        return(
            <div className="App">
-               <h1>My Daily Chart</h1>
+               <h1>{t('Account.chart')}</h1>
                <div className="Bar">
                    <Bar
                      data={chartData}

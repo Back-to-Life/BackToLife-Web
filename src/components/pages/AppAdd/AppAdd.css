@@ -63,3 +63,23 @@
 .icons{
     margin-right: 5px;
 }
+@media screen and (max-width:960px) {
+  
+    .imgAdd > img{
+        margin-top: 30%;
+        width: 95%;
+    }
+    .headerAdd h1{
+        font-size: 40px;
+    }
+    .textAdd{
+        width: 80%;
+    }
+    .buttonApple , .buttonAndroid{
+        padding: 5px 10px;
+       
+    }
+    .buttonApple a , .buttonAndroid a{
+        font-size: 15px;
+    }
+}
