@@ -20,12 +20,12 @@
 .headerHome{ 
     max-width: 580px;
     margin-bottom: 24px;
-    font-size: 28px;
-    line-height: 1.1;
     margin-left: 10%;
 }
 .headerHome h1{
     color: #fc9583;
+    font-size: 50px;
+    line-height: 1.1;
 }
 .textHome{
     margin-left: 10%;
@@ -40,4 +40,14 @@
 }
 Button{
     margin-left: 10%;
+}
+@media screen and (max-width:960px) {
+  
+    .imgHome > img{
+        margin-top: 10%;
+        width: 95%;
+    }
+    .wrapperTextHome{
+        margin-top: 20%;
+    }
 }

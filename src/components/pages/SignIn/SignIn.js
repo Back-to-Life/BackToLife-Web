@@ -1,9 +1,11 @@
 import React,{useCallback,useContext} from 'react';
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 
 
 export default function SignIn() {
+  const {t, i18n} = useTranslation();
 
   return (
     
@@ -13,7 +15,7 @@ export default function SignIn() {
          
         <div className="form-wrapper">
 
-        <h1>Sign In</h1>
+        <h1>{t('Sign.signin')}</h1>
         <form  noValidate>
         <div className="email">
           <label htmlFor="email"></label> 
@@ -40,14 +42,15 @@ export default function SignIn() {
            
          
             
-          <button className="buttonsign" type="submit">
-            Sign In
-          </button>
+          <a className="buttonsign" type="submit">
+            <h5>{t('Sign.signin')}</h5>
+          
+          </a>
          
              
             
               <Link to="/signup" >
-                {"Don't have an account? Sign Up"}
+              {t('Sign.accountUp')}
               </Link>
             
         </form>

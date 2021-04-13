@@ -10,8 +10,7 @@
    align-items: center;
    margin: 0 auto;
 }
-.imgSave{ 
-    
+.imgSave{    
     transform: translateY(20%);
 }
 .imgSave img{
@@ -31,7 +30,6 @@
     margin-left: 10%;
     max-width: 600px;
     margin-bottom: 35px;
-   
     line-height: 24px;
 }
 .textSave p{
@@ -42,3 +40,24 @@
     max-width: 500px;
 }
 
+@media screen and (max-width:960px) {
+    .containerSave{
+       
+        background: url("../../4responsive.png");
+    }
+    .imgSave > img{
+        margin-top: 20%;
+        width: 95%;
+        padding-left: 0px;
+    }
+    .headerSave h1{
+        font-size: 35px;
+    }
+    .wrapperTextSave{
+        width: 90%;
+    }
+    .textSave{
+        width: 80%;
+    }
+
+}

@@ -36,13 +36,30 @@
         "button": "Başlayın!"
     },
     "Mobile":{
-        "header": "Mobil Uygulamamızı ziyaret edin ve geri dönüşüm yaparken kazanmaya başlayın",
+        "header": "Mobil Uygulamamızı ziyaret edin!",
         "description":"Modern ve kullanışlı bir arayüz ile geri dönüşüm atıklarını birkaç adımda paraya dönüştürün ve doğaya katkıda bulunun!"
     },
     "Account":{
         "header":"Hoşgeldiniz",
         "description": "Doğaya katkı sağlarken para kazanmak istiyorsanız doğru yerdesiniz.",
-        "earn": "Toplam Kazanç"
+        "earn": "Toplam Kazanç",
+        "chart": "Günlük Grafiğim"
+    },
+    "Footer":{
+        "header":"Bize katılın ve geri dönüşüm yaparken kazanmaya başlayın.",
+        "about": "Hakkımızda",
+        "Link1": "Başlayın!",
+        "Link2": "Anasayfa",
+        "Link3": "Nasıl Çalışır",
+        "Link4": "Puanlar",
+        "Visit": "Mobil Uygulama",
+        "Social": "Sosyal Medya"
+    },
+    "Sign":{
+        "signin": "Giriş Yap",
+        "signup": "Kayıt Ol",
+        "accountIn": "Hesabın var mı? Giriş Yap",
+        "accountUp": "Hesabın yok mu? Kayıt Ol"
     }
 
 }

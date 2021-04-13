@@ -41,3 +41,19 @@
 Button{
     margin-left: 10%;
 }
+@media screen and (max-width:960px) {
+  
+    .imgWork > img{
+        margin-top: 10%;
+        width: 95%;
+    }
+    .wrapperTextWork{
+        margin-top: 20%;
+    }
+    .textWork{
+        width: 99%;
+    }
+    .headerWork h1{
+        font-size: 40px;
+    }
+}

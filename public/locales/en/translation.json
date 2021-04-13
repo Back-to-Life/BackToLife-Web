@@ -36,12 +36,29 @@
         "button": "Start Now"
     },
     "Mobile":{
-        "header": "Visit our Mobile App and start earning while recycling",
+        "header": "Visit our Mobile App!",
         "description":"Convert recycling wastes to money in a few steps with a modern and useful interface and contribute to nature!"
     },
     "Account":{
         "header":"Welcome",
         "description": "If you want to make money while contributing to nature, you are in the right place.",
-        "earn": "Total Earnings"
+        "earn": "Total Earnings",
+        "chart": "My Daily Chart"
+    },
+    "Footer":{
+        "header":"Join us and start earning while you recycle.",
+        "about": "About Us",
+        "Link1": "Start Now",
+        "Link2": "Home",
+        "Link3": "How To Work",
+        "Link4": "Points",
+        "Visit": "Visit Mobile App",
+        "Social": "Social Media"
+    },
+    "Sign":{
+        "signin": "Sign In",
+        "signup": "Sign Up",
+        "accountIn": "You have an account? Sign In",
+        "accountUp": "Don't have an account? Sign Up"
     }
 }

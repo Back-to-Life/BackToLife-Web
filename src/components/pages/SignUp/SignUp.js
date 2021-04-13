@@ -2,11 +2,12 @@ import React,{useCallback,useContext} from 'react';
 import { withRouter, Redirect } from "react-router";
 import { Link } from 'react-router-dom';
 import './SignUp.css'
-
+import { useTranslation } from 'react-i18next';
 
 
 export default function SignIn() {
- 
+  const {t, i18n} = useTranslation();
+
   return (
     
      
@@ -15,7 +16,7 @@ export default function SignIn() {
          
         <div className="form-wrapper">
 
-        <h1>Sign Up</h1>
+        <h1>{t('Sign.signup')}</h1>
         <form  noValidate>
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
@@ -75,14 +76,14 @@ export default function SignIn() {
            
          
             
-          <button className="buttonsign" type="submit">
-            Sign Up
-          </button>
+          <a className="buttonsign" type="submit">
+           <h5>{t('Sign.signup')}</h5> 
+          </a>
          
              
             
               <Link to="/login" >
-                {"You have an account? Sign In"}
+                {t('Sign.accountIn')}
               </Link>
             
         </form>
