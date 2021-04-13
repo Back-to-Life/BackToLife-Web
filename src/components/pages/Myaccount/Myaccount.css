@@ -131,6 +131,35 @@ li.slide.selected{
     margin: 0 auto;
     margin-top: 1.5%;
 }
+.imgHero img{
+    max-width: 230px;
+}
+.headerHero h1{
+    color: #fc9583;
+}
+.sort ul li img{
+    max-width: 40px;
+}
+.sort ul {
+    list-style-type: none;
+}
+.sort{
+    width: 300px;
+    margin-top: 4%;
+}
+.sort ul li {
+    padding-bottom: 4%;
+}
+.more{
+    width: 30px;
+    margin-left: 1%;
+}
+.person{
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 20px;
+    color:#0e425d;
+}
 @media screen and (max-width:960px){
     .containerr{
         display: flex;
