@@ -43,7 +43,8 @@
         "header":"Hoşgeldiniz",
         "description": "Doğaya katkı sağlarken para kazanmak istiyorsanız doğru yerdesiniz.",
         "earn": "Toplam Kazanç",
-        "chart": "Günlük Grafiğim"
+        "chart": "Günlük Grafiğim",
+        "hero":  "Dünyanın Kahramanları"
     },
     "Footer":{
         "header":"Bize katılın ve geri dönüşüm yaparken kazanmaya başlayın.",
