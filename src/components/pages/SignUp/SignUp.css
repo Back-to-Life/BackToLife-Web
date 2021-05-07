@@ -77,7 +77,7 @@
 .lastName {
   width: 49%;
 }
-
+.firstName,
 .email,
 .password,
 .passwordAgain
