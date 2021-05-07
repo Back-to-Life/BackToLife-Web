@@ -1,14 +1,44 @@
-import React,{useCallback,useContext} from 'react';
+import React,{useCallback,useContext,useState} from 'react';
 import { withRouter, Redirect } from "react-router";
 import { Link } from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
+import axios from 'axios'
+import { Component } from 'react';
+import { useHistory } from "react-router-dom";
 
 
-export default function SignIn() {
-  const {t, i18n} = useTranslation();
 
-  return (
+
+export function SignUp () {
+ 
+const [name, setName] = useState("")
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
+
+async function signUp()
+{
+  let item = {name, email, password}
+  console.log(item)
+
+  let result = await fetch("http://localhost:5000/signup", 
+  {
+    method: "POST",
+    body:JSON.stringify(item),
+    headers: {
+      "Content-Type":"application/json",
+      "Accept":"application/json"
+    }
+  })
+  result = await result.json()
+console.log("result", result)
+}
+
+
+
+   
+
+      return (
     
      
       <div className="wrapper1">
@@ -16,30 +46,22 @@ export default function SignIn() {
          
         <div className="form-wrapper">
 
-        <h1>{t('Sign.signup')}</h1>
-        <form  noValidate>
+        
+        <form >
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
           <input 
           type="text"
           className=""
-          placeholder="First Name"
+          placeholder="Name"
           type="text" 
-          name="firstName" 
+          name="name" 
+          onChange = {(e) => setName(e.target.value)} 
+          value =  {name} //{ this.state.name }
          
           />
         </div>
-        <div className="lastName">
-          <label  htmlFor="lastName"></label> 
-          <input 
-          type="text"
-          className=""
-          placeholder="Last Name"
-          type="text" 
-          name="lastName" 
-         
-          />
-        </div>
+        
         <div className="email">
           <label   htmlFor="email"></label> 
           <input 
@@ -48,6 +70,8 @@ export default function SignIn() {
           placeholder="E-mail"
           type="email" 
           name="email" 
+          onChange =  {(e) => setEmail(e.target.value)} 
+          value = {email} 
          
           />
         </div>
@@ -59,31 +83,39 @@ export default function SignIn() {
           placeholder="Password"
           type="password" 
           name="password" 
-        
+          onChange = {(e) => setPassword(e.target.value)} 
+          value =  {password}
           />
         </div>
-        <div className="passwordAgain">
-          <label  htmlFor="passwordAgain"></label> 
-          <input 
-          type="text"
-          className=""
-          placeholder="Password Again"
-          type="password" 
-          name="passwordAgain" 
+       
         
-          />
-        </div>
+
            
+    
+    <button onClick={signUp}
+           value = "Submit"
+           >
+             SignUp 
+           </button>
+    
+           
+   
+          
          
+        
+        
+         
+        
+        
+        
             
-          <a className="buttonsign" type="submit">
-           <h5>{t('Sign.signup')}</h5> 
-          </a>
+            
+        
          
              
             
               <Link to="/login" >
-                {t('Sign.accountIn')}
+                {"Have an account?"}
               </Link>
             
         </form>
@@ -92,6 +124,13 @@ export default function SignIn() {
    
    );     
   
+   
+  
+//}
+    
+  
+
+ 
      
   
   
