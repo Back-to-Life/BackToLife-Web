@@ -18,7 +18,8 @@
         "points": "Puanlar",
         "account": "Hesabım",
         "up": "KAYIT OL",
-        "in": "GIRIŞ YAP"
+        "in": "GIRIŞ YAP",
+        "out": "ÇIKIŞ YAP"
     },
     "Home":{
         "header":"Back To Life!",

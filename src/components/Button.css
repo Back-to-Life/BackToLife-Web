@@ -22,8 +22,8 @@
     transition: all .3s ease-out;
 }
 .btn--medium{
-    padding: 8px 20px;
-    font-size: 18px;
+    padding: 8px 10px;
+    font-size: 16px;
 }
 .btn--large{
     padding: 12px 26px;
@@ -94,7 +94,9 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    padding: 8px 16px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
     height: 100%;
     width: 100%;
 }

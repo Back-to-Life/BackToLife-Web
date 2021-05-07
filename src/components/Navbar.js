@@ -5,7 +5,7 @@ import {AiOutlineHome} from 'react-icons/ai'
 import {VscServerProcess} from 'react-icons/vsc'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import {CgProfile} from 'react-icons/cg'
-import {GoSignIn} from 'react-icons/go'
+import {GoSignIn,GoSignOut} from 'react-icons/go'
 import {FaRegIdCard} from 'react-icons/fa'
 import { FaBars, FaTimes} from 'react-icons/fa'
 import { Button } from './Button'
@@ -101,6 +101,20 @@ function Navbar() {
                           ):(
                               <Link to='/login' className='btn-link' onClick={closeMobileMenu}>
                                   <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>SIGN IN</Button>
+                              </Link>
+                          )}
+                      </li>
+                      <li className="nav-btn">
+                          {button ? (
+                              <Link to='/logout' className='btn-link' >
+                                  <Button buttonStyle='btn--outline'>
+                                  <GoSignOut className="navbar-icon"/>
+                                  {t('Navbar.out')}</Button>
+
+                              </Link>
+                          ):(
+                              <Link to='/logout' className='btn-link' onClick={closeMobileMenu}>
+                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>LOG OUT</Button>
                               </Link>
                           )}
                       </li>
