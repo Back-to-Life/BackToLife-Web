@@ -18,7 +18,8 @@
         "points": "Points",
         "account": "My Account",
         "up": "SIGN UP",
-        "in": "SIGN IN"
+        "in": "SIGN IN",
+        "out":"LOG OUT"
     },
     "Home":{
         "header":"Back To Life!",
