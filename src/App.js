@@ -9,6 +9,7 @@ import SignUp from './components/pages/SignUp/SignUp';
 import Footer from './components/pages//Footer/Footer';
 import Points from './components/pages/Points/Points';
 import SignIn from './components/pages/SignIn/SignIn';
+import Logout from './components/pages/Logout/Logout';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Route path='/points' exact component={Points}/>
       <Route path='/signup' exact component={SignUp}/>
       <Route path='/login' exact component={SignIn}/>
-      
+      <Route path='/logout' exact component={Logout}/>
     </Switch>
     
     <Footer/>
