@@ -1,11 +1,8 @@
-import React,{useCallback,useContext,useState} from 'react';
-import { withRouter, Redirect } from "react-router";
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react';
+
+import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
-import axios from 'axios'
-import { Component } from 'react';
-import { useHistory } from "react-router-dom";
 
 
 
@@ -36,7 +33,7 @@ async function signUp()
 
   }).then(history.push("/confirm"))
 
-  })
+  
 
   
   result = await result.json()
@@ -99,13 +96,9 @@ console.log("result", result)
        
         
 
-   
-   <button className = "buttonsign"
-    onClick={signUp}
-  
-
 
     <button className = "buttonsign"
+
     onClick={signUp}
 
            value = "Submit"
@@ -121,11 +114,8 @@ console.log("result", result)
 
               <Link className="linklogin" to="/login" >
                 {t('Sign.accountIn')}
-
-    
-    </Link>
-
-           
+                 </Link>
+  
             
         </form>
       </div>

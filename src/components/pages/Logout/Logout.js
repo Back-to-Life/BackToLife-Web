@@ -5,20 +5,21 @@ import axios from 'axios'
 
 
 
-function Logout() {
+export default function Logout() {
 
-    async function logout()
+
+
+async function logout()
 {
 
-  let result = await axios("http://localhost:5000/logout", 
+  let result = await fetch("http://localhost:5000/logout", 
   {
     method: "GET",
     headers: {
-        "Authorization":`Baerer ${token}`
+        "Authorization":"Baerer " + localStorage.getItem('token')
     }
   
   })
-  
   result = await result.json()
 console.log("result", result)
 }
@@ -41,4 +42,4 @@ console.log("result", result)
     )
 }
 
-export default Logout
+
