@@ -22,7 +22,7 @@
 }
 
 .home__hero-subtitle{
-    color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
     max-width: 440px;
     margin-bottom: 35px;
     font-size: 18px;
@@ -71,7 +71,7 @@
     color: azure;
 }
 .dark{
-    color: rgb(35, 43, 43);
+    color: #fc9583;
 }
 .darkBg{
   background:url(./4.png);

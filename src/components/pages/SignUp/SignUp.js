@@ -101,7 +101,7 @@ console.log("result", result)
 
            value = "Submit"
            >
-             <h5>{t('Sign.signin')}</h5> 
+             <h5>{t('Sign.signup')}</h5> 
            </button>
     
 
