@@ -17,7 +17,6 @@ function HeroSection({
     alt,
     imgStart
 }) {
-    const {t, i18n} = useTranslation();
     return (
         <>
             <div className={lightBg ? 'home__hero-section' : 'home__hero_section darkBg'}>
@@ -28,7 +27,7 @@ function HeroSection({
                             <div className="home__hero-text-wrapper">
                                 <div className="top-line">{topLine}</div>
                                    <h1 className={lightText ? 'heading': 'heading dark'}>{headline}</h1>
-                                       <p className={lightTextDesc ? 'home__hero-subtitle':'home__hero-subtitle dark'}>{description}</p>
+                                       <p className={lightTextDesc ? 'home__hero-subtitle':'home__hero-subtitle '}>{description}</p>
                                        <Link to='/signup'>
                                            <Button buttonSize='btn--wide' buttonColor='orange'>{buttonLabel}</Button>
                                        </Link>
