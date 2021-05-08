@@ -30,7 +30,11 @@ async function signUp()
       "Accept":"application/json"
     }
   
+
   }).then(history.push("/confirm"))
+
+  
+
   
   result = await result.json()
 console.log("result", result)
@@ -93,26 +97,25 @@ console.log("result", result)
         
 
 
-           
-
-  
     <button className = "buttonsign"
 
     onClick={signUp}
 
            value = "Submit"
            >
-             <h5>{t('Sign.signin')}</h5> 
+             <h5>{t('Sign.signup')}</h5> 
            </button>
   
     
+    
+    
+
     
 
               <Link className="linklogin" to="/login" >
                 {t('Sign.accountIn')}
                  </Link>
-
-           
+  
             
         </form>
       </div>

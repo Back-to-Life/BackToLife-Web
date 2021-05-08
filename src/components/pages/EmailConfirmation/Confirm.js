@@ -25,7 +25,6 @@ async function confirm()
   let item = {name, email, password, randomCode}
   console.log(item)
 
-  
 
   let result = await fetch("http://localhost:5000/email-activate", 
   {

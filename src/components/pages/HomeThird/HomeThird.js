@@ -22,7 +22,7 @@ function HomeThird() {
                     </div>
                     <Fade left duration={2000}>
                     <Link to='/signup'>
-                        <Button className="buttonWork" buttonSize='btn--wide' buttonColor='orange'>{t('Work.button')}</Button>
+                        <Button  className="buttonWork" buttonSize='btn--wide' buttonColor='orange'>{t('Work.button')}</Button>
                     </Link>
                     </Fade>
                    

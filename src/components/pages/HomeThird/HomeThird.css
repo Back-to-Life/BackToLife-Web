@@ -21,6 +21,7 @@
     max-width: 580px;
     margin-bottom: 24px;
     margin-left: 10%;
+    
 }
 .headerWork h1{
     font-size: 50px;
@@ -38,9 +39,7 @@
 .wrapperTextWork{
     margin-top: 15%;
 }
-.buttonWork{
-    margin-left: 10%;
-}
+
 @media screen and (max-width:960px) {
   
     .imgWork > img{
