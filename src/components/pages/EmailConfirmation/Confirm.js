@@ -1,27 +1,31 @@
 import React,{useCallback,useContext,useState} from 'react';
 import { withRouter, Redirect } from "react-router";
-import { Link } from 'react-router-dom';
-import './SignUp.css'
+import { Link, useHistory } from 'react-router-dom';
+import './Confirm.css'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios'
 import { Component } from 'react';
-import { useHistory } from "react-router-dom";
 
 
 
 
-export function SignUp () {
+export default function Confirm () {
  
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const [randomCode, setToken] = useState("")
 
-async function signUp()
+const history = useHistory();
+
+
+
+async function confirm()
 {
-  let item = {name, email, password}
+  let item = {name, email, password, randomCode}
   console.log(item)
 
-  let result = await fetch("http://localhost:5000/signup", 
+  let result = await fetch("http://localhost:5000/email-activate", 
   {
     method: "POST",
     body:JSON.stringify(item),
@@ -30,7 +34,7 @@ async function signUp()
       "Accept":"application/json"
     }
   
-  })
+  }).then(history.push("/"))
   
   result = await result.json()
 console.log("result", result)
@@ -90,36 +94,31 @@ console.log("result", result)
           />
         </div>
        
-        
+        <div className="token">
+          <label  htmlFor="token"></label> 
+          <input 
+          type="text"
+          className=""
+          placeholder="Token"
+          type="number" 
+          name="token" 
+          onChange = {(e) => setToken(e.target.value)} 
+          value =  {randomCode}
+          />
+        </div>
 
            
-    <Link to = "/confirm">
+    
     <button className = "buttonsign"
-    onClick={signUp}
-           value = "Submit"
+    onClick={confirm}
+           value = "Confirm"
            >
-             SignUp 
+             Confirm 
            </button>
     
     
-    </Link>
+  
     
-           
-   
-          
-         
-        
-        
-         
-        
-        
-        
-            
-            
-        
-         
-             
-            
               <Link to="/login" >
                 {"Have an account?"}
               </Link>
