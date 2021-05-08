@@ -68,19 +68,16 @@
 .lastName,
 .email,
 .password,
-.passwordAgain{
+.passwordAgain,.token{
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-.firstName,
-.lastName {
-  width: 49%;
-}
+
 .firstName,
 .email,
 .password,
-.passwordAgain
+.passwordAgain,.token
 {
   width: 100%;
 }

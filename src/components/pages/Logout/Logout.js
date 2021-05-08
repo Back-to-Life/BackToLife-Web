@@ -2,10 +2,11 @@ import React,{useCallback,useContext,useState} from 'react';
 import { withRouter, Redirect } from "react-router";
 import { Link} from 'react-router-dom';
 import axios from 'axios'
-
+import Popup from 'reactjs-popup';
 
 
 export default function Logout() {
+
 
 
 
@@ -28,16 +29,18 @@ console.log("result", result)
 
 
 
+
     return (
         <div>
            <Link to = "/">
                <button
-               onClick={logout}
+                onClick={logout}
                >
                    Logout
 
                </button>
            </Link>
+           
         </div>
     )
 }
