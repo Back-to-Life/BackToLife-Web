@@ -16,6 +16,8 @@ const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 
+const history = useHistory();
+
 async function signUp()
 {
   let item = {name, email, password}
@@ -30,7 +32,7 @@ async function signUp()
       "Accept":"application/json"
     }
   
-  })
+  }).then(history.push("/confirm"))
   
   result = await result.json()
 console.log("result", result)
@@ -92,17 +94,18 @@ console.log("result", result)
        
         
 
-           
-    <Link to = "/confirm">
-    <button className = "buttonsign"
+   
+   <button className = "buttonsign"
     onClick={signUp}
            value = "Submit"
            >
              SignUp 
            </button>
+  
     
     
-    </Link>
+    
+
     
            
    
