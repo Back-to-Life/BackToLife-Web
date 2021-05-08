@@ -14,7 +14,7 @@ import Points from './components/pages/Points/Points';
 
 
 import Logout from './components/pages/Logout/Logout';
-
+import Confirm from './components/pages/EmailConfirmation/Confirm';
 
 function App() {
 
@@ -33,6 +33,7 @@ function App() {
       <Route path='/signup' exact component={SignUp}/>
       <Route path='/login' exact component={SignIn}/>
       <Route path='/logout' exact component={Logout}/>
+      <Route path='/confirm' exact component={Confirm}/>
 
     </Switch>
     <Footer/>
