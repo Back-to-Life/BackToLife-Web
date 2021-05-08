@@ -1,17 +1,15 @@
-import React,{useCallback,useContext,useState} from 'react';
-import { withRouter, Redirect } from "react-router";
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react';
+
+import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
-import axios from 'axios'
-import { Component } from 'react';
-import { useHistory } from "react-router-dom";
 
 
 
 
 export function SignUp () {
- 
+  const {t, i18n} = useTranslation();
+
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
@@ -50,7 +48,7 @@ console.log("result", result)
          
         <div className="form-wrapper">
 
-        
+        <h1>{t('Sign.signup')}</h1>
         <form >
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
@@ -94,38 +92,27 @@ console.log("result", result)
        
         
 
-   
-   <button className = "buttonsign"
+
+           
+
+  
+    <button className = "buttonsign"
+
     onClick={signUp}
+
            value = "Submit"
            >
-             SignUp 
+             <h5>{t('Sign.signin')}</h5> 
            </button>
   
     
     
-    
 
-    
+              <Link className="linklogin" to="/login" >
+                {t('Sign.accountIn')}
+                 </Link>
+
            
-   
-          
-         
-        
-        
-         
-        
-        
-        
-            
-            
-        
-         
-             
-            
-              <Link to="/login" >
-                {"Have an account?"}
-              </Link>
             
         </form>
       </div>
@@ -133,9 +120,6 @@ console.log("result", result)
    
    );     
   
-   
-  
-//}
     
   
 

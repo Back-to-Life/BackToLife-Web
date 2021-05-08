@@ -38,7 +38,7 @@
 .wrapperTextHome{
     margin-top: 15%;
 }
-Button{
+.buttonHome{
     margin-left: 10%;
 }
 @media screen and (max-width:960px) {

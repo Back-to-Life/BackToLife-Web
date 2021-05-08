@@ -60,8 +60,8 @@
     "Sign":{
         "signin": "Giriş Yap",
         "signup": "Kayıt Ol",
-        "accountIn": "Hesabın var mı? Giriş Yap",
-        "accountUp": "Hesabın yok mu? Kayıt Ol"
+        "accountIn": "Hesabın var mı? ",
+        "accountUp": "Hesabın yok mu? "
     }
 
 }

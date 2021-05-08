@@ -60,7 +60,7 @@
     "Sign":{
         "signin": "Sign In",
         "signup": "Sign Up",
-        "accountIn": "You have an account? Sign In",
-        "accountUp": "Don't have an account? Sign Up"
+        "accountIn": "Have an account? ",
+        "accountUp": "Don't have an account? "
     }
 }
