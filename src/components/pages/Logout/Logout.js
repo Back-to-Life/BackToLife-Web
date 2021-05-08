@@ -5,22 +5,26 @@ import axios from 'axios'
 import Popup from 'reactjs-popup';
 
 
-function Logout() {
+export default function Logout() {
 
-     async function logout()
- {
-   let result = await axios("http://localhost:5000/logout", 
-   {
-     method: "GET",
-     headers: {
-         "Authorization":`Baerer ${token}`
-     }
 
-   })
 
-   result = await result.json()
- console.log("result", result)
- }
+
+async function logout()
+{
+
+  let result = await fetch("http://localhost:5000/logout", 
+  {
+    method: "GET",
+    headers: {
+        "Authorization":"Baerer " + localStorage.getItem('token')
+    }
+  
+  })
+  result = await result.json()
+console.log("result", result)
+}
+
 
 
 
@@ -41,4 +45,4 @@ function Logout() {
     )
 }
 
-export default Logout
+
