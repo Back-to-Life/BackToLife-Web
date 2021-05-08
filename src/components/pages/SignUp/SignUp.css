@@ -75,7 +75,7 @@
 }
 .firstName,
 .lastName {
-  width: 49%;
+  width: 100%;
 }
 .firstName,
 .email,
@@ -115,4 +115,11 @@
   color: #fff;
   background-color: #ffbeb3;
   border: 2px solid #fc9583;
+}
+.linklogin{
+  position: relative;
+  right: -200px;
+  text-decoration: none;
+  color: #52d0bd;
+  padding-top: 10px;
 }

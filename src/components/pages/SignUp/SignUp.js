@@ -11,7 +11,8 @@ import { useHistory } from "react-router-dom";
 
 
 export function SignUp () {
- 
+  const {t, i18n} = useTranslation();
+
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
@@ -46,7 +47,7 @@ console.log("result", result)
          
         <div className="form-wrapper">
 
-        
+        <h1>{t('Sign.signup')}</h1>
         <form >
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
@@ -92,30 +93,14 @@ console.log("result", result)
 
            
     
-    <button onClick={signUp}
+    <button className="buttonsign" onClick={signUp}
            value = "Submit"
            >
-             SignUp 
+             <h5>{t('Sign.signin')}</h5> 
            </button>
     
-           
-   
-          
-         
-        
-        
-         
-        
-        
-        
-            
-            
-        
-         
-             
-            
-              <Link to="/login" >
-                {"Have an account?"}
+              <Link className="linklogin" to="/login" >
+                {t('Sign.accountIn')}
               </Link>
             
         </form>
