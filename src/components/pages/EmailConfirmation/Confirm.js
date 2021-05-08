@@ -10,7 +10,8 @@ import { Component } from 'react';
 
 
 export default function Confirm () {
- 
+  const {t, i18n} = useTranslation();
+
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
@@ -53,7 +54,7 @@ console.log("result", result)
          
         <div className="form-wrapper">
 
-        
+        <h1>{t('Sign.Confirm')}</h1>
         <form >
          <div className="firstName">
           <label  htmlFor="firstName"></label> 
@@ -114,14 +115,11 @@ console.log("result", result)
     onClick={confirm}
            value = "Confirm"
            >
-             Confirm 
+             <h5>{t('Sign.Confirm')} </h5>
            </button>
     
-    
-  
-    
-              <Link to="/login" >
-                {"Have an account?"}
+              <Link className="linklogin" to="/login" >
+                {t('Sign.accountIn')}
               </Link>
             
         </form>

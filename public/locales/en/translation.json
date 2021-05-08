@@ -61,6 +61,7 @@
         "signin": "Sign In",
         "signup": "Sign Up",
         "accountIn": "Have an account? ",
-        "accountUp": "Don't have an account? "
+        "accountUp": "Don't have an account? ",
+        "Confirm": "Confirm"
     }
 }

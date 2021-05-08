@@ -36,7 +36,7 @@ async function signUp()
 
   }).then(history.push("/confirm"))
 
-  })
+  
 
   
   result = await result.json()
@@ -100,30 +100,20 @@ console.log("result", result)
         
 
    
-   <button className = "buttonsign"
-    onClick={signUp}
-  
-
-
     <button className = "buttonsign"
     onClick={signUp}
 
            value = "Submit"
            >
              <h5>{t('Sign.signup')}</h5> 
-           </button>
+    </button>
   
-    
-    
-    
-
-    
 
               <Link className="linklogin" to="/login" >
                 {t('Sign.accountIn')}
 
-    
     </Link>
+  
 
            
             
@@ -133,11 +123,6 @@ console.log("result", result)
    
    );     
   
-    
-  
-
- 
-     
   
   
 }

@@ -61,7 +61,8 @@
         "signin": "Giriş Yap",
         "signup": "Kayıt Ol",
         "accountIn": "Hesabın var mı? ",
-        "accountUp": "Hesabın yok mu? "
+        "accountUp": "Hesabın yok mu? ",
+        "Confirm": "Onayla"
     }
 
 }

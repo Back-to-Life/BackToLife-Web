@@ -2,26 +2,25 @@ import React,{useCallback,useContext,useState} from 'react';
 import { withRouter, Redirect } from "react-router";
 import { Link} from 'react-router-dom';
 import axios from 'axios'
-
+import Popup from 'reactjs-popup';
 
 
 function Logout() {
 
-    async function logout()
-{
+     async function logout()
+ {
+   let result = await axios("http://localhost:5000/logout", 
+   {
+     method: "GET",
+     headers: {
+         "Authorization":`Baerer ${token}`
+     }
 
-  let result = await axios("http://localhost:5000/logout", 
-  {
-    method: "GET",
-    headers: {
-        "Authorization":`Baerer ${token}`
-    }
-  
-  })
-  
-  result = await result.json()
-console.log("result", result)
-}
+   })
+
+   result = await result.json()
+ console.log("result", result)
+ }
 
 
 
@@ -31,12 +30,13 @@ console.log("result", result)
         <div>
            <Link to = "/">
                <button
-               onClick={logout}
+                onClick={logout}
                >
                    Logout
 
                </button>
            </Link>
+           
         </div>
     )
 }
