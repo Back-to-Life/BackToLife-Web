@@ -2,7 +2,7 @@ import React,{useCallback,useContext, useEffect, useState} from 'react';
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-
+import './SignIn.css'
 
 
 export default function SignIn() {
@@ -74,19 +74,17 @@ console.log("result", result)
          
             
        
-    <button onClick={submit}
+    <button className="buttonsign" onClick={submit}
            value = "Submit"
-
            >
-            
-               Login 
-           
-            
+
+               <h5>{t('Sign.signin')}</h5> 
+
            </button>
     
             
-    <Link to="/signup" >
-                {"Don't have an account?"}
+           <Link className="linksignin" to="/signup" >
+                {t('Sign.accountUp')}
               </Link>
         </form>
       </div>

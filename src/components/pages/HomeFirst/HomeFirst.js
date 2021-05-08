@@ -23,7 +23,7 @@ function HomeFirst() {
                     </div>
                     <Fade left duration={2000}>
                     <Link to='/signup'>
-                        <Button buttonSize='btn--wide' buttonColor='orange'>{t('Home.button')}</Button>
+                        <Button className="buttonHome" buttonSize='btn--wide' buttonColor='orange'>{t('Home.button')}</Button>
                     </Link>
                     </Fade>
                     

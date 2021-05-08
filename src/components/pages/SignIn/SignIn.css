@@ -30,8 +30,6 @@
     flex-wrap: wrap;
   }
   
-  
-  
   label {
     font-size: 0.8em;
     margin-bottom: 0.25em;
@@ -82,10 +80,7 @@
     margin-bottom: 15px;
   }
   
-  .firstName,
-  .lastName {
-    width: 49%;
-  }
+ 
   
   .email,
   .password,
@@ -126,4 +121,10 @@
     background-color: #ffbeb3;
     border: 2px solid #fc9583;
   }
-  
+.linksignin{
+  position: relative;
+  right: -160px;
+  text-decoration: none;
+  color: #52d0bd;
+  padding-top: 10px;
+}
