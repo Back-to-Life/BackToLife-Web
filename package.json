@@ -8,18 +8,18 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
-    "i18next": "^20.1.0",
+    "i18next": "^20.2.2",
     "i18next-browser-languagedetector": "^6.1.0",
-    "i18next-http-backend": "^1.2.1",
+    "i18next-http-backend": "^1.2.2",
     "lord-icon-element": "^2.0.2",
-    "lottie-web": "^5.7.7",
-    "react": "^16.13.1",
-    "react-chartjs-2": "^2.11.1",
-    "react-circular-progressbar": "^2.0.3",
-    "react-dom": "^16.13.1",
-    "react-i18next": "^11.8.12",
+    "lottie-web": "^5.7.8",
+    "react": "^16.14.0",
+    "react-chartjs-2": "^2.11.2",
+    "react-circular-progressbar": "^2.0.4",
+    "react-dom": "^16.14.0",
+    "react-i18next": "^11.8.15",
     "react-icons": "^3.11.0",
-    "react-responsive-carousel": "^3.2.10",
+    "react-responsive-carousel": "^3.2.18",
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -46,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-loader": "^4.0.2",
+    "style-loader": "^2.0.0"
   }
 }

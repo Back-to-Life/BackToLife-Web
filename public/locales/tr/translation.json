@@ -63,6 +63,13 @@
         "accountIn": "Hesabın var mı? ",
         "accountUp": "Hesabın yok mu? ",
         "Confirm": "Onayla"
+    },
+    "Popup":{
+        "header":"Çıkış yapmak istediğinizden emin misiniz?",
+        "text1":"Veya hesabınızdaki mevcut para miktarını öğrenebilir, günlük uygulamamızı kullanarak verilerinizi takip edebilir ve Kahramanlar sıralamasındaki yerinizi öğrenebilirsiniz.",
+        "text2":"Geri dönüştürdüğünüz atıkların türlerine göre puanlarına da bakabilirsiniz.",
+        "logout":"Çıkış Yap",
+        "exit":"Ana Sayfa"
     }
 
 }
