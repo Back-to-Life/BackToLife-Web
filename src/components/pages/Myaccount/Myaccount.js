@@ -8,11 +8,14 @@ import Chart from "../../Chart/Chart.js";
 import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
+import Navbar from "../../Navbar";
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
+
   return (
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
+     
       <div className="background">
         <div className="section_card">
           <div className="wrapper">
@@ -88,7 +91,7 @@ function Myaccount() {
 
         <div className="containerBigCard">
           <div className="container_big">
-            <Chart />
+            <Chart/>
           </div>
         </div>
       </div>

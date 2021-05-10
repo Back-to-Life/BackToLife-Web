@@ -83,6 +83,7 @@ import { useTranslation } from 'react-i18next';
          })
          .catch(err =>{
              console.log(err);
+             
          })
       
      }

@@ -1,14 +1,21 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
+import Navbar from '../../Navbar';
 
 
 
 
 export function SignUp () {
-  const {t, i18n} = useTranslation();
+// useEffect(()=>{
+//   if(localStorage.getItem('user-info')){
+//     history.push("/")
+//   }
+// })
+
+const {t, i18n} = useTranslation();
 
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
@@ -46,7 +53,8 @@ console.log("result", result)
 
       return (
     
-     
+     <>
+   
       <div className="wrapper1">
        
          
@@ -115,7 +123,7 @@ console.log("result", result)
         </form>
       </div>
        </div>
-   
+       </>
    );     
   
   
