@@ -90,8 +90,10 @@
   span{
     color: white;
   }
-  .outbtn{
-      cursor: pointer;
+  .outbtn a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
   }
   @media (max-width: 500px) {
     .modalImage {

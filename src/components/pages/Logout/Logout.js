@@ -5,7 +5,7 @@ import axios from 'axios'
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../Navbar';
-
+import {Fade} from 'react-reveal';
 
 export default function Logout() {
 
@@ -40,9 +40,10 @@ const {t, i18n} = useTranslation();
 
 return (
   <>
-  
+  <Navbar/>
   <div className="pop">
     <div className={`modalBackground modalShowing-${modalState}`}>
+      <Fade top duration={2000}>
       <div className="modalInner">
         <div className="modalImage">
           <img
@@ -57,7 +58,11 @@ return (
           <br/><br/> {t('Popup.text2')}
           </p>
           <form action="">
-            <button className="outbtn" onClick={logout}>{t('Popup.logout')}</button>
+            <button className="outbtn" onClick={logout}>
+              <a href="/">
+              {t('Popup.logout')}
+                </a>
+                </button>
           </form>
           <button className="exitButton">
               <Link to="/">
@@ -67,6 +72,7 @@ return (
           </button>
         </div>
       </div>
+      </Fade>
     </div>
     
   </div>

@@ -38,7 +38,7 @@ ul.thumbs.animated{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background:linear-gradient(45deg, #58c4bc 0%,#58c4bc 100%);
+    background:linear-gradient(45deg, rgb(88, 196, 188) 0%,#58c4bc 100%);
 }
 .container_card{
     background:linear-gradient(45deg, #e5eeee 0%,#e5eeee 100%);
@@ -90,7 +90,7 @@ li.slide.selected{
     color: #fc9583;
 }
 .container_cardInfo h2{
-    color: #0e425d;
+    color: #fc9583;
 }
 .ortala p{
     margin-bottom: 10px;
@@ -160,6 +160,7 @@ li.slide.selected{
     font-size: 20px;
     color:#0e425d;
 }
+
 @media screen and (max-width:960px){
     .containerr{
         display: flex;
@@ -191,5 +192,7 @@ li.slide.selected{
         background:#e5eeee ;
         border-radius: 30px;
     } 
-
+    .gif img{
+        display: none;
+    }
 }

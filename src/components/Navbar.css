@@ -27,7 +27,7 @@
   }
   
   .navbar-logo {
-    color: #fc9583;
+    color: rgb(252, 149, 131);
     justify-self: start;
     cursor: pointer;
     text-decoration: none;
@@ -58,7 +58,9 @@
   .nav-item:hover {
     border-bottom: 2px solid #52d0bd;
   }
-  
+  .nav-item:nth-child(4){
+    margin-right: 10px;
+  }
   .nav-links {
     color: #fc9583;
     display: flex;
@@ -67,6 +69,7 @@
     padding: 0.5rem 0.7rem;
     height: 100%;
   }
+
   
   .fa-bars {
     color: #fff;
