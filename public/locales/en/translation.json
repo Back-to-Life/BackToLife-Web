@@ -61,6 +61,14 @@
         "signin": "Sign In",
         "signup": "Sign Up",
         "accountIn": "Have an account? ",
-        "accountUp": "Don't have an account? "
+        "accountUp": "Don't have an account? ",
+        "Confirm": "Confirm"
+    },
+    "Popup":{
+        "header":"Are you sure you want to log out?",
+        "text1":"Or you can find out the current amount of money in your account, track your data using our daily application, and learn your place in the Heroes ranking.",
+        "text2":"You can also look at how many points the wastes you recycle are worth according to their types.",
+        "logout":"Logout",
+        "exit":"Home"
     }
 }

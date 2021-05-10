@@ -1,0 +1,100 @@
+.App {
+    height: 100vh;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .App button:not(.exitButton) {
+    padding: 13px 35px;
+    background: #22c39f;
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
+    border: none;
+  }
+  
+  .modalBackground {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./overlay.png"),url("./popupback.png");
+    display: flex;
+    background-size: cover;
+  }
+  
+  .modalShowing-true {
+    opacity: 1;
+    pointer-events: visible;
+  }
+  
+  .modalInner {
+    background: #031e36;
+    width: 900px;
+    max-width: calc(100% - 60px);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: left;
+    border-radius: 20px;
+  }
+  
+  .modalText {
+    padding: 15px;
+    
+  }
+  .modalText h2{
+      padding-bottom: 10px;
+      color: #22c39f;
+  }
+  .modalText p {
+    line-height: 180%;
+    padding-bottom: 20px;
+  }
+  
+  .modalText button {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .modalImage img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 20px;
+
+  }
+  
+  .exitButton{
+    padding: 15px;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    
+  }
+  Link{
+    text-decoration: none;
+  }
+  span{
+    color: white;
+  }
+  .outbtn{
+      cursor: pointer;
+  }
+  @media (max-width: 500px) {
+    .modalImage {
+      display: none;
+    }
+  }

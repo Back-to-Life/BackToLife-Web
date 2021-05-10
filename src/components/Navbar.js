@@ -38,6 +38,9 @@ function Navbar() {
     function TranslateClick(lang) {
         i18n.changeLanguage(lang);
     }
+
+    
+    
     return (
         <>
         <IconContext.Provider value={{color:'#fc9583'}}>
@@ -107,7 +110,7 @@ function Navbar() {
                       <li className="nav-btn">
                           {button ? (
                               <Link to='/logout' className='btn-link' >
-                                  <Button buttonStyle='btn--outline'>
+                                  <Button  buttonStyle='btn--outline'>
                                   <GoSignOut className="navbar-icon"/>
                                   {t('Navbar.out')}</Button>
 

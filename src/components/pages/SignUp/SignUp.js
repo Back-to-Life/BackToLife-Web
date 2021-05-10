@@ -95,8 +95,6 @@ console.log("result", result)
         </div>
        
         
-
-
     <button className = "buttonsign"
 
     onClick={signUp}
@@ -104,18 +102,15 @@ console.log("result", result)
            value = "Submit"
            >
              <h5>{t('Sign.signup')}</h5> 
-           </button>
+    </button>
   
-    
-    
-    
-
-    
 
               <Link className="linklogin" to="/login" >
                 {t('Sign.accountIn')}
-                 </Link>
-  
+
+
+    </Link>
+        
             
         </form>
       </div>
@@ -123,11 +118,6 @@ console.log("result", result)
    
    );     
   
-    
-  
-
- 
-     
   
   
 }
