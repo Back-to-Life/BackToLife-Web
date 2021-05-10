@@ -3,6 +3,7 @@ import {IconContext} from 'react-icons/lib';
 import {Link} from 'react-router-dom';
 import './Pricing.css';
 import { useTranslation } from 'react-i18next';
+import Navbar from './Navbar';
 
 function Pricing() {
     const {t, i18n} = useTranslation();
@@ -10,6 +11,7 @@ function Pricing() {
     return (
         <IconContext.Provider value={{color:'#fff', size: 64}}>
         <div>
+        <Navbar/>
             <div className="pricing__section">
                 <div className="pricing__wrapper">
                 

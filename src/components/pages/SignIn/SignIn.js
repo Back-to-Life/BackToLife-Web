@@ -1,10 +1,16 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './SignIn.css'
+import Navbar from '../../Navbar';
 
 
 export default function SignIn() {
+   useEffect(()=>{
+     if(localStorage.getItem('user-info')){
+       history.push("/")
+     }
+   })
   const {t, i18n} = useTranslation();
 
 const [email, setEmail] = useState()
@@ -28,6 +34,7 @@ let result = await fetch("http://localhost:5000/login",
     }
   }).then(history.push("/") )
   result = await result.json()
+  localStorage.setItem('user-info', JSON.stringify(result))
 console.log("result", result)
 
 }
@@ -41,7 +48,8 @@ console.log("result", result)
 
   return (
     
-     
+     <>
+     <Navbar/>
       <div className="wrapper1">
        
          
@@ -94,7 +102,7 @@ console.log("result", result)
         </form>
       </div>
        </div>
-   
+       </>
    );     
   
      
