@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
+
   return (
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
       <div className="background">

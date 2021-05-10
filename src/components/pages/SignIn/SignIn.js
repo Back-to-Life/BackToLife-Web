@@ -1,7 +1,6 @@
-import React,{useCallback,useContext, useEffect, useState} from 'react';
+import React,{useState} from 'react';
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import axios from 'axios';
 import './SignIn.css'
 
 
@@ -17,7 +16,7 @@ const history = useHistory();
 
 const submit = async (e) => {
  
-let item = { email, password}
+let item = { email, password }
   console.log(item)
 let result = await fetch("http://localhost:5000/login", 
   {
@@ -32,6 +31,10 @@ let result = await fetch("http://localhost:5000/login",
 console.log("result", result)
 
 }
+
+
+
+
 
 
 
