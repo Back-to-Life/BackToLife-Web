@@ -9,11 +9,11 @@ import Navbar from '../../Navbar';
 
 
 export function SignUp () {
-// useEffect(()=>{
-//   if(localStorage.getItem('user-info')){
-//     history.push("/")
-//   }
-// })
+ useEffect(()=>{
+   if(localStorage.getItem('user-info')){
+     history.push("/");
+   }
+ })
 
 const {t, i18n} = useTranslation();
 
@@ -54,7 +54,7 @@ console.log("result", result)
       return (
     
      <>
-   
+   <Navbar/>
       <div className="wrapper1">
        
          

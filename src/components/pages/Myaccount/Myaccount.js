@@ -15,7 +15,7 @@ function Myaccount() {
 
   return (
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
-     
+     <Navbar/>
       <div className="background">
         <div className="section_card">
           <div className="wrapper">
