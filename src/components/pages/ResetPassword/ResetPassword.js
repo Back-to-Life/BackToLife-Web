@@ -1,44 +1,30 @@
-
 import React,{useState} from 'react';
-
-import React,{useState,useEffect} from 'react';
-
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './SignIn.css'
-import Navbar from '../../Navbar';
 
 
-export default function SignIn() {
-   useEffect(()=>{
-     if(localStorage.getItem('user-info')){
-       history.push("/")
-     }
-   })
-  const {t, i18n} = useTranslation();
+export default function ResetPassword() {
+    const {t, i18n} = useTranslation();
 
-const [email, setEmail] = useState()
-const [password, setPassword] = useState()
+    const [email, setEmail] = useState("")
+    const [resetToken, setResetToken] = useState("")
+    const [newPassword, setNewPassword] = useState("")
 
 
-const history = useHistory();
+    const history = useHistory();
 
 
-const submit = async (e) => {
+    const resetPassword = async (e) => {
  
-let item = { email, password }
-  console.log(item)
-let result = await fetch("http://localhost:5000/login", 
-  {
-    method: "POST",
-    body:JSON.stringify(item),
-    headers: {
-      "Content-Type":"application/json",
-      "Accept":"application/json"
-    }
+    let item = { email, newPassword, resetToken }
+        console.log(item)
+    let result = await fetch("http://localhost:5000/resetPassword", 
+        {
+            method: "PUT",
+            body:JSON.stringify(item)
   }).then(history.push("/") )
   result = await result.json()
-  localStorage.setItem('user-info', JSON.stringify(result))
 console.log("result", result)
 
 }
@@ -52,8 +38,7 @@ console.log("result", result)
 
   return (
     
-     <>
-     <Navbar/>
+     
       <div className="wrapper1">
        
          
@@ -78,18 +63,31 @@ console.log("result", result)
           <input 
           type="text"
           className=""
-          placeholder="Password"
+          placeholder="New Password"
           type="password" 
           name="password" 
-          onChange = {(e) => setPassword(e.target.value)}
+          onChange = {(e) => setNewPassword(e.target.value)}
         
           />
         </div>
+        <div className="password">
+          <label htmlFor="password"></label> 
+          <input 
+          type="text"
+          className=""
+          placeholder="Reset Token"
+          type="number" 
+          name="token" 
+          onChange = {(e) => setResetToken(e.target.value)}
+        
+          />
+        </div>
+        
            
          
             
        
-    <button className="buttonsign" onClick={submit}
+    <button className="buttonsign" onClick={resetPassword}
            value = "Submit"
            >
 
@@ -100,13 +98,11 @@ console.log("result", result)
     
           
 
-           <Link to = "/forgotPassword">
-           Forgot Password?
-           </Link>   
+ 
         </form>
       </div>
        </div>
-       </>
+   
    );     
   
      

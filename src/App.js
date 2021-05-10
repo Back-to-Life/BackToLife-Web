@@ -11,7 +11,12 @@ import Points from './components/pages/Points/Points';
 import Logout from './components/pages/Logout/Logout';
 import Confirm from './components/pages/EmailConfirmation/Confirm';
 import HomeThird from './components/pages/HomeThird/HomeThird';
+
+import ForgotPassword from './components/pages/ForgotPassword/ForgotPassword'
+import ResetPassword from './components/pages/ResetPassword/ResetPassword'
+
 import Protected from './components/pages/Protected';
+
 
 function App() {
 
@@ -33,6 +38,8 @@ function App() {
       <Route path='/login' exact component={SignIn}/>
       <Route path='/logout' exact component={Logout}/>
       <Route path='/confirm' exact component={Confirm}/>
+      <Route path='/forgotPassword' exact component={ForgotPassword}/>
+      <Route path='/resetPassword' exact component={ResetPassword}/>
 
     </Switch>
     <Footer/>

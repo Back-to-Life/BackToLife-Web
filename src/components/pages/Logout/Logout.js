@@ -5,7 +5,11 @@ import axios from 'axios'
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../Navbar';
+
+
+
 import {Fade} from 'react-reveal';
+
 
 export default function Logout() {
 
@@ -40,7 +44,9 @@ const {t, i18n} = useTranslation();
 
 return (
   <>
+
   <Navbar/>
+
   <div className="pop">
     <div className={`modalBackground modalShowing-${modalState}`}>
       <Fade top duration={2000}>
@@ -79,5 +85,3 @@ return (
   </>
     )
 }
-
-
