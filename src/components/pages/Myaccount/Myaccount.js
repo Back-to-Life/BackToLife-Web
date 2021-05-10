@@ -12,6 +12,7 @@ import Navbar from "../../Navbar";
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
+
   /*let result = await fetch("http://localhost:5000/me", 
   {
     method: "GET"
@@ -19,6 +20,7 @@ function Myaccount() {
   result = await result.json()
 console.log("result", result)
 */
+
 
   return (
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
