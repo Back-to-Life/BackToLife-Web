@@ -6,11 +6,13 @@ import './ProgressBar.css'
 const ProgressBar = () =>{
     const [percentage, setPercentage] = useState(0);
 
-   useEffect(async () => {
+   useEffect(()=>{
+       (async () => {
        const response = await fetch("http://dummy.restapiexample.com/api/v1/employees");
         const datajson = await response.json();
         const [item] = datajson.data;
         setPercentage(item);
+       })();
    }, []);
    
     return(
