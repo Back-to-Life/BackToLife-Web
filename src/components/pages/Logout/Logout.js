@@ -1,5 +1,5 @@
 import React,{useCallback,useContext,useState} from 'react';
-import { withRouter, Redirect } from "react-router";
+import { withRouter, Redirect, useHistory } from "react-router";
 import { Link} from 'react-router-dom';
 import axios from 'axios'
 import './Logout.css'
@@ -7,13 +7,13 @@ import { useTranslation } from 'react-i18next';
 import Navbar from '../../Navbar';
 
 
-
 import {Fade} from 'react-reveal';
+
 
 
 export default function Logout() {
 
-
+const history = useHistory();
 
 
 async function logout()
@@ -23,10 +23,10 @@ async function logout()
   {
     method: "GET",
     headers: {
-        "Authorization":"Baerer " + localStorage.getItem('token')
+        "Authorization":"Baerer " + localStorage.getItem('user-info')
     }
   
-  })
+  }).then(localStorage.removeItem("user-info")).then(history.push("/"))
   result = await result.json()
 console.log("result", result)
 }
