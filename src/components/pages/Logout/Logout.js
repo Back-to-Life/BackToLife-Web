@@ -5,8 +5,6 @@ import axios from 'axios'
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
 import Navbar from '../../Navbar';
-
-
 import {Fade} from 'react-reveal';
 
 

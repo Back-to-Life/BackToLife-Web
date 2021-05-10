@@ -1,4 +1,3 @@
-
 import React,{useState, useEffect} from 'react';
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
@@ -40,20 +39,11 @@ console.log("result", result)
 
 }
 
-
-
-
-
-
-
-
   return (
     
      <>
      <Navbar/>
       <div className="wrapper1">
-       
-         
         <div className="form-wrapper">
 
         <h1>{t('Sign.signin')}</h1>
@@ -97,7 +87,7 @@ console.log("result", result)
     
           
 
-           <Link to = "/forgotPassword">
+           <Link className="passwordlink" to = "/forgotPassword">
            Forgot Password?
            </Link>   
         </form>

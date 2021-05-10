@@ -62,7 +62,9 @@
         "signup": "Kayıt Ol",
         "accountIn": "Hesabın var mı? ",
         "accountUp": "Hesabın yok mu? ",
-        "Confirm": "Onayla"
+        "Confirm": "Onayla",
+        "forgot":"Şifremi Unuttum",
+        "reset":"Şifreyi Sıfırla"
     },
     "Popup":{
         "header":"Çıkış yapmak istediğinizden emin misiniz?",
