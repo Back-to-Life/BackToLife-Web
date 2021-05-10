@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom';
 import axios from 'axios'
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
+import Navbar from '../../Navbar';
 
 
 export default function Logout() {
@@ -38,7 +39,9 @@ const toggleModalState = () => {
 const {t, i18n} = useTranslation();
 
 return (
-  <div className="App">
+  <>
+  
+  <div className="pop">
     <div className={`modalBackground modalShowing-${modalState}`}>
       <div className="modalInner">
         <div className="modalImage">
@@ -65,9 +68,8 @@ return (
         </div>
       </div>
     </div>
-    {/* <button onClick={() => toggleModalState()}>Open modal</button> */}
+    
   </div>
+  </>
     )
 }
-
-
