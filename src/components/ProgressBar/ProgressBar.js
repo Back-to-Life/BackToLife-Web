@@ -11,7 +11,7 @@ const ProgressBar = () =>{
         const datajson = await response.json();
         const [item] = datajson.data;
         setPercentage(item);
-   },[]);
+   }, []);
    
     return(
         <div style={{width:"200px", padding: "40px 40px 40px 40px"}}>

@@ -7,6 +7,7 @@ import HomeThird from '../HomeThird/HomeThird';
 function Home() {
     return (
         <>
+        
            <HomeFirst/>
            <HomeSecond/>
            <HomeThird/>
