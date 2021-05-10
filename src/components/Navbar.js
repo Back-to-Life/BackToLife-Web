@@ -54,7 +54,11 @@ function Navbar() {
                       {click ? <FaTimes/> : <FaBars/>}
                   </div>
                   <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                      <li className="nav-item">
+                     {
+                         localStorage.getItem('user-info') ?
+                         
+                         <>
+                         <li className="nav-item">
                           <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
                               {t('Navbar.home')}
@@ -79,6 +83,41 @@ function Navbar() {
                           </Link>
                       </li>
                       <li className="nav-btn">
+                          {button ? (
+                              <Link to='/logout' className='btn-link' >
+                                  <Button  buttonStyle='btn--outline'>
+                                  <GoSignOut className="navbar-icon"/>
+                                  {t('Navbar.out')}</Button>
+
+                              </Link>
+                          ):(
+                              <Link to='/logout' className='btn-link' onClick={closeMobileMenu}>
+                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>LOG OUT</Button>
+                              </Link>
+                          )}
+                      </li>
+                         </>
+                         :
+                         <>
+                              <li className="nav-item">
+                          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                              <AiOutlineHome className="navbar-icon"/>
+                              {t('Navbar.home')}
+                          </Link>
+                      </li>
+                      <li className="nav-item">
+                          <Link to='/howtowork' className='nav-links' onClick={closeMobileMenu}>
+                              <VscServerProcess className="navbar-icon"/>
+                              {t('Navbar.work')}
+                          </Link>
+                      </li>
+                      <li className="nav-item">
+                          <Link to='/points' className='nav-links' onClick={closeMobileMenu}>
+                              <AiOutlinePlusCircle className="navbar-icon"/>
+                              {t('Navbar.points')}
+                          </Link>
+                      </li>
+                          <li className="nav-btn">
                           {button ? (
                               <Link to='/signup' className='btn-link'>
                                  
@@ -107,20 +146,11 @@ function Navbar() {
                               </Link>
                           )}
                       </li>
-                      <li className="nav-btn">
-                          {button ? (
-                              <Link to='/logout' className='btn-link' >
-                                  <Button  buttonStyle='btn--outline'>
-                                  <GoSignOut className="navbar-icon"/>
-                                  {t('Navbar.out')}</Button>
-
-                              </Link>
-                          ):(
-                              <Link to='/logout' className='btn-link' onClick={closeMobileMenu}>
-                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>LOG OUT</Button>
-                              </Link>
-                          )}
-                      </li>
+                         </>
+                     } 
+                      
+                     
+                      
                       <a className="languagebuttonTr" onClick={()=>TranslateClick('tr')}><img src="images/turkey.png" alt=""/></a>
                     <a className="languagebuttonEn" onClick={()=>TranslateClick('en')}><img src="images/united-kingdom.png"></img></a>
                   </ul>

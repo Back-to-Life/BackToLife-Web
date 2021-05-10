@@ -1,4 +1,4 @@
-.App {
+.pop {
     height: 100vh;
     min-height: 100%;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
   }
   
-  .App button:not(.exitButton) {
+  .pop button:not(.exitButton) {
     padding: 13px 35px;
     background: #22c39f;
     border-radius: 30px;
@@ -90,8 +90,10 @@
   span{
     color: white;
   }
-  .outbtn{
-      cursor: pointer;
+  .outbtn a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
   }
   @media (max-width: 500px) {
     .modalImage {

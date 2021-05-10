@@ -83,6 +83,7 @@ import { useTranslation } from 'react-i18next';
          })
          .catch(err =>{
              console.log(err);
+             
          })
       
      }
@@ -95,8 +96,8 @@ import { useTranslation } from 'react-i18next';
                <div className="Bar">
                    <Bar
                      data={chartData}
-                     width={"60%"}
-                     height={"10%"}
+                     width="60%"
+                     height="10%"
                      options={{
                         // maintainAspectRatio: false,
                          responsive:true,

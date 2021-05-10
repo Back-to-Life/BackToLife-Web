@@ -8,9 +8,11 @@ import Chart from "../../Chart/Chart.js";
 import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
+import Navbar from "../../Navbar";
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
+
   /*let result = await fetch("http://localhost:5000/me", 
   {
     method: "GET"
@@ -19,8 +21,10 @@ function Myaccount() {
 console.log("result", result)
 */
 
+
   return (
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
+     <Navbar/>
       <div className="background">
         <div className="section_card">
           <div className="wrapper">
@@ -96,7 +100,7 @@ console.log("result", result)
 
         <div className="containerBigCard">
           <div className="container_big">
-            <Chart />
+            <Chart/>
           </div>
         </div>
       </div>

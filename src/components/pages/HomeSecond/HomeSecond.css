@@ -42,8 +42,7 @@
 
 @media screen and (max-width:960px) {
     .containerSave{
-       
-        background: url("../../4responsive.png");
+       background: url("../../4responsive.png");
     }
     .imgSave > img{
         margin-top: 20%;
