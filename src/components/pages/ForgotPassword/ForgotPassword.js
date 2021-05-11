@@ -5,7 +5,6 @@ import './ForgotPassword.css'
 import { useTranslation } from 'react-i18next';
 
 import { Component } from 'react';
-import Navbar from '../../Navbar';
 
 
 
@@ -48,13 +47,13 @@ console.log("result", result)
       return (
     
      <>
-     <Navbar/>
+     
       <div className="wrapper1">
        
          
         <div className="form-wrapper">
 
-        <h1>{t('Sign.forgot')}</h1>
+        <h1>{t('Sign.forgotMain')}</h1>
         <form >
       
         <div className="email">

@@ -11,7 +11,7 @@ function HomeThird() {
 
     return (
         <div>
-            <Navbar/>
+           
             <div className="containerWork">
                 <div className="wrapperWork">
                    
