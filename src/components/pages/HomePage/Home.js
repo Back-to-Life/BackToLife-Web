@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../../Navbar';
 import Pricing from '../../Pricing';
 import AppAdd from '../AppAdd/AppAdd';
 import HomeFirst from '../HomeFirst/HomeFirst';
@@ -8,7 +7,7 @@ import HomeThird from '../HomeThird/HomeThird';
 function Home() {
     return (
         <>
-        <Navbar/>
+          
            <HomeFirst/>
            <HomeSecond/>
            <HomeThird/>

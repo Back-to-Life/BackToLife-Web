@@ -4,7 +4,7 @@ import { Link} from 'react-router-dom';
 import axios from 'axios'
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
-import Navbar from '../../Navbar';
+
 import {Fade} from 'react-reveal';
 
 
@@ -43,7 +43,6 @@ const {t, i18n} = useTranslation();
 return (
   <>
 
-  <Navbar/>
 
   <div className="pop">
     <div className={`modalBackground modalShowing-${modalState}`}>
