@@ -6,11 +6,7 @@ import './SignIn.css'
 
 
 export default function SignIn() {
-   useEffect(()=>{
-     if(localStorage.getItem('user-info')){
-       history.push("/")
-     }
-   })
+   
   const {t, i18n} = useTranslation();
 
 const [email, setEmail] = useState()
@@ -29,8 +25,7 @@ let result = await fetch("http://localhost:5000/login",
     method: "POST",
     body:JSON.stringify(item),
     headers: {
-      "Content-Type":"application/json",
-      "Accept":"application/json"
+      "Content-Type":"application/json"
     }
   }).then(history.push("/") )
   result = await result.json()
