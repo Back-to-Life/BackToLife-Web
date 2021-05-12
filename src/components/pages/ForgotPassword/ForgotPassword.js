@@ -17,8 +17,6 @@ export default function ForgotPassword () {
    
     const history = useHistory();
 
-
-
 async function forgotPassword()
 {
     let item = {email}
