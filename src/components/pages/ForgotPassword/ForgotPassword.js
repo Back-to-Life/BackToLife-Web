@@ -44,13 +44,14 @@ console.log("result", result)
 
       return (
     
+     <>
      
       <div className="wrapper1">
        
          
         <div className="form-wrapper">
 
-        <h1>Forgot Password</h1>
+        <h1>{t('Sign.forgotMain')}</h1>
         <form >
       
         <div className="email">
@@ -82,7 +83,7 @@ console.log("result", result)
         </form>
       </div>
        </div>
-   
+       </>
    );     
   
    

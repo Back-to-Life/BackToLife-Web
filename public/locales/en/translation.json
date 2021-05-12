@@ -62,7 +62,10 @@
         "signup": "Sign Up",
         "accountIn": "Have an account? ",
         "accountUp": "Don't have an account? ",
-        "Confirm": "Confirm"
+        "Confirm": "Confirm",
+        "forgot":"Forgot Password?",
+        "reset":"Reset Password",
+        "forgotMain":"Forgot Password"
     },
     "Popup":{
         "header":"Are you sure you want to log out?",

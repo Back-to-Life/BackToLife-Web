@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
-import Navbar from '../../Navbar';
+
 
 
 
@@ -54,7 +54,6 @@ console.log("result", result)
       return (
     
      <>
-   <Navbar/>
       <div className="wrapper1">
        
          

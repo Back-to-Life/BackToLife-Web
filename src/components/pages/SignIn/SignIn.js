@@ -1,9 +1,8 @@
-
 import React,{useState, useEffect} from 'react';
 import { Link ,useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './SignIn.css'
-import Navbar from '../../Navbar';
+
 
 
 export default function SignIn() {
@@ -31,24 +30,15 @@ let result = await fetch("http://localhost:5000/login",
   }).then(history.push("/") )
   result = await result.json()
   localStorage.setItem('user-info', JSON.stringify(result))
-console.log("result", result)
-
+  console.log("result", result)
+  window.location.reload();
 }
-
-
-
-
-
-
-
 
   return (
     
      <>
-     <Navbar/>
+    
       <div className="wrapper1">
-       
-         
         <div className="form-wrapper">
 
         <h1>{t('Sign.signin')}</h1>
@@ -92,8 +82,8 @@ console.log("result", result)
     
           
 
-           <Link to = "/forgotPassword">
-           Forgot Password?
+           <Link className="passwordlink" to = "/forgotPassword">
+           {t('Sign.forgot')}
            </Link>   
         </form>
       </div>

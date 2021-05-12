@@ -121,9 +121,9 @@
     background-color: #ffbeb3;
     border: 2px solid #fc9583;
   }
-.linksignin{
+.passwordlink{
   position: relative;
-  right: -160px;
+  right: -200px;
   text-decoration: none;
   color: #52d0bd;
   padding-top: 10px;

@@ -30,21 +30,15 @@ console.log("result", result)
 }
 
 
-
-
-
-
-
-
   return (
+    <>
     
-     
       <div className="wrapper1">
        
          
         <div className="form-wrapper">
 
-        <h1>{t('Sign.signin')}</h1>
+        <h1>{t('Sign.reset')}</h1>
         <form >
         <div className="email">
           <label htmlFor="email"></label> 
@@ -102,7 +96,7 @@ console.log("result", result)
         </form>
       </div>
        </div>
-   
+       </>
    );     
   
      
