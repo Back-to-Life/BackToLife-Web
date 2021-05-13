@@ -57,9 +57,11 @@ const ImageUpload=()=>{
                <input type="file" id="file" onChange={handleChange} hidden/> 
                <label htmlFor="file" id="selector" >
                    <MdPhotoLibrary /> &nbsp;Select File</label>
-              <button className="buttons" onClick={handleUpload} align="center" >
-                  <RiFolderUploadFill/> &nbsp;Upload File</button> 
+               <label className="buttons" onClick={handleUpload} align="center" >
+                  <RiFolderUploadFill/> &nbsp;Upload File</label> 
                </div>
+               
+              
                </IconContext.Provider>
         </div>
     )
