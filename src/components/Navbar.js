@@ -47,7 +47,8 @@ function Navbar() {
            <div className="navbar">
               <div className="navbar-container container">
                   <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-                      <FaRecycle className="navbar-icon"/>
+                      {/* <FaRecycle className="navbar-icon"/> */}
+                      <img src="images/icon.png" alt="" />
                       {t('Navbar.icon')}
                   </Link>
                   <div className="menu-icon" onClick={handleClick}>
