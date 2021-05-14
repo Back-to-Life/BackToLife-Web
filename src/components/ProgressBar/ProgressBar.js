@@ -8,9 +8,9 @@ const ProgressBar = () =>{
 
    useEffect(()=>{
        (async () => {
-       const response = await fetch("http://dummy.restapiexample.com/api/v1/employees");
+       const response = await fetch("http://localhost:5000/users");
         const datajson = await response.json();
-        const [item] = datajson.data;
+        const item = datajson.data[0];
         setPercentage(item);
        })();
    }, []);
@@ -19,14 +19,14 @@ const ProgressBar = () =>{
         <div style={{width:"200px", padding: "40px 40px 40px 40px"}}>
 
                 <CircularProgressbar
-                 value={percentage.employee_age}
-                 text={`${percentage.employee_age} ₺`}
+                 value={percentage.point}
+                 text={`${percentage.point} ₺`}
                  styles={buildStyles({
                     
                     strokeLinecap: 'round',
                     textSize: '16px',
                     pathTransitionDuration: 0.5,
-                    pathColor: `rgba(88, 196, 188, ${percentage.employee_age / 100})`,
+                    pathColor: `rgba(88, 195, 187, ${percentage.point / 20})`,
                     textColor: '#f88',
                     trailColor: '#d6d6d6',
                     backgroundColor: '#3e98c7',

@@ -35,7 +35,11 @@
     display: flex;
     align-items: center;
   }
-  
+  .navbar-logo img{
+    max-width: 70px;
+    padding-right: 10px;
+    margin-top: -10px;
+  }
   .navbar-icon {
     margin-right: 0.5rem;
     

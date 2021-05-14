@@ -2,14 +2,14 @@ input[type="file"]{
     display: none;
 }
 #selector{
-  padding: 4px 10px;
+  padding: 6px 10px;
   border: 2px solid #58c4bc;
   border-radius: 20px; 
   cursor: pointer;
   margin-right: 10px;
   white-space: nowrap;
   font-size: 17px;
-  display: inline-block;
+  
 
 }
 #selector:hover{
@@ -18,16 +18,17 @@ input[type="file"]{
 
 #selector span{
   font-weight: normal;
+ 
 }
 .buttons{
-  padding: 0px 10px;
+  padding: 6px 10px;
   border: 2px solid #58c4bc;
   border-radius: 20px; 
   cursor: pointer;
   background: none;
   font-size: 16px;
   white-space: nowrap;
-  display: inline-block;
+  
 }
 .buttons:hover{
     transform: scale(1.03);
@@ -37,3 +38,5 @@ input[type="file"]{
     justify-content: center;
     align-content: center;
 }
+
+

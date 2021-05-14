@@ -1,4 +1,4 @@
-import React,{ useState }  from 'react'
+import React,{ useState,useEffect }  from 'react'
 import {MdPhotoLibrary} from 'react-icons/md'
 import {IconContext} from 'react-icons/lib'
 import {RiFolderUploadFill} from 'react-icons/ri'
@@ -37,29 +37,39 @@ const ImageUpload=()=>{
             localStorage.setItem('imageUrl',url.toString());
             window.location.reload();
             });
-     
-           
-            
+       
         }
       );
     };
-  
+   const [imgData, setImagedata]= useState([]);
+   useEffect(() => {
+     ( async ()=>{
+       const respImg = await fetch("http://localhost:5000/users")
+       const jsonImg = await respImg.json()
+       const itemImg= jsonImg.data[1];
+       setImagedata(itemImg);
+     })();
+   }, []);
+   
+ //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
     return (
         <div >
              <IconContext.Provider value={{color:'#58c4bc'}}>
             <br/>
-            <img src={ localStorage.getItem('imageUrl') == null ? "https://ardeco.com.tr/public/upload/20200306095606_profilpng.png" : localStorage.getItem('imageUrl') } alt="firebase-image" />
+            <img src={(imgData.imageUrl == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : imgData.imageUrl } alt="firebase-image" />
             
             <br/>
-           
+         
             <br/>  
                <div className="kapsayici">
                <input type="file" id="file" onChange={handleChange} hidden/> 
                <label htmlFor="file" id="selector" >
                    <MdPhotoLibrary /> &nbsp;Select File</label>
-              <button className="buttons" onClick={handleUpload} align="center" >
-                  <RiFolderUploadFill/> &nbsp;Upload File</button> 
+               <label className="buttons" onClick={handleUpload} align="center" >
+                  <RiFolderUploadFill/> &nbsp;Upload File</label> 
                </div>
+               
+              
                </IconContext.Provider>
         </div>
     )
