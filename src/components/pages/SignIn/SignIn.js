@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./SignIn.css";
 
 export default function SignIn() {
+
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       history.push("/");
@@ -11,10 +12,12 @@ export default function SignIn() {
   });
   const { t, i18n } = useTranslation();
 
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const history = useHistory();
+
 
   const submit = async (e) => {
     let item = { email, password };
@@ -32,6 +35,7 @@ export default function SignIn() {
     console.log("result", result);
     if (result.status == 200) {
       console.log("result", result.body);
+
     }
 
     window.location.reload();
