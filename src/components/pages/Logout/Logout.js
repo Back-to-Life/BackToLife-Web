@@ -68,7 +68,7 @@ return (
           </form>
           <button className="exitButton">
               <Link to="/">
-              <span>{t('Popup.exit')}</span> 
+              <span className="popSpan">{t('Popup.exit')}</span> 
               </Link>
             
           </button>

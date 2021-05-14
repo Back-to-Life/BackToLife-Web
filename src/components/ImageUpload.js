@@ -34,20 +34,22 @@ const ImageUpload=()=>{
             .ref("images").child(image.name).getDownloadURL()
             .then(url => {
               setUrl(url);
+              console.log(url.toString());
             localStorage.setItem('imageUrl',url.toString());
-            window.location.reload();
+            //window.location.reload();
             });
-       
+           
         }
       );
     };
    const [imgData, setImagedata]= useState([]);
    useEffect(() => {
      ( async ()=>{
-       const respImg = await fetch("http://localhost:5000/users")
-       const jsonImg = await respImg.json()
-       const itemImg= jsonImg.data[1];
-       setImagedata(itemImg);
+       const respImg = await fetch("http://localhost:5000/users/609e5bfbf520a83a7459e169")
+        const jsonImg = await respImg.json()
+        // const itemImg= jsonImg.data.imageUrl;
+        setImagedata(jsonImg.data.imageUrl);
+        
      })();
    }, []);
    
@@ -56,7 +58,7 @@ const ImageUpload=()=>{
         <div >
              <IconContext.Provider value={{color:'#58c4bc'}}>
             <br/>
-            <img src={(imgData.imageUrl == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : imgData.imageUrl } alt="firebase-image" />
+             <img src={(imgData == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : imgData } alt="firebase-image" /> 
             
             <br/>
          
@@ -64,9 +66,9 @@ const ImageUpload=()=>{
                <div className="kapsayici">
                <input type="file" id="file" onChange={handleChange} hidden/> 
                <label htmlFor="file" id="selector" >
-                   <MdPhotoLibrary /> &nbsp;Select File</label>
+                   <MdPhotoLibrary className="smallicon"/> <span className="imgSpan">Select File</span></label>
                <label className="buttons" onClick={handleUpload} align="center" >
-                  <RiFolderUploadFill/> &nbsp;Upload File</label> 
+                  <RiFolderUploadFill className="smallicon"/> <span className="imgSpan">Upload File</span></label> 
                </div>
                
               
