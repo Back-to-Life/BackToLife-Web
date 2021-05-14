@@ -27,7 +27,7 @@ export default function SignIn() {
       body: JSON.stringify(item),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
     }).then(history.push("/"));
     result = await result.json();

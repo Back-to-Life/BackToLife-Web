@@ -1,6 +1,6 @@
- import React, { Component, useEffect, useState } from 'react'
+ import React, { useEffect, useState } from 'react'
  import { useTranslation } from 'react-i18next';
-
+import './DataUpload.css'
 function DataUpload() {
 //     constructor(){
 //         super();
@@ -29,7 +29,7 @@ useEffect(()=>{
 const {t, i18n} = useTranslation();
          return (
              <div>
-                 <h3>{t('Account.header')} {data.name}</h3>
+                 <h3 className="Username">{t('Account.header')} {data.name}</h3>
                  
              </div>
          )

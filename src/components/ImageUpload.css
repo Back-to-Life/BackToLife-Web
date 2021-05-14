@@ -38,5 +38,26 @@ input[type="file"]{
     justify-content: center;
     align-content: center;
 }
-
-
+@media screen and (max-width: 1100px) {
+  .buttons, #selector{
+    width: 95%;
+  }
+  .imgSpan{
+    font-size: 13px;
+    
+  }
+  .smallicon{
+    width: 12px;
+  }
+}
+@media screen and (max-width: 960px){
+  .buttons, #selector{
+    width: 200%;
+  }
+  .imgSpan{
+    font-size: 16px;
+  }
+  .smallicon{
+    width: 20px;
+  }
+}

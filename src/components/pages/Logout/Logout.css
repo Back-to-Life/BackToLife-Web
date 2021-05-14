@@ -87,7 +87,7 @@
   Link{
     text-decoration: none;
   }
-  span{
+  .popSpan{
     color: white;
   }
   .outbtn a{
