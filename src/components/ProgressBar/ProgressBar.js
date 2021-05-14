@@ -10,7 +10,7 @@ const ProgressBar = () =>{
        (async () => {
        const response = await fetch("http://localhost:5000/users");
         const datajson = await response.json();
-        const item = datajson.data[1];
+        const item = datajson.data[0];
         setPercentage(item);
        })();
    }, []);
@@ -26,7 +26,7 @@ const ProgressBar = () =>{
                     strokeLinecap: 'round',
                     textSize: '16px',
                     pathTransitionDuration: 0.5,
-                    pathColor: `rgba(88, 195, 187, ${percentage.point / 40})`,
+                    pathColor: `rgba(88, 195, 187, ${percentage.point / 20})`,
                     textColor: '#f88',
                     trailColor: '#d6d6d6',
                     backgroundColor: '#3e98c7',

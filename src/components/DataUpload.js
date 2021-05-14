@@ -22,7 +22,7 @@ useEffect(()=>{
     (async ()=>{
         const respData = await fetch("http://localhost:5000/users")
         const jsonData = await respData.json()
-        const [itemData] = jsonData.data
+        const itemData = jsonData.data[1]
         setData(itemData);
     })();
 }, []);
@@ -30,6 +30,7 @@ const {t, i18n} = useTranslation();
          return (
              <div>
                  <h3>{t('Account.header')} {data.name}</h3>
+                 
              </div>
          )
         
