@@ -36,30 +36,44 @@ const ImageUpload=()=>{
               setUrl(url);
               console.log(url.toString());
             localStorage.setItem('imageUrl',url.toString());
-            //window.location.reload();
+            window.location.reload();
             });
            
         }
       );
     };
    const [imgData, setImagedata]= useState([]);
+   const [img, setdataImage]= useState([]);
    useEffect(() => {
      ( async ()=>{
-       const respImg = await fetch("http://localhost:5000/users/609e5bfbf520a83a7459e169")
+        const respImg = await fetch("http://localhost:5000/users/")
         const jsonImg = await respImg.json()
         // const itemImg= jsonImg.data.imageUrl;
-        setImagedata(jsonImg.data.imageUrl);
+        setImagedata(jsonImg.data.imageUrl); 
+      
+
+
+       for(let i=0;i < (jsonImg.count); i++){
+         if(jsonImg.data[i].login == true){
+           var idUser=jsonImg.data[i]._id
+           const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
+           const jsoImg = await resImg.json()
+           setdataImage(jsoImg.data.imageUrl); 
+          //  console.log(img)
+         }
         
+       }
      })();
    }, []);
-   
+ 
+   //console.log("id",localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1])
  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
     return (
         <div >
              <IconContext.Provider value={{color:'#58c4bc'}}>
             <br/>
-             <img src={(imgData == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : imgData } alt="firebase-image" /> 
-            
+             <img src={(img == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : img } alt="firebase-image" /> 
+            <h3></h3>
             <br/>
          
             <br/>  

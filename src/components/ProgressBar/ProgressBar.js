@@ -5,13 +5,24 @@ import './ProgressBar.css'
 
 const ProgressBar = () =>{
     const [percentage, setPercentage] = useState(0);
-
+    const [point, setPoint]= useState([]);
    useEffect(()=>{
        (async () => {
        const response = await fetch("http://localhost:5000/users");
         const datajson = await response.json();
-        const item = datajson.data[0];
+        const [item] = datajson.data;
         setPercentage(item);
+
+        for(let i=0;i < (datajson.count); i++){
+            if(datajson.data[i].login == true){
+             var idUserData=datajson.data[i]._id
+              const resPoint = await fetch(`http://localhost:5000/users/${idUserData}`)
+              const jsoPoint = await resPoint.json()
+              setPoint(jsoPoint.data.point); 
+              
+            }
+           
+          }
        })();
    }, []);
    
@@ -19,14 +30,14 @@ const ProgressBar = () =>{
         <div style={{width:"200px", padding: "40px 40px 40px 40px"}}>
 
                 <CircularProgressbar
-                 value={percentage.point}
-                 text={`${percentage.point} ₺`}
+                 value={point}
+                 text={`${point} ₺`}
                  styles={buildStyles({
                     
                     strokeLinecap: 'round',
                     textSize: '16px',
                     pathTransitionDuration: 0.5,
-                    pathColor: `rgba(88, 195, 187, ${percentage.point / 30})`,
+                    pathColor: `rgba(88, 195, 187, ${point / 30})`,
                     textColor: '#f88',
                     trailColor: '#d6d6d6',
                     backgroundColor: '#3e98c7',
