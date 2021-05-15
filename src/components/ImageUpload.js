@@ -73,7 +73,6 @@ const ImageUpload=()=>{
              <IconContext.Provider value={{color:'#58c4bc'}}>
             <br/>
              <img src={(img == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : img } alt="firebase-image" /> 
-            <h3></h3>
             <br/>
          
             <br/>  
