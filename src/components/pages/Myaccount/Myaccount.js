@@ -13,13 +13,16 @@ import { useTranslation } from "react-i18next";
 function Myaccount() {
   const { t, i18n } = useTranslation();
 
-  /*let result = await fetch("http://localhost:5000/me", 
+const sort = async(e) => {
+  let result = await fetch("http://localhost:5000/sort", 
   {
     method: "GET"
-  }).then(history.push("/") )
+  })
   result = await result.json()
 console.log("result", result)
-*/
+}
+
+
 
 
   return (
@@ -73,13 +76,14 @@ console.log("result", result)
                         <img src="images/hero.png" alt=""/>
                     </div>
                     <div className="headerHero">
-                        <h1>{t('Account.hero')}</h1>
+                        <h1  onClick={sort} >{t('Account.hero')}</h1>
                     </div>
                     <div className="sort">
                     <ul>
-                        <li><img src="images/first.png" alt=""/>Birinci</li>
+                        <li><img src="images/first.png" alt=""  />Birinci</li>
                         <li><img src="images/second.png" alt=""/>İkinci</li>
                         <li><img src="images/third.png" alt=""/>Üçüncü</li>
+                        
                     </ul>
                     <img className="more" src="images/ellipsis.png" alt=""/> 
                     <ul>

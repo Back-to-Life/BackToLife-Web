@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "firebase": "^8.6.0",
+    "html-parse-stringify2": "^2.0.1",
     "i18next": "^20.2.2",
     "i18next-browser-languagedetector": "^6.1.0",
     "i18next-http-backend": "^1.2.2",
