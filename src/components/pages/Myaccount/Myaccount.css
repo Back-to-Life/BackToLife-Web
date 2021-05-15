@@ -11,7 +11,7 @@
     margin-right: 30px; 
 }
 .background{
-    background: #58c4bc;
+    background-image: linear-gradient(90deg, #58c4bc, #8ed8d3, #c2ceb5, #aad3cc) ;
     padding-bottom: 30px;
 }
 ul.thumbs.animated{
@@ -38,7 +38,8 @@ ul.thumbs.animated{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background:linear-gradient(45deg, rgb(88, 196, 188) 0%,#58c4bc 100%);
+     background-image: linear-gradient(25deg, #58c4bc, #8ed8d3, #c2ceb5, #ffe1c8) 
+    
 }
 .container_card{
     background:linear-gradient(45deg, #e5eeee 0%,#e5eeee 100%);
@@ -84,9 +85,9 @@ li.slide.selected{
     align-items: center;  
  
 }
-.container_cardInfo h3{
+.container_cardInfo h1{
     margin-top: 5px;
-    font-size: 24px;
+    font-size: 30px;
     color: #fc9583;
 }
 .container_cardInfo h2{
@@ -130,6 +131,7 @@ li.slide.selected{
     display: flex;
     margin: 0 auto;
     margin-top: 1.5%;
+    
 }
 .imgHero img{
     max-width: 230px;
@@ -158,9 +160,21 @@ li.slide.selected{
     margin-left: 3%;
     margin-top: 1%;
     font-size: 20px;
-    color:#0e425d;
+    color:#fc9583;
+    font-weight: 700;
 }
-
+@media screen and (max-width:1100px){
+    .headerHero h1{
+        font-size: 25px;
+    }
+    .sort ul{
+        margin-left: 10px;
+    }
+    .more{
+        margin-left: 15px;
+    }
+    
+}
 @media screen and (max-width:960px){
     .containerr{
         display: flex;
@@ -195,4 +209,8 @@ li.slide.selected{
     .gif img{
         display: none;
     }
+    .headerHero h1{
+        font-size: 30px;
+    }
+    
 }
