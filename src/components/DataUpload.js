@@ -13,16 +13,11 @@ useEffect(()=>{
         const [itemData] = jsonData.data
         setData(itemData);
 
-        for(let i=0;i < (jsonData.count); i++){
-            if(jsonData.data[i].login == true){
-             var idUserData=jsonData.data[i]._id
-              const resData = await fetch(`http://localhost:5000/users/${idUserData}`)
-              const jsoData = await resData.json()
-              setNamedata(jsoData.data.name); 
-              
-            }
-           
-          }
+       
+        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        const resName = await fetch(`http://localhost:5000/users/${idUser}`)
+        const jsonName = await resName.json()
+        setNamedata(jsonName.data.name); 
     })();
 }, []);
 

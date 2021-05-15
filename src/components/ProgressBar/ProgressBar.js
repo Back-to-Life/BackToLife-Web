@@ -13,16 +13,10 @@ const ProgressBar = () =>{
         const [item] = datajson.data;
         setPercentage(item);
 
-        for(let i=0;i < (datajson.count); i++){
-            if(datajson.data[i].login == true){
-             var idUserData=datajson.data[i]._id
-              const resPoint = await fetch(`http://localhost:5000/users/${idUserData}`)
-              const jsoPoint = await resPoint.json()
-              setPoint(jsoPoint.data.point); 
-              
-            }
-           
-          }
+        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        const resPoint = await fetch(`http://localhost:5000/users/${idUser}`)
+        const jsonPoint = await resPoint.json()
+        setPoint(jsonPoint.data.point); 
        })();
    }, []);
    
