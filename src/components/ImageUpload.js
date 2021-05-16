@@ -5,19 +5,21 @@ import {RiFolderUploadFill} from 'react-icons/ri'
 import './ImageUpload.css'
 import {storage} from '../components/firebase'
 
-const ImageUpload=()=>{
+const ImageUpload=()=>{ 
+  const [imgData, setImagedata]= useState([]);
+   const [img, setdataImage]= useState([]);
     const [image, setImage] = useState(null);
     const [url, setUrl] = useState("");
     const [progress, setProgress] = useState(0);
-  
     const handleChange = e => {
       if (e.target.files[0]) {
         setImage(e.target.files[0]);
        
       }
     };
-  
-    const handleUpload = () => {
+    
+
+    const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
         "state_changed",
@@ -35,22 +37,25 @@ const ImageUpload=()=>{
             .then(url => {
               setUrl(url);
               console.log(url.toString());
+              
             localStorage.setItem('imageUrl',url.toString());
-            window.location.reload();
+           // window.location.reload();
             });
            
         }
+        
       );
+      
     };
-   const [imgData, setImagedata]= useState([]);
-   const [img, setdataImage]= useState([]);
+  
    useEffect(() => {
      ( async ()=>{
         const respImg = await fetch("http://localhost:5000/users/")
         const jsonImg = await respImg.json()
         // const itemImg= jsonImg.data.imageUrl;
         setImagedata(jsonImg.data.imageUrl); 
-      
+
+
 
 
        for(let i=0;i < (jsonImg.count); i++){
@@ -59,12 +64,17 @@ const ImageUpload=()=>{
            const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
            const jsoImg = await resImg.json()
            setdataImage(jsoImg.data.imageUrl); 
+
           //  console.log(img)
          }
         
        }
+      
+
      })();
+
    }, []);
+   
  
    //console.log("id",localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1])
  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
