@@ -141,9 +141,11 @@ li.slide.selected{
 }
 .sort ul li img{
     max-width: 40px;
+    float: left;
 }
 .sort ul {
     list-style-type: none;
+    
 }
 .sort{
     width: 300px;
@@ -151,6 +153,7 @@ li.slide.selected{
 }
 .sort ul li {
     padding-bottom: 4%;
+    
 }
 .more{
     width: 30px;
@@ -163,6 +166,21 @@ li.slide.selected{
     color:#fc9583;
     font-weight: 700;
 }
+.nameHero{
+    font-weight: 600;
+    color: #0f415d;
+    margin-left: 20px;
+    margin-right: 60px;
+    float: left;
+}
+.pointHero{
+    font-weight: 800;
+    color: #58c4bc;
+    font-size: 20px;
+    display: flex;
+    justify-content:flex-end;
+}
+
 @media screen and (max-width:1100px){
     .headerHero h1{
         font-size: 25px;

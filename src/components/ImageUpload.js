@@ -58,25 +58,23 @@ const ImageUpload=()=>{
 
 
 
-       for(let i=0;i < (jsonImg.count); i++){
-         if(jsonImg.data[i].login == true){
-           var idUser=jsonImg.data[i]._id
+           let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
            const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
            const jsoImg = await resImg.json()
            setdataImage(jsoImg.data.imageUrl); 
 
           //  console.log(img)
-         }
+         
         
+
        }
-      
 
      })();
 
    }, []);
    
  
-   //console.log("id",localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1])
+  
  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
     return (
         <div >

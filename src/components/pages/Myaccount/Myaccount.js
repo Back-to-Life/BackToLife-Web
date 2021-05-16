@@ -8,6 +8,7 @@ import Chart from "../../Chart/Chart.js";
 import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 
 
 function Myaccount() {
@@ -21,6 +22,28 @@ const sort = async(e) => {
   result = await result.json()
 console.log("result", result)
 }
+
+  const [hero, setHero] = useState([]);
+  const [pointH, setPointH] = useState([]);
+  const [countU, setCount] = useState([]);
+  useEffect(()=>{
+    (async ()=>{
+        const respHero = await fetch("http://localhost:5000/sort")
+        const jsonHero = await respHero.json()
+        //const [itemData] = jsonData.data
+        setHero(jsonHero.names);
+
+        const respImg = await fetch("http://localhost:5000/users/")
+        const jsonImg = await respImg.json()
+        // const itemImg= jsonImg.data.imageUrl;
+        setCount(jsonImg.count);
+
+        const respPoint = await fetch("http://localhost:5000/sort")
+        const jsonPoint = await respPoint.json()
+        //const [itemData] = jsonData.data
+        setPointH(jsonPoint.points);
+      })();
+    }, []);
 
 
 
@@ -80,17 +103,25 @@ console.log("result", result)
                     </div>
                     <div className="sort">
                     <ul>
+
                         <li><img src="images/first.png" alt=""  />Birinci</li>
                         <li><img src="images/second.png" alt=""/>İkinci</li>
                         <li><img src="images/third.png" alt=""/>Üçüncü</li>
+
+                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li>
+                        <br />
+                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[countU-2]}</span> <span className="pointHero">+{pointH[countU-2]}p</span></li>
+                        <br />
+                        <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[countU-3]}</span> <span className="pointHero">+{pointH[countU-3]}p</span></li>
+
                         
                     </ul>
-                    <img className="more" src="images/ellipsis.png" alt=""/> 
+                    {/* <img className="more" src="images/ellipsis.png" alt=""/> 
                     <ul>
                         <li className="person">
-                           34 -  
+                           Sen-   
                         </li>
-                    </ul>
+                    </ul> */}
                     </div>
                     
                 </div>
