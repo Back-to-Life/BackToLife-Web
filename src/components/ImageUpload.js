@@ -7,17 +7,23 @@ import {storage} from '../components/firebase'
 
 const ImageUpload=()=>{ 
   const [imgData, setImagedata]= useState([]);
-   const [img, setdataImage]= useState([]);
-    const [image, setImage] = useState(null);
-    const [url, setUrl] = useState("");
-    const [progress, setProgress] = useState(0);
+  const [img, setdataImage]= useState([]);
+  const [image, setImage] = useState(null);
+  const [imageUrl, setUrl] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [newUrl, setNewUrl] = useState("")
+
+  let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
     const handleChange = e => {
       if (e.target.files[0]) {
         setImage(e.target.files[0]);
        
       }
+
     };
-    
+     
+ 
+ 
 
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -34,19 +40,37 @@ const ImageUpload=()=>{
         () => {
           storage
             .ref("images").child(image.name).getDownloadURL()
-            .then(url => {
-              setUrl(url);
-              console.log(url.toString());
-              
-            localStorage.setItem('imageUrl',url.toString());
+            .then(imageUrl => {
+              setUrl(imageUrl);
+              console.log(imageUrl.toString());
+
+            localStorage.setItem('imageUrl',imageUrl.toString());
            // window.location.reload();
             });
-           
+            
+        
         }
         
       );
-      
+
+      let item = { imageUrl }
+        console.log("new url: ", item)
+    let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`, 
+        {
+            method: "PUT",
+            body:JSON.stringify(item),
+            headers:{
+              "Content-Type": "application/json",
+            }
+
+  })
+  result = await result.json()
+console.log("result", result)
+
+     
     };
+
+
   
    useEffect(() => {
      ( async ()=>{
@@ -58,22 +82,25 @@ const ImageUpload=()=>{
 
 
 
-           let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
            const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
            const jsoImg = await resImg.json()
            setdataImage(jsoImg.data.imageUrl); 
 
           //  console.log(img)
          
+<<<<<<< HEAD
+=======
         
 
        }
+>>>>>>> 8087c14cc9baa3163a32fd3b3494962c0e142ceb
 
      })();
 
-   }, []);
-   
- 
+   }, 
+   []);
+  
   
  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
     return (
@@ -86,7 +113,7 @@ const ImageUpload=()=>{
             <br/>  
                <div className="kapsayici">
                <input type="file" id="file" onChange={handleChange} hidden/> 
-               <label htmlFor="file" id="selector" >
+               <label htmlFor="file" id="selector">
                    <MdPhotoLibrary className="smallicon"/> <span className="imgSpan">Select File</span></label>
                <label className="buttons" onClick={handleUpload} align="center" >
                   <RiFolderUploadFill className="smallicon"/> <span className="imgSpan">Upload File</span></label> 
