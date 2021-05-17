@@ -22,6 +22,7 @@ const sort = async(e) => {
   result = await result.json()
 console.log("result", result)
 }
+
   const [hero, setHero] = useState([]);
   const [pointH, setPointH] = useState([]);
   const [countU, setCount] = useState([]);
@@ -43,6 +44,7 @@ console.log("result", result)
         setPointH(jsonPoint.points);
       })();
     }, []);
+
 
 
 
@@ -102,13 +104,22 @@ console.log("result", result)
                     <div className="sort">
                     <ul>
 
+<<<<<<< HEAD
                      
 
                     <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li>
+=======
+                        <li><img src="images/first.png" alt=""  />Birinci</li>
+                        <li><img src="images/second.png" alt=""/>İkinci</li>
+                        <li><img src="images/third.png" alt=""/>Üçüncü</li>
+
+                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li>
+>>>>>>> 8087c14cc9baa3163a32fd3b3494962c0e142ceb
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[countU-2]}</span> <span className="pointHero">+{pointH[countU-2]}p</span></li>
                         <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[countU-3]}</span> <span className="pointHero">+{pointH[countU-3]}p</span></li>
+
                         
                     </ul>
                     {/* <img className="more" src="images/ellipsis.png" alt=""/> 
