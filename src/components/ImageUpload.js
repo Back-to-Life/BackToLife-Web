@@ -89,12 +89,6 @@ console.log("result", result)
 
           //  console.log(img)
          
-<<<<<<< HEAD
-=======
-        
-
-       }
->>>>>>> 8087c14cc9baa3163a32fd3b3494962c0e142ceb
 
      })();
 
