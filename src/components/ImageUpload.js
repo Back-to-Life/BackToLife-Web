@@ -37,7 +37,7 @@ const ImageUpload=()=>{
         error => {
           console.log(error);
         },
-        () => {
+        async () => {
           storage
             .ref("images").child(image.name).getDownloadURL()
             .then(imageUrl => {
@@ -45,15 +45,29 @@ const ImageUpload=()=>{
               console.log(imageUrl.toString());
 
             localStorage.setItem('imageUrl',imageUrl.toString());
+          
            // window.location.reload();
             });
-            
+            let item = { imageUrl }
+            console.log("new url: ", item)
+            let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`, 
+        {
+            method: "PUT",
+            body:JSON.stringify(item),
+            headers:{
+              "Content-Type": "application/json",
+            }
+
+  })
+  result = await result.json()
+console.log("result", result)
         
         }
         
-      );
+      )
+      
 
-      let item = { imageUrl }
+     /* let item = { imageUrl }
         console.log("new url: ", item)
     let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`, 
         {
@@ -67,8 +81,9 @@ const ImageUpload=()=>{
   result = await result.json()
 console.log("result", result)
 
-     
+     */
     };
+
 
 
   
@@ -88,13 +103,11 @@ console.log("result", result)
            setdataImage(jsoImg.data.imageUrl); 
 
           //  console.log(img)
-         
-<<<<<<< HEAD
-=======
+
         
 
-       }
->>>>>>> 8087c14cc9baa3163a32fd3b3494962c0e142ceb
+       
+
 
      })();
 
