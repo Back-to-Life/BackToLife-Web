@@ -9,6 +9,7 @@ import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import { flushSync } from "react-dom";
 
 
 function Myaccount() {
@@ -20,27 +21,38 @@ const sort = async(e) => {
     method: "GET"
   })
   result = await result.json()
-console.log("result", result)
+//console.log("result", result)
 }
   const [hero, setHero] = useState([]);
+  const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
-  const [countU, setCount] = useState([]);
+  //const [countU, setCount] = useState([]);
+  const [heroId, setId] = useState([]);
+
+  // var bool = new Boolean(false);
+const [bool, setBoll] = useState([])
+
   useEffect(()=>{
     (async ()=>{
         const respHero = await fetch("http://localhost:5000/sort")
         const jsonHero = await respHero.json()
         //const [itemData] = jsonData.data
-        setHero(jsonHero.names);
+        setHero(jsonHero.data.names);
+        setHid(jsonHero.data._ids);
+        setPointH(jsonHero.data.points);
 
-        const respImg = await fetch("http://localhost:5000/users/")
-        const jsonImg = await respImg.json()
-        // const itemImg= jsonImg.data.imageUrl;
-        setCount(jsonImg.count);
+        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        const resId = await fetch(`http://localhost:5000/users/${idUser}`)
+        const jsonId = await resId.json()
+        setId(idUser); 
+        console.log("id",heroId)
+        console.log("id",idH[0])
+        console.log("id", idH[1])
+        console.log("id",idH[2])
 
-        const respPoint = await fetch("http://localhost:5000/sort")
-        const jsonPoint = await respPoint.json()
-        //const [itemData] = jsonData.data
-        setPointH(jsonPoint.points);
+        setBoll((heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) )
+        
+         console.log(bool)
       })();
     }, []);
 
@@ -101,19 +113,30 @@ console.log("result", result)
                     </div>
                     <div className="sort">
                     <ul>
-                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li>
+                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
                         <br />
-                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[countU-2]}</span> <span className="pointHero">+{pointH[countU-2]}p</span></li>
+                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
                         <br />
-                        <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[countU-3]}</span> <span className="pointHero">+{pointH[countU-3]}p</span></li>
+                        <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
+                        <br />
+                      {
                         
+                       bool ?
+
+                       <> 
+                       <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
+                       </>
+
+                        :
+                        <>
+                          <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
+                          <br />
+                          <li className="person"> Sen- </li> 
+                        </>
+                     }
                     </ul>
-                    {/* <img className="more" src="images/ellipsis.png" alt=""/> 
-                    <ul>
-                        <li className="person">
-                           Sen-   
-                        </li>
-                    </ul> */}
+                     
+                     
                     </div>
                     
                 </div>
