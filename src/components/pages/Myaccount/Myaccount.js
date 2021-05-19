@@ -151,7 +151,7 @@ const sort = async(e) => {
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
       
-                          <li className="person">{localStorage.getItem('sort')}-</li> 
+                          <li className="person">-</li> 
                           {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
                         </>
                      }

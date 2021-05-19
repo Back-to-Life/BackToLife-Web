@@ -18,10 +18,10 @@ export default function SignIn() {
 
   const history = useHistory();
 
-  const [idH, setHid] = useState([]);
-  const [heroId, setId] = useState([]);
-  const [indexH, setIndex] = useState([]);
-  const [countU, setCount] = useState([]);
+  // const [idH, setHid] = useState([]);
+  // const [heroId, setId] = useState([]);
+  // const [indexH, setIndex] = useState([]);
+  // const [countU, setCount] = useState([]);
 
   const submit = async (e) => {
     let item = { email, password };
