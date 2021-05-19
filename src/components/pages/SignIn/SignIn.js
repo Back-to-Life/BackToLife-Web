@@ -17,7 +17,15 @@ export default function SignIn() {
   const [password, setPassword] = useState();
   const [id, setId] = useState();
   const history = useHistory();
+
   id =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+
+
+  // const [idH, setHid] = useState([]);
+  // const [heroId, setId] = useState([]);
+  // const [indexH, setIndex] = useState([]);
+  // const [countU, setCount] = useState([]);
+
 
   const submit = async (e) => {
     let item = { email, password };
@@ -31,12 +39,22 @@ export default function SignIn() {
       },
     }).then(history.push("/"));
     
+
     let sort = await fetch(`http://localhost:5000/whereAmI`, {
       method:"POST",
       body: JSON.stringify(id)
     })
     sort = await sort.json();
     localStorage.setItem("sort", JSON.stringify(sort));
+
+    // let sort = await fetch("http://localhost:5000/sort", {
+    //   method:"GET"
+    // })
+
+    // sort = await sort.json();
+    // localStorage.setItem("sort", JSON.stringify(sort));
+
+
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     console.log("result", result);
@@ -44,8 +62,34 @@ export default function SignIn() {
       console.log("result", result.body);
 
     }
+// // 
+// const respHero = await fetch("http://localhost:5000/sort")
+// const jsonHero = await respHero.json()
+// setHid(jsonHero.data._ids);
+
+// let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+// const resId = await fetch(`http://localhost:5000/users/${idUser}`)
+// const jsonId = await resId.json()
+// setId(idUser); 
+
+// const respImg = await fetch("http://localhost:5000/users/")
+// const jsonImg = await respImg.json()
+// setCount(jsonImg.count); 
+
+
+// for(let i=0;i<countU;i++){
+   
+//   console.log(idH[i])
+//   if(heroId == idH[i]){
+//     console.log(i)
+//     setIndex(i)
+//     localStorage.setItem('sort',i.toString())
+//   }
+// }
+
 
     window.location.reload();
+        
   };
 
   return (

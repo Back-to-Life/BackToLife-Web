@@ -45,7 +45,9 @@
         "description": "Doğaya katkı sağlarken para kazanmak istiyorsanız doğru yerdesiniz.",
         "earn": "Toplam Kazanç",
         "chart": "Günlük Grafiğim",
-        "hero":  "Dünyanın Kahramanları"
+        "hero":  "Dünyanın Kahramanları",
+        "select": "Dosya Seç",
+        "upload": "Dosyayı Yükle"
     },
     "Footer":{
         "header":"Bize katılın ve geri dönüşüm yaparken kazanmaya başlayın.",

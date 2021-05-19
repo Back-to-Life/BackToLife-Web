@@ -45,7 +45,9 @@
         "description": "If you want to make money while contributing to nature, you are in the right place.",
         "earn": "Total Earnings",
         "chart": "My Daily Chart",
-        "hero": "Heroes Of The World"
+        "hero": "Heroes Of The World",
+        "select": "Select File",
+        "upload": "Upload File"
     },
     "Footer":{
         "header":"Join us and start earning while you recycle.",
