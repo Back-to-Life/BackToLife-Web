@@ -9,7 +9,6 @@ import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import { flushSync } from "react-dom";
 
 
 function Myaccount() {
@@ -27,11 +26,9 @@ const sort = async(e) => {
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
-  //const [countU, setCount] = useState([]);
+  const [countU, setCount] = useState([]);
   const [heroId, setId] = useState([]);
-
-  // var bool = new Boolean(false);
-const [bool, setBoll] = useState([])
+  const [indexH, setIndex] = useState([]);
 
   useEffect(()=>{
     (async ()=>{
@@ -42,18 +39,39 @@ const [bool, setBoll] = useState([])
         setHid(jsonHero.data._ids);
         setPointH(jsonHero.data.points);
 
+        const respImg = await fetch("http://localhost:5000/users/")
+        const jsonImg = await respImg.json()
+        setCount(jsonImg.count); 
+
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)
         const jsonId = await resId.json()
         setId(idUser); 
-        console.log("id",heroId)
+        console.log("idHero",heroId)
         console.log("id",idH[0])
         console.log("id", idH[1])
         console.log("id",idH[2])
 
-        setBoll((heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) )
+
+          // for(let i=0;i<countU;i++){
+       
+          //   console.log(idH[i])
+          //   if(heroId == idH[i]){
+          //     console.log(i)
+          //     setIndex(i)
+          //     localStorage.setItem('sort',i)
+              
+          //   }
+          // }
+        // localStorage.setItem('sort',(idH.indexOf(heroId)))
         
-         console.log(bool)
+        // idH.map((idler, index)=>{
+        //   if(heroId == idler){
+        //     console.log(index+1)
+        //     setIndex(index+1)
+        //   }
+        // })
+        
       })();
     }, []);
 
@@ -124,18 +142,17 @@ const [bool, setBoll] = useState([])
                         <br />
 
                       {
-                     
-                       bool ?
-
+                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
                        <> 
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
                        </>
-
                         :
                         <>
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
-                          <li className="person"> Sen- </li> 
+      
+                          <li className="person">{localStorage.getItem('sort')}-</li> 
+                          {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
                         </>
                      }
                     </ul>
