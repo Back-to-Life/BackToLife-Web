@@ -23,6 +23,7 @@ const sort = async(e) => {
   result = await result.json()
 //console.log("result", result)
 }
+
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
@@ -55,6 +56,7 @@ const [bool, setBoll] = useState([])
          console.log(bool)
       })();
     }, []);
+
 
 
 
@@ -113,14 +115,16 @@ const [bool, setBoll] = useState([])
                     </div>
                     <div className="sort">
                     <ul>
+
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
                         <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
                         <br />
+
                       {
-                        
+                     
                        bool ?
 
                        <> 
