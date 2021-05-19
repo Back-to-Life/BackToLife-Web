@@ -15,13 +15,17 @@ export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
+  const [id, setId] = useState();
   const history = useHistory();
+
+  id =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+
 
   // const [idH, setHid] = useState([]);
   // const [heroId, setId] = useState([]);
   // const [indexH, setIndex] = useState([]);
   // const [countU, setCount] = useState([]);
+
 
   const submit = async (e) => {
     let item = { email, password };
@@ -35,12 +39,21 @@ export default function SignIn() {
       },
     }).then(history.push("/"));
     
+
+    let sort = await fetch(`http://localhost:5000/whereAmI`, {
+      method:"POST",
+      body: JSON.stringify(id)
+    })
+    sort = await sort.json();
+    localStorage.setItem("sort", JSON.stringify(sort));
+
     // let sort = await fetch("http://localhost:5000/sort", {
     //   method:"GET"
     // })
 
     // sort = await sort.json();
     // localStorage.setItem("sort", JSON.stringify(sort));
+
 
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
