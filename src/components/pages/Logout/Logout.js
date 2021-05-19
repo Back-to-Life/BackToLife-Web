@@ -23,7 +23,8 @@ async function logout()
         "Authorization":"Baerer " + localStorage.getItem('user-info')
     }
   
-  }).then(localStorage.removeItem("user-info")).then(history.push("/"))
+  }).then(localStorage.removeItem("user-info"))
+  .then(history.push("/"))
   result = await result.json()
 console.log("result", result)
 }

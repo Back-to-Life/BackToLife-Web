@@ -4,8 +4,11 @@ import {IconContext} from 'react-icons/lib'
 import {RiFolderUploadFill} from 'react-icons/ri'
 import './ImageUpload.css'
 import {storage} from '../components/firebase'
+import { useTranslation } from "react-i18next";
 
 const ImageUpload=()=>{ 
+  const { t, i18n } = useTranslation();
+
   const [imgData, setImagedata]= useState([]);
   const [img, setdataImage]= useState([]);
   const [image, setImage] = useState(null);
@@ -45,7 +48,7 @@ const ImageUpload=()=>{
               console.log(imageUrl.toString());
 
             localStorage.setItem('imageUrl',imageUrl.toString());
-           // window.location.reload();
+            window.location.reload();
             });
             
         
@@ -89,12 +92,6 @@ console.log("result", result)
 
           //  console.log(img)
          
-<<<<<<< HEAD
-=======
-        
-
-       }
->>>>>>> 8087c14cc9baa3163a32fd3b3494962c0e142ceb
 
      })();
 
@@ -107,16 +104,16 @@ console.log("result", result)
         <div >
              <IconContext.Provider value={{color:'#58c4bc'}}>
             <br/>
-             <img src={(img == null || localStorage.getItem('imageUrl') == null ) ? "https://bit.ly/3y4chbU" : img } alt="firebase-image" /> 
+             <img src={(img == null || localStorage.getItem('imageUrl') == null ) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img } alt="firebase-image" /> 
             <br/>
          
             <br/>  
                <div className="kapsayici">
                <input type="file" id="file" onChange={handleChange} hidden/> 
                <label htmlFor="file" id="selector">
-                   <MdPhotoLibrary className="smallicon"/> <span className="imgSpan">Select File</span></label>
+                   <MdPhotoLibrary className="smallicon"/> <span className="imgSpan">{t('Account.select')}</span></label>
                <label className="buttons" onClick={handleUpload} align="center" >
-                  <RiFolderUploadFill className="smallicon"/> <span className="imgSpan">Upload File</span></label> 
+                  <RiFolderUploadFill className="smallicon"/> <span className="imgSpan">{t('Account.upload')}</span></label> 
                </div>
                
               
