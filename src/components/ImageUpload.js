@@ -52,7 +52,7 @@ const ImageUpload=()=>{
           
            // window.location.reload();
 
-            window.location.reload();
+            //window.location.reload();
 
             });
             let item = { imageUrl }
