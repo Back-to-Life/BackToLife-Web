@@ -29,7 +29,8 @@ const sort = async(e) => {
   const [countU, setCount] = useState([]);
   const [heroId, setId] = useState([]);
   const [indexH, setIndex] = useState([]);
-
+  const [nameUser, setNameUser] = useState([]);
+  const [pointUser, setPointUser] = useState([]);
   useEffect(()=>{
     (async ()=>{
         const respHero = await fetch("http://localhost:5000/sort")
@@ -47,13 +48,16 @@ const sort = async(e) => {
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)
         const jsonId = await resId.json()
-        setId(idUser); 
-        console.log("idHero",heroId)
-        console.log("id",idH[0])
-        console.log("id", idH[1])
-        console.log("id",idH[2])
+        setId(idUser);
+        setNameUser(jsonId.data.name)
+        setPointUser(jsonId.data.point)
 
-
+        // console.log("idHero",heroId)
+        // console.log("id",idH[0])
+        // console.log("id", idH[1])
+        // console.log("id",idH[2])
+        let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0]
+        setIndex(sortUser)
         //  for(let i=0;i<countU;i++){
         //    if(heroId == idH[i]){
         //      setIndex(i)
@@ -162,7 +166,7 @@ const sort = async(e) => {
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
       
-                          <li className="person">{localStorage.getItem('sort')}-</li> 
+                          <li className="person"><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointuser">+{pointUser}p</span></li> 
                           {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
                         </>
                      }

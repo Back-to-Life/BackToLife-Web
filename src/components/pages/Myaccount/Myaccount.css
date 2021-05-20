@@ -91,6 +91,7 @@ li.slide.selected{
     color: #fc9583;
 }
 .container_cardInfo h2{
+    font-size: 30px;
     color: #fc9583;
 }
 .ortala p{
@@ -157,14 +158,16 @@ li.slide.selected{
 }
 .more{
     width: 30px;
-    margin-left: 1%;
+    margin-left: 2%;
+    margin-bottom: 2%;
 }
 .person{
-    margin-left: 3%;
+    margin-left: 4%;
     margin-top: 1%;
     font-size: 20px;
     color:#fc9583;
     font-weight: 700;
+    float: left;
 }
 .nameHero{
     font-weight: 600;
@@ -180,7 +183,25 @@ li.slide.selected{
     display: flex;
     justify-content:flex-end;
 }
+.indexUser{
+    float: left;
+    font-size: 22px;
+}
+.nameuser{
+    font-size: 18px;
+    color: #0f415d;
+    margin-left: 26px;
+    float: left;
+    margin-right: 130px;
+    margin-top: 2px;
+}
+.pointuser{
+    color: #58c4bc;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 800;
 
+}
 @media screen and (max-width:1100px){
     .headerHero h1{
         font-size: 25px;
