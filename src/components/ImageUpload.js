@@ -21,6 +21,7 @@ const ImageUpload = () => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
 
+<<<<<<< HEAD
     }
 
   };
@@ -48,6 +49,40 @@ const ImageUpload = () => {
             console.log(imageUrl.toString());
 
             localStorage.setItem('imageUrl', imageUrl.toString());
+=======
+    };
+     
+ 
+ 
+
+    const handleUpload = async () => {
+      const uploadTask = storage.ref(`images/${image.name}`).put(image);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          setProgress(progress);
+        },
+        error => {
+          console.log(error);
+        },
+        async () => {
+          storage
+            .ref("images").child(image.name).getDownloadURL()
+            .then(imageUrl => {
+              setUrl(imageUrl);
+              console.log(imageUrl.toString());
+
+            localStorage.setItem('imageUrl',imageUrl.toString());
+
+          
+           // window.location.reload();
+
+            //window.location.reload();
+
+            });
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
             let item = { imageUrl }
             console.log("new url: ", item)
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
@@ -92,6 +127,7 @@ const ImageUpload = () => {
 
 
 
+<<<<<<< HEAD
   useEffect(() => {
     (async () => {
       const respImg = await fetch("http://localhost:5000/users/")
@@ -100,6 +136,9 @@ const ImageUpload = () => {
       setImagedata(jsonImg.data.imageUrl);
 
 
+=======
+          //  console.log(img)
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
 
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]

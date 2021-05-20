@@ -42,6 +42,7 @@ const sort = async(e) => {
         const respImg = await fetch("http://localhost:5000/users/")
         const jsonImg = await respImg.json()
         setCount(jsonImg.count); 
+        console.log("count",countU)
 
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)
@@ -53,24 +54,14 @@ const sort = async(e) => {
         console.log("id",idH[2])
 
 
-          // for(let i=0;i<countU;i++){
-       
-          //   console.log(idH[i])
-          //   if(heroId == idH[i]){
-          //     console.log(i)
-          //     setIndex(i)
-          //     localStorage.setItem('sort',i)
-              
-          //   }
-          // }
-        // localStorage.setItem('sort',(idH.indexOf(heroId)))
-        
-        // idH.map((idler, index)=>{
-        //   if(heroId == idler){
-        //     console.log(index+1)
-        //     setIndex(index+1)
-        //   }
-        // })
+        //  for(let i=0;i<countU;i++){
+        //    if(heroId == idH[i]){
+        //      setIndex(i)
+        //      console.log(indexH.toString())
+        //      localStorage.setItem('sort',JSON.stringify(i))
+        //    }
+        //  }
+         //localStorage.setItem('sort',(idH.indexOf(heroId)))
         
       })();
     }, []);
@@ -139,12 +130,20 @@ const sort = async(e) => {
                      
 
                    
+<<<<<<< HEAD
                   
                       <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
 
+=======
+                    {/* <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li> */}
+
+                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
                         <br />
+                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
+        <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
                         <br />
 
@@ -163,7 +162,7 @@ const sort = async(e) => {
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
       
-                          <li className="person">-</li> 
+                          <li className="person">{localStorage.getItem('sort')}-</li> 
                           {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
                         </>
                      }
