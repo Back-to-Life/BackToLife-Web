@@ -31,7 +31,7 @@ const ProgressBar = () =>{
                     strokeLinecap: 'round',
                     textSize: '16px',
                     pathTransitionDuration: 0.5,
-                    pathColor: `rgba(88, 195, 187, ${point / 30})`,
+                    pathColor: `rgba(88, 195, 187, ${point / 20})`,
                     textColor: '#f88',
                     trailColor: '#d6d6d6',
                     backgroundColor: '#3e98c7',
