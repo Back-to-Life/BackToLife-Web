@@ -25,8 +25,6 @@ const ImageUpload=()=>{
 
     };
      
- 
- 
 
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -49,16 +47,10 @@ const ImageUpload=()=>{
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
-          
-           // window.location.reload();
-
-            //window.location.reload();
-
             });
             let item = { imageUrl }
             console.log("new url: ", item)
-            let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`, 
-        {
+            let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`, {
             method: "PUT",
             body:JSON.stringify(item),
             headers:{
@@ -67,7 +59,9 @@ const ImageUpload=()=>{
 
   })
   result = await result.json()
-console.log("result", result)
+  console.log("result", result)
+  //window.location.reload();
+
         
         }
         
