@@ -134,9 +134,17 @@ const sort = async(e) => {
                      
 
                    
+<<<<<<< HEAD
+                  
+                      <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
+                        <br />
+                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
+
+=======
                     {/* <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li> */}
 
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
         <br />

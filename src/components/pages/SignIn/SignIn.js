@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
+import { storage } from "../../firebase";
 
 export default function SignIn() {
 
@@ -15,6 +16,8 @@ export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+<<<<<<< HEAD
+=======
   // const [id, setId] = useState();
   const history = useHistory();
 
@@ -26,9 +29,13 @@ export default function SignIn() {
    const [indexH, setIndex] = useState([]);
    const [countU, setCount] = useState([]);
 
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
 
+  const history = useHistory();
+  
   const submit = async (e) => {
     let item = { email, password };
+
     console.log(item);
 
  
@@ -39,6 +46,9 @@ export default function SignIn() {
         "Content-Type": "application/json",
         "Accept": "application/json",
       },
+<<<<<<< HEAD
+    }).then(history.push("/"));
+=======
     })
     .then(history.push("/"));
     
@@ -58,18 +68,29 @@ export default function SignIn() {
     // localStorage.setItem("sort", JSON.stringify(sort));
 
 
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
+    let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+
     console.log("result", result);
     if (result.status == 200) {
       console.log("result", result.body);
 
     }
+<<<<<<< HEAD
+    let sort = await fetch(`http://localhost:500/${idUser}/whereAmI`, {
+      method: "GET"
+    })
+=======
 
+>>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
 
+    localStorage.setItem("sort", JSON.stringify(sort))
+  
+    
 
     window.location.reload();
-        
   };
 
   return (
