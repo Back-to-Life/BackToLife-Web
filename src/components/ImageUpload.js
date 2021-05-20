@@ -47,8 +47,6 @@ const ImageUpload = () => {
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
-            });
-
             let item = { imageUrl }
             console.log("new url: ", item)
 
@@ -66,32 +64,16 @@ const ImageUpload = () => {
          
 
 
+            });
+
 
 
             window.location.reload();
 
           });
-        /*let item = { imageUrl }
-        console.log("new url: ", item)
-        let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
-          {
-            method: "PUT",
-            body: JSON.stringify(item),
-            headers: {
-              "Content-Type": "application/json",
-            }
-
-          })
-        result = await result.json()
-        console.log("result", result)*/
+      
 
       }
-
-    )
-
-
-
-  };
 
 
 
