@@ -11,17 +11,13 @@ import Points from './components/pages/Points/Points';
 import Logout from './components/pages/Logout/Logout';
 import Confirm from './components/pages/EmailConfirmation/Confirm';
 import HomeThird from './components/pages/HomeThird/HomeThird';
-
 import ForgotPassword from './components/pages/ForgotPassword/ForgotPassword'
 import ResetPassword from './components/pages/ResetPassword/ResetPassword'
-
 import Protected from './components/pages/Protected';
 
 
 function App() {
 
-
- 
   return (
     <Router>
     <Navbar/>
@@ -30,7 +26,6 @@ function App() {
       <Route path='/' exact component={Home}/>
       <Route path='/myaccount'>
         <Protected Cmp={Myaccount}/>
-        {/* <Myaccount/> */}
       </Route>
       <Route path='/howtowork' exact component={HomeThird}/>
       <Route path='/points' exact component={Points}/>

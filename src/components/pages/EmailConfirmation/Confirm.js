@@ -1,25 +1,16 @@
-import React,{useCallback,useContext,useState} from 'react';
-import { withRouter, Redirect } from "react-router";
+import React,{useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Confirm.css'
 import { useTranslation } from 'react-i18next';
-import axios from 'axios'
-import { Component } from 'react';
-
-
 
 
 export default function Confirm () {
-  const {t, i18n} = useTranslation();
-
+const {t, i18n} = useTranslation();
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [randomCode, setToken] = useState("")
-
 const history = useHistory();
-
-
 
 async function confirm()
 {
@@ -41,19 +32,9 @@ async function confirm()
   result = await result.json()
 console.log("result", result)
 }
-
-
-
-   
-
-      return (
-    
-     
+      return (   
       <div className="wrapper1">
-       
-         
-        <div className="form-wrapper">
-
+      <div className="form-wrapper">
         <h1>{t('Sign.Confirm')}</h1>
         <form >
          <div className="firstName">
@@ -66,7 +47,6 @@ console.log("result", result)
           name="name" 
           onChange = {(e) => setName(e.target.value)} 
           value =  {name}
-         
           />
         </div>
         
@@ -109,12 +89,9 @@ console.log("result", result)
           />
         </div>
 
-           
-    
     <button className = "buttonsign"
-    onClick={confirm}
-           value = "Confirm"
-           >
+            onClick={confirm}
+            value = "Confirm">
              <h5>{t('Sign.Confirm')} </h5>
            </button>
     
@@ -127,15 +104,5 @@ console.log("result", result)
        </div>
    
    );     
-  
-   
-  
-//}
-    
-  
-
- 
-     
-  
   
 }

@@ -20,7 +20,7 @@ const sort = async(e) => {
     method: "GET"
   })
   result = await result.json()
-//console.log("result", result)
+
 }
 
   const [hero, setHero] = useState([]);
@@ -35,7 +35,6 @@ const sort = async(e) => {
     (async ()=>{
         const respHero = await fetch("http://localhost:5000/sort")
         const jsonHero = await respHero.json()
-        //const [itemData] = jsonData.data
         setHero(jsonHero.data.names);
         setHid(jsonHero.data._ids);
         setPointH(jsonHero.data.points);
@@ -52,10 +51,7 @@ const sort = async(e) => {
         setNameUser(jsonId.data.name)
         setPointUser(jsonId.data.point)
 
-        // console.log("idHero",heroId)
-        // console.log("id",idH[0])
-        // console.log("id", idH[1])
-        // console.log("id",idH[2])
+
         let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0]
         setIndex(sortUser)
 
@@ -125,7 +121,7 @@ const sort = async(e) => {
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
-        <br />
+                        <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
                         <br />
 
@@ -145,10 +141,7 @@ const sort = async(e) => {
                      }
 
                     </ul>
-                     
-                     
                     </div>
-                    
                 </div>
               </div>
             </div>

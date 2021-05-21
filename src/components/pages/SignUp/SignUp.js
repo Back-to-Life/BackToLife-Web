@@ -1,12 +1,7 @@
 import React,{useState,useEffect} from 'react';
-
 import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
-
-
-
-
 
 export function SignUp () {
  useEffect(()=>{

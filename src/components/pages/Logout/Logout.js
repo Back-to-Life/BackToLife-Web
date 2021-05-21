@@ -3,19 +3,15 @@ import { withRouter, Redirect, useHistory } from "react-router";
 import { Link} from 'react-router-dom';
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
-
 import {Fade} from 'react-reveal';
-
-
 
 export default function Logout() {
 
 const history = useHistory();
-
-
+const {t, i18n} = useTranslation();
+const [modalState, setModalState] = useState(true)
 async function logout()
 {
-
   let result = await fetch("http://localhost:5000/logout", 
   {
     method: "GET",
@@ -29,21 +25,12 @@ async function logout()
 console.log("result", result)
 }
 
-
-
-
-
-const [modalState, setModalState] = useState(true)
-
 const toggleModalState = () => {
   setModalState(!modalState)
 }
-const {t, i18n} = useTranslation();
 
 return (
   <>
-
-
   <div className="pop">
     <div className={`modalBackground modalShowing-${modalState}`}>
       <Fade top duration={2000}>

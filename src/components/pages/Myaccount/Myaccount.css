@@ -162,12 +162,6 @@ li.slide.selected{
     margin-left: 2%;
     
 }
-/* .person{
-    margin-left: 4%;
-    margin-top: 1%;
-
-    float: left;
-} */
 .nameHero{
     font-weight: 600;
     color: #0f415d;
@@ -201,13 +195,7 @@ li.slide.selected{
     margin-right: 60px;
     margin-top: 5px;
 }
-/* .pointuser{
-    color: #58c4bc;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: 800;
-    font-size: 20px;
-} */
+
 @media screen and (max-width:1100px){
     .headerHero h1{
         font-size: 25px;
@@ -216,9 +204,7 @@ li.slide.selected{
         margin-left: 10px;
         margin-right: 10px;
     }
-   
-    
-    
+ 
 }
 @media screen and (max-width:960px){
     .containerr{
