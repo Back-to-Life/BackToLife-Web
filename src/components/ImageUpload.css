@@ -9,8 +9,6 @@ input[type="file"]{
   margin-right: 10px;
   white-space: nowrap;
   font-size: 17px;
-  
-
 }
 #selector:hover{
   transform: scale(1.03);

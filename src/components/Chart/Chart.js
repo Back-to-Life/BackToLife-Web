@@ -8,8 +8,7 @@ import { useTranslation } from 'react-i18next';
     const {t, i18n} = useTranslation();
 
      const [chartData, setChartData]  = useState({});
-     const [employeeSalary, setEmployeeSalary] = useState([]);
-     const [employeeAge, setEmployeeAge] = useState([]);
+
      const Chart = () => {
          let empSal = [];
          let empAge = [];

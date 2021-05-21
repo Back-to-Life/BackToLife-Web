@@ -26,8 +26,6 @@ function HomeFirst() {
                         <Button className="buttonHome" buttonSize='btn--wide' buttonColor='orange'>{t('Home.button')}</Button>
                     </Link>
                     </Fade>
-                    
-                   
                     </div>
                     <Fade right duration={2000}>
                     <div className="imgHome">
