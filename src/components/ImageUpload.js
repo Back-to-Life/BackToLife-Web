@@ -109,7 +109,7 @@ const ImageUpload = () => {
     []);
 
 
-  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
+  
   return (
     <div >
       <IconContext.Provider value={{ color: '#58c4bc' }}>

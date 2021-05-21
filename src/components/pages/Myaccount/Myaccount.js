@@ -9,7 +9,7 @@ import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-
+import ChartRecType from "../../Chart/ChartRecType.js"
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
@@ -58,14 +58,7 @@ const sort = async(e) => {
         // console.log("id",idH[2])
         let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0]
         setIndex(sortUser)
-        //  for(let i=0;i<countU;i++){
-        //    if(heroId == idH[i]){
-        //      setIndex(i)
-        //      console.log(indexH.toString())
-        //      localStorage.setItem('sort',JSON.stringify(i))
-        //    }
-        //  }
-         //localStorage.setItem('sort',(idH.indexOf(heroId)))
+
         
       })();
     }, []);
@@ -129,24 +122,12 @@ const sort = async(e) => {
                     <div className="sort">
                     <ul>
 
-
-
-                     
-
-
-
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
-
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
         <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
                         <br />
-
-
-                        
-
-                        
 
                       {
                         (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
@@ -157,9 +138,9 @@ const sort = async(e) => {
                         <>
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
-      
-                          <li className="person"><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointuser">+{pointUser}p</span></li> 
-                          {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
+
+                        <li><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointHero">+{pointUser}p</span></li> 
+                        
                         </>
                      }
 
@@ -180,6 +161,13 @@ const sort = async(e) => {
         <div className="containerBigCard">
           <div className="container_big">
             <Chart/>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div className="containerBigCard">
+          <div className="container_big">
+            <ChartRecType/>
           </div>
         </div>
       </div>

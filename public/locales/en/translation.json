@@ -45,6 +45,8 @@
         "description": "If you want to make money while contributing to nature, you are in the right place.",
         "earn": "Total Earnings",
         "chart": "My Daily Chart",
+        "label":"Daily Recycling Count",
+        "chartType": "The Wastes I Recycle The Most",
         "hero": "Heroes Of The World",
         "select": "Select File",
         "upload": "Upload File"
@@ -75,5 +77,14 @@
         "text2":"You can also look at how many points the wastes you recycle are worth according to their types.",
         "logout":"Logout",
         "exit":"Home"
+    },
+    "Chart":{
+        "Glass": "Glass",
+        "Plastic": "Plastic",
+        "Electronic":"Electronic",
+        "Battery": "Battery",
+        "Metal":"Metal",
+        "Organic":"Organic",
+        "Paper":"Paper"
     }
 }
