@@ -78,6 +78,7 @@ li.slide.selected{
     color: #fc9583;
     margin-bottom: 24px;
 }
+
 .container_cardInfo{
     display: flex;
     flex-direction: column;
@@ -114,7 +115,7 @@ li.slide.selected{
     font-size: 20px;
 }
 .image{
-    margin: 24px 0;
+    /* margin: 24px 0; */
     width: 100px;
     
 }
@@ -159,16 +160,14 @@ li.slide.selected{
 .more{
     width: 30px;
     margin-left: 2%;
-    margin-bottom: 2%;
+    
 }
-.person{
+/* .person{
     margin-left: 4%;
     margin-top: 1%;
-    font-size: 20px;
-    color:#fc9583;
-    font-weight: 700;
+
     float: left;
-}
+} */
 .nameHero{
     font-weight: 600;
     color: #0f415d;
@@ -186,22 +185,29 @@ li.slide.selected{
 .indexUser{
     float: left;
     font-size: 22px;
+    color:#fc9583;
+    font-weight: 700;
+    display: flex;
+    margin-left: 14px;
+    margin-top: 5px;
+
 }
 .nameuser{
+    font-weight: 600;
     font-size: 18px;
     color: #0f415d;
-    margin-left: 26px;
+    margin-left: 20px;
     float: left;
-    margin-right: 130px;
-    margin-top: 2px;
+    margin-right: 60px;
+    margin-top: 5px;
 }
-.pointuser{
+/* .pointuser{
     color: #58c4bc;
     display: flex;
     justify-content: flex-end;
     font-weight: 800;
-
-}
+    font-size: 20px;
+} */
 @media screen and (max-width:1100px){
     .headerHero h1{
         font-size: 25px;
@@ -210,9 +216,7 @@ li.slide.selected{
         margin-left: 10px;
         margin-right: 10px;
     }
-    .more{
-        margin-left: 15px;
-    }
+   
     
     
 }

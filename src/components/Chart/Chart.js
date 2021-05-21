@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next';
              setChartData({
                  labels: empAge,
                  datasets: [{
-                                              label: 'Daily Recycling Count',
+                                              label: t('Account.label'),
                                               data: empSal,
                                               backgroundColor: [
                                                    'rgba(255, 99, 132, 0.2)',
