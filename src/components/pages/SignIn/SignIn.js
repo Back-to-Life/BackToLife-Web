@@ -16,8 +16,7 @@ export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-<<<<<<< HEAD
-=======
+
   // const [id, setId] = useState();
   const history = useHistory();
 
@@ -29,9 +28,8 @@ export default function SignIn() {
    const [indexH, setIndex] = useState([]);
    const [countU, setCount] = useState([]);
 
->>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
 
-  const history = useHistory();
+  
   
   const submit = async (e) => {
     let item = { email, password };
@@ -46,29 +44,9 @@ export default function SignIn() {
         "Content-Type": "application/json",
         "Accept": "application/json",
       },
-<<<<<<< HEAD
+
     }).then(history.push("/"));
-=======
-    })
-    .then(history.push("/"));
-    
 
-    // let sort = await fetch(`http://localhost:5000/whereAmI`, {
-    //   method:"POST",
-    //   body: JSON.stringify(id)
-    // })
-    // sort = await sort.json();
-    // localStorage.setItem("sort", JSON.stringify(sort));
-
-    // let sort = await fetch("http://localhost:5000/sort", {
-    //   method:"GET"
-    // })
-
-    // sort = await sort.json();
-    // localStorage.setItem("sort", JSON.stringify(sort));
-
-
->>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -78,16 +56,7 @@ export default function SignIn() {
       console.log("result", result.body);
 
     }
-<<<<<<< HEAD
-    let sort = await fetch(`http://localhost:500/${idUser}/whereAmI`, {
-      method: "GET"
-    })
-=======
 
->>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
-
-    localStorage.setItem("sort", JSON.stringify(sort))
-  
     
 
     window.location.reload();

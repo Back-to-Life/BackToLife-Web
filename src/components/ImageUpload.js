@@ -21,38 +21,10 @@ const ImageUpload = () => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
 
-<<<<<<< HEAD
     }
 
   };
 
-
-
-
-  const handleUpload = async () => {
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
-    uploadTask.on(
-      "state_changed",
-      snapshot => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        setProgress(progress);
-      },
-      error => {
-        console.log(error);
-      },
-      async () => {
-        storage
-          .ref("images").child(image.name).getDownloadURL()
-          .then(imageUrl => {
-            setUrl(imageUrl);
-            console.log(imageUrl.toString());
-
-            localStorage.setItem('imageUrl', imageUrl.toString());
-=======
-    };
-     
- 
  
 
     const handleUpload = async () => {
@@ -76,14 +48,7 @@ const ImageUpload = () => {
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
-          
-           // window.location.reload();
-
-            //window.location.reload();
-
-            });
->>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
-            let item = { imageUrl }
+           let item = { imageUrl }
             console.log("new url: ", item)
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
@@ -95,6 +60,10 @@ const ImageUpload = () => {
 
               })
          
+            });
+
+           
+         
 
 
 
@@ -102,32 +71,17 @@ const ImageUpload = () => {
             window.location.reload();
 
           });
-        /*let item = { imageUrl }
-        console.log("new url: ", item)
-        let result = await fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
-          {
-            method: "PUT",
-            body: JSON.stringify(item),
-            headers: {
-              "Content-Type": "application/json",
-            }
-
-          })
-        result = await result.json()
-        console.log("result", result)*/
+        
 
       }
 
-    )
 
 
-
-  };
+  
 
 
 
 
-<<<<<<< HEAD
   useEffect(() => {
     (async () => {
       const respImg = await fetch("http://localhost:5000/users/")
@@ -135,10 +89,6 @@ const ImageUpload = () => {
       // const itemImg= jsonImg.data.imageUrl;
       setImagedata(jsonImg.data.imageUrl);
 
-
-=======
-          //  console.log(img)
->>>>>>> c0b2b0c9ca6b554ba28e43a58f43645bf0a6cc3d
 
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -181,9 +131,11 @@ const ImageUpload = () => {
       </IconContext.Provider>
     </div>
   )
-}
 
-export default ImageUpload
+
+ 
+  }
+  export default ImageUpload
 
 
 
