@@ -80,20 +80,10 @@ const ImageUpload = () => {
       }
 
 
-
-  
-
-
-
-
-
-            });
-            window.location.reload();
-
-          });
+          
       
 
-      }
+      
 
 
   useEffect(() => {

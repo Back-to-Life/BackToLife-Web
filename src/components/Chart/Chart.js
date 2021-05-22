@@ -12,13 +12,17 @@ import { useTranslation } from 'react-i18next';
      const Chart = () => {
          let empSal = [];
          let empAge = [];
-         axios.get("http://dummy.restapiexample.com/api/v1/employees")
+         axios.get("http://localhost:5000/logins/60a8f89dd7e1895d5c099e64/showCounter")
          .then(res => {
              console.log(res);
-             for(const dataObj of res.data.data){
-                 empSal.push(parseInt(dataObj.employee_salary));
-                 empAge.push(parseInt(dataObj.employee_age ));
+
+             for(const dataCount of res.data.data){
+               
+                 empAge.push(dataCount.loginDetails[0].loginDate)
+                 empSal.push(parseInt(dataCount.loginDetails[0].loginCounter))
+                
              }
+            
              setChartData({
                  labels: empAge,
                  datasets: [{
@@ -101,10 +105,8 @@ import { useTranslation } from 'react-i18next';
                         // maintainAspectRatio: false,
                          responsive:true,
                          scales:{
-                             yAxes:{
-                                 ticks:{
-                                     beginAtZero: true
-                                 }
+                             y:{
+                                beginAtZero: true
                              }
                          }
                      }}

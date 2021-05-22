@@ -13,10 +13,10 @@ import { useTranslation } from 'react-i18next';
          let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
          axios.get(`http://localhost:5000/points/${idUser}/Points`)
          .then(res => {
-             console.log(res);
+            //  console.log(res);
 
              let dataObj = res.data.data
-             console.log(res.data)
+            //  console.log(res.data)
              setChartData({
                  labels: [t('Chart.Glass'),t('Chart.Plastic'),t('Chart.Electronic'),t('Chart.Battery'),t('Chart.Metal'),t('Chart.Organic'),t('Chart.Paper')],
                  datasets: [{
