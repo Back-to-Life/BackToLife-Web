@@ -81,21 +81,6 @@ const ImageUpload = () => {
 
 
 
-  
-
-
-
-
-
-            });
-            window.location.reload();
-
-          });
-      
-
-      }
-
-
   useEffect(() => {
     (async () => {
       const respImg = await fetch("http://localhost:5000/users/")
