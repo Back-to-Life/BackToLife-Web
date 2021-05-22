@@ -5,6 +5,9 @@ import { RiFolderUploadFill } from 'react-icons/ri'
 import './ImageUpload.css'
 import { storage } from '../components/firebase'
 import { useTranslation } from "react-i18next";
+import Image, { Shimmer } from 'react-shimmer'
+import Loading from './pages/Loading'
+import Skeleton from 'react-loading-skeleton';
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -80,11 +83,15 @@ const ImageUpload = () => {
   },
     []);
 
+    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img
+
   return (
     <div >
       <IconContext.Provider value={{ color: '#58c4bc' }}>
         <br />
-        <img src={(img == null || localStorage.getItem('imageUrl') == null) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img} alt="firebase-image" />
+          
+          <img src={imageChange}  />  
+          
         <br />
         <br />
         <div className="kapsayici">
