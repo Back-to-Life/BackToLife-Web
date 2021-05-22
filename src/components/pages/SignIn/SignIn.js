@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
-import { storage } from "../../firebase";
 
 export default function SignIn() {
 
@@ -17,6 +16,7 @@ export default function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  
   // const [id, setId] = useState();
   const history = useHistory();
 
@@ -29,6 +29,7 @@ export default function SignIn() {
    const [countU, setCount] = useState([]);
 
 
+  
   
   
   const submit = async (e) => {
@@ -45,8 +46,12 @@ export default function SignIn() {
         "Accept": "application/json",
       },
 
+      
+
     }).then(history.push("/"));
 
+
+    
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -56,6 +61,7 @@ export default function SignIn() {
       console.log("result", result.body);
 
     }
+
 
     
 

@@ -4,14 +4,12 @@ import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal';
 import './HomeThird.css'
 import { useTranslation } from 'react-i18next';
-import Navbar from '../../Navbar';
 
 function HomeThird() {
     const {t, i18n} = useTranslation();
 
     return (
         <div>
-           
             <div className="containerWork">
                 <div className="wrapperWork">
                    
@@ -27,8 +25,6 @@ function HomeThird() {
                         <Button  className="buttonWork" buttonSize='btn--wide' buttonColor='orange'>{t('Work.button')}</Button>
                     </Link>
                     </Fade>
-                   
-                   
                     </div>
                     <Fade right duration={2000}>
                     <div className="imgWork">
