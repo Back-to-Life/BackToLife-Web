@@ -20,8 +20,10 @@ const ImageUpload = () => {
   const handleChange = e => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
+
     }
   };
+
 
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -45,6 +47,7 @@ const ImageUpload = () => {
             localStorage.setItem('imageUrl',imageUrl.toString());
 
             let item = { imageUrl }
+
             console.log("new url: ", item)
 
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
@@ -56,6 +59,31 @@ const ImageUpload = () => {
                 }
 
               })
+
+         
+            });
+
+           
+         
+
+
+
+
+            window.location.reload();
+
+          });
+        
+
+      }
+
+
+
+  
+
+
+
+
+
             });
             window.location.reload();
 
@@ -64,11 +92,13 @@ const ImageUpload = () => {
 
       }
 
+
   useEffect(() => {
     (async () => {
       const respImg = await fetch("http://localhost:5000/users/")
       const jsonImg = await respImg.json()
       setImagedata(jsonImg.data.imageUrl);
+
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
       const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
@@ -97,9 +127,11 @@ const ImageUpload = () => {
       </IconContext.Provider>
     </div>
   )
-}
 
-export default ImageUpload
+
+ 
+  }
+  export default ImageUpload
 
 
 

@@ -16,9 +16,21 @@ export default function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-
-
+  
+  // const [id, setId] = useState();
   const history = useHistory();
+
+  // id =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+
+
+   const [idH, setHid] = useState([]);
+   const [heroId, setId] = useState([]);
+   const [indexH, setIndex] = useState([]);
+   const [countU, setCount] = useState([]);
+
+
+  
+  
   
   const submit = async (e) => {
     let item = { email, password };
@@ -33,9 +45,13 @@ export default function SignIn() {
         "Content-Type": "application/json",
         "Accept": "application/json",
       },
+
+      
+
     }).then(history.push("/"));
 
 
+    
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
     let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -46,6 +62,8 @@ export default function SignIn() {
 
     }
 
+
+    
 
     window.location.reload();
   };
