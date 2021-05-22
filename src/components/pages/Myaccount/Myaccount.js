@@ -14,14 +14,14 @@ import ChartRecType from "../../Chart/ChartRecType.js"
 function Myaccount() {
   const { t, i18n } = useTranslation();
 
-const sort = async(e) => {
+  const sort = async(e) => {
   let result = await fetch("http://localhost:5000/sort", 
   {
     method: "GET"
   })
   result = await result.json()
 
-}
+  }
 
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
@@ -36,7 +36,7 @@ const sort = async(e) => {
         const respHero = await fetch("http://localhost:5000/sort")
         const jsonHero = await respHero.json()
         setHero(jsonHero.data.names);
-        setHid(jsonHero.data._ids);
+        setHid(jsonHero.data.ids);
         setPointH(jsonHero.data.points);
 
         const respImg = await fetch("http://localhost:5000/users/")
@@ -118,16 +118,7 @@ const sort = async(e) => {
                     <div className="sort">
                     <ul>
 
-
-
-
-                     
-
-                   
-
-
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
-
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
                         <br />
@@ -137,7 +128,7 @@ const sort = async(e) => {
                       {
                         (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
                        <> 
-                       <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
+                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
                        </>
                         :
                         <>
