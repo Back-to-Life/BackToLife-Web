@@ -80,11 +80,6 @@ const ImageUpload = () => {
       }
 
 
-          
-      
-
-      
-
 
   useEffect(() => {
     (async () => {
