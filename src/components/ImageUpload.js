@@ -61,7 +61,7 @@ const ImageUpload = () => {
                   "Content-Type": "application/json",
                 }
 
-              })
+              }).then( window.location.reload())
 
          
             });
@@ -72,13 +72,13 @@ const ImageUpload = () => {
 
 
 
-            window.location.reload();
+            
 
           });
         
-
+         
       }
-
+     
 
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const ImageUpload = () => {
   },
     []);
 
-    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img
+    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "images/nullpp.jpeg" : img
 
   return (
     <div >

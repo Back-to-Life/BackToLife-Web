@@ -106,9 +106,11 @@ import { useTranslation } from 'react-i18next';
                         // maintainAspectRatio: false,
                          responsive:true,
                          scales:{
-                             y:{
-                                beginAtZero: true
-                             }
+                            yAxes:{
+                                ticks:{
+                                    beginAtZero: true
+                                }
+                            }
                          }
                      }}
                    />
