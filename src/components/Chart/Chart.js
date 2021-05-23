@@ -7,30 +7,31 @@ import { useTranslation } from 'react-i18next';
  const DynamicChart = () => {
     const {t, i18n} = useTranslation();
 
-     const [chartData, setChartData]  = useState({});
+    const [chartData, setChartData]  = useState({});
 
-     const Chart = () => {
-         let empSal = [];
-         let empAge = [];
-         axios.get("http://localhost:5000/logins/60a8f89dd7e1895d5c099e64/showCounter")
+    const Chart = () => {
+         let count = [];
+         let date = [];
+         let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
+         axios.get(`http://localhost:5000/logins/${idUser}/showCounter`)
          .then(res => {
              console.log(res);
 
              for(const dataCount of res.data.data){
                
-                 empAge.push(dataCount.loginDetails[0].loginDate)
-                 empSal.push(parseInt(dataCount.loginDetails[0].loginCounter))
+                 date.push(dataCount.loginDetails[0].loginDate)
+                 count.push(parseInt(dataCount.loginDetails[0].loginCounter))
                 
              }
             
              setChartData({
-                 labels: empAge,
+                 labels: date,
                  datasets: [{
                                               label: t('Account.label'),
-                                              data: empSal,
+                                              data: count,
                                               backgroundColor: [
-                                                   'rgba(255, 99, 132, 0.2)',
-                                                   'rgba(54, 162, 235, 0.2)',
+                                                  'rgba(255, 99, 132, 0.2)',
+                                                  'rgba(54, 162, 235, 0.2)',
                                                   'rgba(255, 206, 86, 0.2)',
                                                   'rgba(75, 192, 192, 0.2)',
                                                   'rgba(153, 102, 255, 0.2)',
