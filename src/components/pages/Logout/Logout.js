@@ -20,7 +20,7 @@ async function logout()
     }
   
   }).then(localStorage.removeItem("user-info"))
-  .then(history.push("/"))
+  .then(history.push("/home"))
   result = await result.json()
 console.log("result", result)
 }
@@ -49,13 +49,13 @@ return (
           </p>
           <form action="">
             <button className="outbtn" onClick={logout}>
-              <a href="/">
+              <a href="/home">
               {t('Popup.logout')}
                 </a>
                 </button>
           </form>
           <button className="exitButton">
-              <Link to="/">
+              <Link to="/home">
               <span className="popSpan">{t('Popup.exit')}</span> 
               </Link>
             

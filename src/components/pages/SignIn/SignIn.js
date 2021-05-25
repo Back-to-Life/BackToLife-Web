@@ -48,7 +48,7 @@ export default function SignIn() {
 
       
 
-    }).then(history.push("/"));
+    }).then(history.push("/home"));
 
 
     

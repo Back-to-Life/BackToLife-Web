@@ -58,7 +58,7 @@ function Navbar() {
                          localStorage.getItem('user-info') ?
                          <>
                          <li className="nav-item">
-                          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
                               {t('Navbar.home')}
                           </Link>
@@ -99,7 +99,7 @@ function Navbar() {
                          :
                          <>
                               <li className="nav-item">
-                          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                          <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
                               {t('Navbar.home')}
                           </Link>
