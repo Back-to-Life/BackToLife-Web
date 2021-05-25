@@ -4,15 +4,10 @@ import './ProgressBar.css'
 
 
 const ProgressBar = () =>{
-    const [percentage, setPercentage] = useState(0);
-    const [point, setPoint]= useState([]);
+   
+    const [point, setPoint]= useState(0);
    useEffect(()=>{
        (async () => {
-       const response = await fetch("http://localhost:5000/users");
-        const datajson = await response.json();
-        const [item] = datajson.data;
-        setPercentage(item);
-
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resPoint = await fetch(`http://localhost:5000/users/${idUser}`)
         const jsonPoint = await resPoint.json()

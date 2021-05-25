@@ -10,7 +10,7 @@ import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import ChartRecType from "../../Chart/ChartRecType.js"
-import DotLoader from "react-spinners/DotLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
 
 function Myaccount() {
@@ -132,9 +132,9 @@ function Myaccount() {
                    
                   {
                        loading ? 
-                        <DotLoader
+                        <BeatLoader
                         css={override}
-                        size={50}
+                        size={15}
                         color={"#58c4bc"}
                         loading={loading}
                         />
