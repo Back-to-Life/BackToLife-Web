@@ -1,0 +1,53 @@
+.splashbody{
+  overflow: hidden;
+}
+.logo_wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .screen {
+    background: url("bck.png"); 
+    overflow: hidden;
+    border-radius: 100%;
+    animation: grow 5.5s forwards;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+  }
+  
+  @keyframes grow {
+    0% {
+      transform: scale(0);
+    }
+    10% {
+      transform: scale(1);
+      border-radius: 0%;
+      height: 100%;
+      width: 100%;
+    }
+    90% {
+      transform: scale(1);
+      border-radius: 0%;
+      height: 100%;
+      width: 100%;
+    }
+    100% {
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      border-radius: 100%;
+    }
+  }
+  
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

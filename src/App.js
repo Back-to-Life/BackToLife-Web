@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component}from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -14,16 +14,29 @@ import HomeThird from './components/pages/HomeThird/HomeThird';
 import ForgotPassword from './components/pages/ForgotPassword/ForgotPassword'
 import ResetPassword from './components/pages/ResetPassword/ResetPassword'
 import Protected from './components/pages/Protected';
+import Splash from './components/pages/Splash/Splash';
 
 
-function App() {
-
+export default class App extends Component {
+ render(){
+  const theme = this.props.theme;
+  const settings = {
+    isSplash: true, // Change this to false if you don't want Splash screen.
+  };
+  if (settings.isSplash) {
   return (
-    <Router>
+    <Router basename="/">
+       <Route
+                path="/"
+                exact
+                render={(props) => (
+                  <Splash {...props} theme={this.props.theme} />
+                )}
+              />
     <Navbar/>
     <Switch>
-    
-      <Route path='/' exact component={Home}/>
+   
+      <Route path='/home' exact component={Home}/>
       <Route path='/myaccount'>
         <Protected Cmp={Myaccount}/>
       </Route>
@@ -35,11 +48,40 @@ function App() {
       <Route path='/confirm' exact component={Confirm}/>
       <Route path='/forgotPassword' exact component={ForgotPassword}/>
       <Route path='/resetPassword' exact component={ResetPassword}/>
-
+      <Route
+                path="/splash"
+                render={(props) => (
+                  <Splash {...props} theme={this.props.theme} />
+                )}
+              />
     </Switch>
     <Footer/>
     </Router>
   );
+  }else{
+    return (
+      <Router>
+      <Navbar/>
+      <Switch>
+     
+        <Route path='/home' exact component={Home}/>
+        <Route path='/myaccount'>
+          <Protected Cmp={Myaccount}/>
+        </Route>
+        <Route path='/howtowork' exact component={HomeThird}/>
+        <Route path='/points' exact component={Points}/>
+        <Route path='/signup' exact component={SignUp}/>
+        <Route path='/login' exact component={SignIn}/>
+        <Route path='/logout' exact component={Logout}/>
+        <Route path='/confirm' exact component={Confirm}/>
+        <Route path='/forgotPassword' exact component={ForgotPassword}/>
+        <Route path='/resetPassword' exact component={ResetPassword}/>
+  
+      </Switch>
+      <Footer/>
+      </Router>
+    );
+  }
+}
 }
 
-export default App;
