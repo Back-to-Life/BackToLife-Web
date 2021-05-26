@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 export function SignUp () {
  useEffect(()=>{
    if(localStorage.getItem('user-info')){
-     history.push("/home");
+     history.push("/");
    }
  })
 

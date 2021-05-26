@@ -10,7 +10,7 @@ import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import ChartRecType from "../../Chart/ChartRecType.js"
-import BeatLoader from "react-spinners/BeatLoader";
+import PacmanLoader from "react-spinners/PacmanLoader";
 import { css } from "@emotion/react";
 
 function Myaccount() {
@@ -25,11 +25,8 @@ function Myaccount() {
 
   }
   const override = css`
-    
     margin-top: 30%;
-    
-
-  
+    margin-left: -5%;
 `;
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
@@ -132,9 +129,9 @@ function Myaccount() {
                    
                   {
                        loading ? 
-                        <BeatLoader
+                        <PacmanLoader
                         css={override}
-                        size={15}
+                        size={20}
                         color={"#58c4bc"}
                         loading={loading}
                         />
