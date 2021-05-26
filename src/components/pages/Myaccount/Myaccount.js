@@ -74,6 +74,7 @@ function Myaccount() {
 
 
   return (
+
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
    
       <div className="background">
@@ -126,29 +127,8 @@ function Myaccount() {
                     <div className="headerHero">
                         <h1  onClick={sort} >{t('Account.hero')}</h1>
                     </div>
-<<<<<<< HEAD
-                    <div className="sort">
-                    <ul>
 
-
-                     
-
-                   
-
-     
-                        <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
-
-                        <br />
-                        <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
-                        <br />
-                        <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
-                        <br />
-
-                      {
-                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
-                       <> 
-=======
-                   
+                  
                   {
                        loading ? 
                         <PacmanLoader
@@ -170,8 +150,7 @@ function Myaccount() {
 
                      {
                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
-                      <> 
->>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
+                      <>
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
                       </>
                        :
@@ -214,5 +193,6 @@ function Myaccount() {
     </IconContext.Provider>
   );
 }
+
 
 export default Myaccount;
