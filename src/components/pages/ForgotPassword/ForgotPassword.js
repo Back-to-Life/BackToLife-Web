@@ -1,20 +1,12 @@
-import React,{useCallback,useContext,useState} from 'react';
-import { withRouter, Redirect } from "react-router";
+import React,{useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './ForgotPassword.css'
 import { useTranslation } from 'react-i18next';
 
-import { Component } from 'react';
-
-
-
 
 export default function ForgotPassword () {
     const {t, i18n} = useTranslation();
-    
-  
     const [email, setEmail] = useState("")
-   
     const history = useHistory();
 
 async function forgotPassword()
@@ -37,20 +29,11 @@ async function forgotPassword()
   result = await result.json()
 console.log("result", result)
 }
-
-
-
-   
-
       return (
     
      <>
-     
       <div className="wrapper1">
-       
-         
         <div className="form-wrapper">
-
         <h1>{t('Sign.forgotMain')}</h1>
         <form >
       
@@ -66,13 +49,9 @@ console.log("result", result)
          
           />
         </div>
-
-           
-    
     <button className = "buttonsign"
-    onClick={forgotPassword}
-           value = "Confirm"
-           >
+            onClick={forgotPassword}
+            value = "Confirm">
              <h5>{t('Sign.Confirm')} </h5>
            </button>
     
@@ -85,15 +64,4 @@ console.log("result", result)
        </div>
        </>
    );     
-  
-   
-  
-
-    
-  
-
- 
-     
-  
-  
 }

@@ -14,7 +14,7 @@ const ImageUpload = () => {
   const [image, setImage] = useState(null);
   const [imageUrl, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
-  const [newUrl, setNewUrl] = useState("")
+
 
   let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
   const handleChange = e => {
@@ -22,10 +22,7 @@ const ImageUpload = () => {
       setImage(e.target.files[0]);
 
     }
-
   };
-
- 
 
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -48,8 +45,10 @@ const ImageUpload = () => {
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
+
+            
            let item = { imageUrl }
-            console.log("new url: ", item)
+
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
                 method: "PUT",
@@ -59,6 +58,7 @@ const ImageUpload = () => {
                 }
 
               })
+
          
             });
 
@@ -73,22 +73,16 @@ const ImageUpload = () => {
           });
         
 
+      
+      
+
       }
-
-
-
-  
-
-
-
 
   useEffect(() => {
     (async () => {
       const respImg = await fetch("http://localhost:5000/users/")
       const jsonImg = await respImg.json()
-      // const itemImg= jsonImg.data.imageUrl;
       setImagedata(jsonImg.data.imageUrl);
-
 
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -96,28 +90,17 @@ const ImageUpload = () => {
       const jsoImg = await resImg.json()
       setdataImage(jsoImg.data.imageUrl);
 
-      //  console.log(img)
-
-
-
-
-
-
-
     })();
 
   },
     []);
 
-
-  //  localStorage.getItem('imageUrl') == null ? localStorage.getItem('imageUrl')  : imgData.imageUrl
   return (
     <div >
       <IconContext.Provider value={{ color: '#58c4bc' }}>
         <br />
         <img src={(img == null || localStorage.getItem('imageUrl') == null) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img} alt="firebase-image" />
         <br />
-
         <br />
         <div className="kapsayici">
           <input type="file" id="file" onChange={handleChange} hidden />
@@ -126,15 +109,14 @@ const ImageUpload = () => {
           <label className="buttons" onClick={handleUpload} align="center" >
             <RiFolderUploadFill className="smallicon" /> <span className="imgSpan">{t('Account.upload')}</span></label>
         </div>
-
-
       </IconContext.Provider>
     </div>
   )
 
 
  
-  }
+  
+}
   export default ImageUpload
 
 

@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {FaRecycle} from 'react-icons/fa'
 import {AiOutlineHome} from 'react-icons/ai'
 import {VscServerProcess} from 'react-icons/vsc'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
@@ -47,7 +46,7 @@ function Navbar() {
            <div className="navbar">
               <div className="navbar-container container">
                   <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-                      {/* <FaRecycle className="navbar-icon"/> */}
+
                       <img src="images/icon.png" alt="" />
                       {t('Navbar.icon')}
                   </Link>
@@ -57,7 +56,6 @@ function Navbar() {
                   <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                      {
                          localStorage.getItem('user-info') ?
-                         
                          <>
                          <li className="nav-item">
                           <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -149,9 +147,7 @@ function Navbar() {
                       </li>
                          </>
                      } 
-                      
-                     
-                      
+                   
                       <a className="languagebuttonTr" onClick={()=>TranslateClick('tr')}><img src="images/turkey.png" alt=""/></a>
                     <a className="languagebuttonEn" onClick={()=>TranslateClick('en')}><img src="images/united-kingdom.png"></img></a>
                   </ul>

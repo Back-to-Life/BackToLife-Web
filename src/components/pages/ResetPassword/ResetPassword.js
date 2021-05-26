@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Link ,useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './SignIn.css'
 
@@ -33,9 +33,7 @@ console.log("result", result)
   return (
     <>
     
-      <div className="wrapper1">
-       
-         
+      <div className="wrapper1">   
         <div className="form-wrapper">
 
         <h1>{t('Sign.reset')}</h1>
@@ -76,23 +74,12 @@ console.log("result", result)
         
           />
         </div>
-        
-           
-         
-            
-       
     <button className="buttonsign" onClick={resetPassword}
            value = "Submit"
            >
 
                <h5>{t('Sign.signin')}</h5> 
-
-
-           </button>
-    
-          
-
- 
+         </button>
         </form>
       </div>
        </div>

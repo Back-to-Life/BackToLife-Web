@@ -45,6 +45,8 @@
         "description": "Doğaya katkı sağlarken para kazanmak istiyorsanız doğru yerdesiniz.",
         "earn": "Toplam Kazanç",
         "chart": "Günlük Grafiğim",
+        "label":"Günlük Geri Dönüşüm Sayısı",
+        "chartType": "En Çok Geri Dönüşüm Yaptığım Atıklar",
         "hero":  "Dünyanın Kahramanları",
         "select": "Dosya Seç",
         "upload": "Dosyayı Yükle"
@@ -75,6 +77,15 @@
         "text2":"Geri dönüştürdüğünüz atıkların türlerine göre puanlarına da bakabilirsiniz.",
         "logout":"Çıkış Yap",
         "exit":"Ana Sayfa"
+    },
+    "Chart":{
+        "Glass": "Cam",
+        "Plastic": "Plastik",
+        "Electronic":"Electronik",
+        "Battery": "Pil",
+        "Metal":"Metal",
+        "Organic":"Organik",
+        "Paper":"Kağıt"
     }
 
 }

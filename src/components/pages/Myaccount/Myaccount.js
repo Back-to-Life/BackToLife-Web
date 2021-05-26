@@ -9,7 +9,7 @@ import DataUpload from "../../DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-
+import ChartRecType from "../../Chart/ChartRecType.js"
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
@@ -20,7 +20,7 @@ const sort = async(e) => {
     method: "GET"
   })
   result = await result.json()
-//console.log("result", result)
+
 }
 
   const [hero, setHero] = useState([]);
@@ -29,12 +29,12 @@ const sort = async(e) => {
   const [countU, setCount] = useState([]);
   const [heroId, setId] = useState([]);
   const [indexH, setIndex] = useState([]);
-
+  const [nameUser, setNameUser] = useState([]);
+  const [pointUser, setPointUser] = useState([]);
   useEffect(()=>{
     (async ()=>{
         const respHero = await fetch("http://localhost:5000/sort")
         const jsonHero = await respHero.json()
-        //const [itemData] = jsonData.data
         setHero(jsonHero.data.names);
         setHid(jsonHero.data._ids);
         setPointH(jsonHero.data.points);
@@ -47,21 +47,14 @@ const sort = async(e) => {
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)
         const jsonId = await resId.json()
-        setId(idUser); 
-        console.log("idHero",heroId)
-        console.log("id",idH[0])
-        console.log("id", idH[1])
-        console.log("id",idH[2])
+        setId(idUser);
+        setNameUser(jsonId.data.name)
+        setPointUser(jsonId.data.point)
 
 
-        //  for(let i=0;i<countU;i++){
-        //    if(heroId == idH[i]){
-        //      setIndex(i)
-        //      console.log(indexH.toString())
-        //      localStorage.setItem('sort',JSON.stringify(i))
-        //    }
-        //  }
-         //localStorage.setItem('sort',(idH.indexOf(heroId)))
+        let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0]
+        setIndex(sortUser)
+
         
       })();
     }, []);
@@ -126,25 +119,18 @@ const sort = async(e) => {
                     <ul>
 
 
-
                      
 
                    
 
-                    {/* <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[countU-1]}</span> <span className="pointHero">+{pointH[countU-1]}p</span></li> */}
-
+     
                         <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
 
                         <br />
                         <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
-        <br />
+                        <br />
                         <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
                         <br />
-
-
-                        
-
-                        
 
                       {
                         (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
@@ -155,17 +141,14 @@ const sort = async(e) => {
                         <>
                           <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                           <br />
-      
-                          <li className="person">{localStorage.getItem('sort')}-</li> 
-                          {/* (indexH != null || localStorage.getItem('sort') != null) ? localStorage.getItem('sort') : "?" */}
+
+                        <li><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointHero">+{pointUser}p</span></li> 
+                        
                         </>
                      }
 
                     </ul>
-                     
-                     
                     </div>
-                    
                 </div>
               </div>
             </div>
@@ -178,6 +161,13 @@ const sort = async(e) => {
         <div className="containerBigCard">
           <div className="container_big">
             <Chart/>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div className="containerBigCard">
+          <div className="container_big">
+            <ChartRecType/>
           </div>
         </div>
       </div>

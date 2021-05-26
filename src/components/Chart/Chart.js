@@ -8,8 +8,7 @@ import { useTranslation } from 'react-i18next';
     const {t, i18n} = useTranslation();
 
      const [chartData, setChartData]  = useState({});
-     const [employeeSalary, setEmployeeSalary] = useState([]);
-     const [employeeAge, setEmployeeAge] = useState([]);
+
      const Chart = () => {
          let empSal = [];
          let empAge = [];
@@ -23,7 +22,7 @@ import { useTranslation } from 'react-i18next';
              setChartData({
                  labels: empAge,
                  datasets: [{
-                                              label: 'Daily Recycling Count',
+                                              label: t('Account.label'),
                                               data: empSal,
                                               backgroundColor: [
                                                    'rgba(255, 99, 132, 0.2)',
