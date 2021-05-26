@@ -25,6 +25,7 @@ const ImageUpload = () => {
     }
   };
 
+
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
@@ -45,6 +46,7 @@ const ImageUpload = () => {
               console.log(imageUrl.toString());
 
             localStorage.setItem('imageUrl',imageUrl.toString());
+
             let item = { imageUrl }
             console.log("new url: ", item)
 
@@ -56,12 +58,16 @@ const ImageUpload = () => {
                 headers: {
                   "Content-Type": "application/json",
                 }
+
+
               }).then( window.location.reload())
-       
+
+
             });
 
           });
         
+
       }
 
 

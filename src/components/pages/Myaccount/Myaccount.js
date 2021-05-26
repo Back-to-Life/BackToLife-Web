@@ -74,6 +74,7 @@ function Myaccount() {
 
 
   return (
+
     <IconContext.Provider value={{ color: "#58c4bc", size: 64 }}>
    
       <div className="background">
@@ -126,7 +127,7 @@ function Myaccount() {
                     <div className="headerHero">
                         <h1  onClick={sort} >{t('Account.hero')}</h1>
                     </div>
-                   
+
                   {
                        loading ? 
                         <PacmanLoader
@@ -148,7 +149,11 @@ function Myaccount() {
 
                      {
                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
+
+                      <>
+
                       <> 
+
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
                       </>
                        :
@@ -191,5 +196,6 @@ function Myaccount() {
     </IconContext.Provider>
   );
 }
+
 
 export default Myaccount;
