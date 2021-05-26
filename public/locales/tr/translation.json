@@ -69,7 +69,10 @@
         "Confirm": "Onayla",
         "forgot":"Şifreni mi Unuttun?",
         "reset":"Şifreyi Sıfırla",
-        "forgotMain":"Şiremi Unuttum"
+        "forgotMain":"Şiremi Unuttum",
+        "email":"E-posta",
+        "password":"Parola",
+        "name":"İsim"
     },
     "Popup":{
         "header":"Çıkış yapmak istediğinizden emin misiniz?",

@@ -127,8 +127,12 @@ function Myaccount() {
                     <div className="headerHero">
                         <h1  onClick={sort} >{t('Account.hero')}</h1>
                     </div>
+<<<<<<< HEAD
 
                   
+=======
+                   
+>>>>>>> e06d8ac3cbfb68545c053fb0044658d0334b7410
                   {
                        loading ? 
                         <PacmanLoader
@@ -150,7 +154,11 @@ function Myaccount() {
 
                      {
                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
+<<<<<<< HEAD
                       <>
+=======
+                      <> 
+>>>>>>> e06d8ac3cbfb68545c053fb0044658d0334b7410
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
                       </>
                        :

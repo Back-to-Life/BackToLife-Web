@@ -69,7 +69,10 @@
         "Confirm": "Confirm",
         "forgot":"Forgot Password?",
         "reset":"Reset Password",
-        "forgotMain":"Forgot Password"
+        "forgotMain":"Forgot Password",
+        "email":"E-mail",
+        "password":"Password",
+        "name":"Name"
     },
     "Popup":{
         "header":"Are you sure you want to log out?",

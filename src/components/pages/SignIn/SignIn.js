@@ -13,23 +13,12 @@ export default function SignIn() {
   });
   const { t, i18n } = useTranslation();
 
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   
 
 
-  // const [id, setId] = useState();
   const history = useHistory();
-
-  // id =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-
-
-  const [idH, setHid] = useState([]);
-  const [heroId, setId] = useState([]);
-  const [indexH, setIndex] = useState([]);
-  const [countU, setCount] = useState([]);
-
 
 
   const submit = async (e) => {
@@ -50,6 +39,7 @@ export default function SignIn() {
         "Authorization": "Bearer " + token
         
       },
+
      
       
       
@@ -75,7 +65,6 @@ export default function SignIn() {
 
 
 
-
     window.location.reload();
     
   };
@@ -94,7 +83,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="E-mail"
+                placeholder={t('Sign.email')}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +94,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="Password"
+                placeholder={t('Sign.password')}
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
