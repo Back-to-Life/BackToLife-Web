@@ -5,6 +5,9 @@ import { RiFolderUploadFill } from 'react-icons/ri'
 import './ImageUpload.css'
 import { storage } from '../components/firebase'
 import { useTranslation } from "react-i18next";
+import Image, { Shimmer } from 'react-shimmer'
+import Loading from './pages/Loading'
+import Skeleton from 'react-loading-skeleton';
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -24,6 +27,10 @@ const ImageUpload = () => {
     }
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
@@ -45,9 +52,15 @@ const ImageUpload = () => {
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
+<<<<<<< HEAD
 
             
            let item = { imageUrl }
+=======
+            let item = { imageUrl }
+
+            console.log("new url: ", item)
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
@@ -57,7 +70,11 @@ const ImageUpload = () => {
                   "Content-Type": "application/json",
                 }
 
+<<<<<<< HEAD
               })
+=======
+              }).then( window.location.reload())
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
          
             });
@@ -68,15 +85,22 @@ const ImageUpload = () => {
 
 
 
-            window.location.reload();
+            
 
           });
         
+<<<<<<< HEAD
 
       
       
 
       }
+=======
+         
+      }
+     
+
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
   useEffect(() => {
     (async () => {
@@ -95,11 +119,15 @@ const ImageUpload = () => {
   },
     []);
 
+    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "images/nullpp.jpeg" : img
+
   return (
     <div >
       <IconContext.Provider value={{ color: '#58c4bc' }}>
         <br />
-        <img src={(img == null || localStorage.getItem('imageUrl') == null) ? "https://lh3.googleusercontent.com/proxy/ABhCaJwfxME4Iq0-l6mHt0tPJrVLz5dw3j8fAJK7vTuZ8hF0dSiJEZDwyB2Qg0xCknY5iyFet-hQvLibUEn3gd2xyYbrbpKF232iEHvyTJsMF7DHtF2B8GhK03AS" : img} alt="firebase-image" />
+          
+          <img src={imageChange}  />  
+          
         <br />
         <br />
         <div className="kapsayici">

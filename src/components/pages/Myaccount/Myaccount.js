@@ -10,19 +10,24 @@ import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import ChartRecType from "../../Chart/ChartRecType.js"
+import PacmanLoader from "react-spinners/PacmanLoader";
+import { css } from "@emotion/react";
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
 
-const sort = async(e) => {
+  const sort = async(e) => {
   let result = await fetch("http://localhost:5000/sort", 
   {
     method: "GET"
   })
   result = await result.json()
 
-}
-
+  }
+  const override = css`
+    margin-top: 30%;
+    margin-left: -5%;
+`;
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
@@ -31,20 +36,26 @@ const sort = async(e) => {
   const [indexH, setIndex] = useState([]);
   const [nameUser, setNameUser] = useState([]);
   const [pointUser, setPointUser] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    }, 3000);
     (async ()=>{
-        const respHero = await fetch("http://localhost:5000/sort")
+        const respHero = await fetch("http://localhost:5000/sort") //fetch user name, id and point
         const jsonHero = await respHero.json()
         setHero(jsonHero.data.names);
-        setHid(jsonHero.data._ids);
+        setHid(jsonHero.data.ids);
         setPointH(jsonHero.data.points);
 
-        const respImg = await fetch("http://localhost:5000/users/")
+        const respImg = await fetch("http://localhost:5000/users/") //fetch all users count
         const jsonImg = await respImg.json()
         setCount(jsonImg.count); 
         console.log("count",countU)
 
-        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1] // fetch login user id, name, point
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)
         const jsonId = await resId.json()
         setId(idUser);
@@ -52,10 +63,10 @@ const sort = async(e) => {
         setPointUser(jsonId.data.point)
 
 
-        let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0]
-        setIndex(sortUser)
+        let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0] // get user rank
+        setIndex(sortUser) 
 
-        
+       
       })();
     }, []);
 
@@ -115,6 +126,7 @@ const sort = async(e) => {
                     <div className="headerHero">
                         <h1  onClick={sort} >{t('Account.hero')}</h1>
                     </div>
+<<<<<<< HEAD
                     <div className="sort">
                     <ul>
 
@@ -135,21 +147,49 @@ const sort = async(e) => {
                       {
                         (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
                        <> 
+=======
+                   
+                  {
+                       loading ? 
+                        <PacmanLoader
+                        css={override}
+                        size={20}
+                        color={"#58c4bc"}
+                        loading={loading}
+                        />
+                       :
+                       <div className="sort">
+                       <ul>
+
+                       <li><img src="images/first.png" alt=""/>  <span className="nameHero">{hero[0]}</span><span className="pointHero">+{pointH[0]}p</span></li>
+                       <br />
+                       <li><img src="images/second.png" alt=""/> <span className="nameHero">{hero[1]}</span><span className="pointHero">+{pointH[1]}p</span></li>
+                       <br />
+                       <li><img src="images/third.png" alt=""/>  <span className="nameHero">{hero[2]}</span><span className="pointHero">+{pointH[2]}p</span></li>
+                       <br />
+
+                     {
+                       (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
+                      <> 
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
+                      </>
+                       :
+                       <>
+                         <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
+                         <br />
+
+                       <li><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointHero">+{pointUser}p</span></li> 
+                       
                        </>
-                        :
-                        <>
-                          <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
-                          <br />
+                    }
 
-                        <li><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointHero">+{pointUser}p</span></li> 
-                        
-                        </>
-                     }
-
-                    </ul>
+                   </ul>
+                   </div>
+                  } 
+                    
                     </div>
-                </div>
+               
               </div>
             </div>
           </div>

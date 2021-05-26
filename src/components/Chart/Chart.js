@@ -7,26 +7,31 @@ import { useTranslation } from 'react-i18next';
  const DynamicChart = () => {
     const {t, i18n} = useTranslation();
 
-     const [chartData, setChartData]  = useState({});
+    const [chartData, setChartData]  = useState({});
 
-     const Chart = () => {
-         let empSal = [];
-         let empAge = [];
-         axios.get("http://dummy.restapiexample.com/api/v1/employees")
+    const Chart = () => {
+         let count = [];
+         let date = [];
+         let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
+         axios.get(`http://localhost:5000/logins/${idUser}/showCounter`)
          .then(res => {
              console.log(res);
-             for(const dataObj of res.data.data){
-                 empSal.push(parseInt(dataObj.employee_salary));
-                 empAge.push(parseInt(dataObj.employee_age ));
+
+             for(const dataCount of res.data.data){
+               
+                 date.push(dataCount.loginDetails[0].loginDate)
+                 count.push(parseInt(dataCount.loginDetails[0].loginCounter))
+                
              }
+            
              setChartData({
-                 labels: empAge,
+                 labels: date,
                  datasets: [{
                                               label: t('Account.label'),
-                                              data: empSal,
+                                              data: count,
                                               backgroundColor: [
-                                                   'rgba(255, 99, 132, 0.2)',
-                                                   'rgba(54, 162, 235, 0.2)',
+                                                  'rgba(255, 99, 132, 0.2)',
+                                                  'rgba(54, 162, 235, 0.2)',
                                                   'rgba(255, 206, 86, 0.2)',
                                                   'rgba(75, 192, 192, 0.2)',
                                                   'rgba(153, 102, 255, 0.2)',
@@ -101,11 +106,11 @@ import { useTranslation } from 'react-i18next';
                         // maintainAspectRatio: false,
                          responsive:true,
                          scales:{
-                             yAxes:{
-                                 ticks:{
-                                     beginAtZero: true
-                                 }
-                             }
+                            yAxes:{
+                                ticks:{
+                                    beginAtZero: true
+                                }
+                            }
                          }
                      }}
                    />

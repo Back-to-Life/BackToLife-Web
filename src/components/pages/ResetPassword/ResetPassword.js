@@ -23,7 +23,7 @@ export default function ResetPassword() {
         {
             method: "PUT",
             body:JSON.stringify(item)
-  }).then(history.push("/") )
+  }).then(history.push("/home") )
   result = await result.json()
 console.log("result", result)
 

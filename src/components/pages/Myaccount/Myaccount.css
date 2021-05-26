@@ -124,6 +124,12 @@ li.slide.selected{
     width: 100px;
     border: 3px solid #58c4bc; 
 }
+ .image img:empty{
+    width: 100px;
+    height: 110px;
+    background: url('loading.gif');
+    border: 3px solid #58c4bc; 
+}
 .kucukresim img{
     margin: 0;
     max-width: 200px;
