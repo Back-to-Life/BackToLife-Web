@@ -16,7 +16,11 @@ export default function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
   // const [id, setId] = useState();
   const history = useHistory();
 
@@ -30,8 +34,11 @@ export default function SignIn() {
 
 
   
+<<<<<<< HEAD
+=======
   
   
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
   const submit = async (e) => {
     let item = { email, password };
 
@@ -45,10 +52,16 @@ export default function SignIn() {
         "Content-Type": "application/json",
         "Accept": "application/json",
       },
+<<<<<<< HEAD
+
+    }).then(history.push("/"));
+
+=======
 
       
 
     }).then(history.push("/"));
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
 
     
@@ -62,8 +75,11 @@ export default function SignIn() {
 
     }
 
+<<<<<<< HEAD
+=======
 
     
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
     window.location.reload();
   };

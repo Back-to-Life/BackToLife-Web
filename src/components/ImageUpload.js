@@ -27,7 +27,10 @@ const ImageUpload = () => {
     }
   };
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
@@ -49,9 +52,15 @@ const ImageUpload = () => {
 
             localStorage.setItem('imageUrl',imageUrl.toString());
 
+<<<<<<< HEAD
+
+            
+           let item = { imageUrl }
+=======
             let item = { imageUrl }
 
             console.log("new url: ", item)
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
@@ -61,7 +70,11 @@ const ImageUpload = () => {
                   "Content-Type": "application/json",
                 }
 
+<<<<<<< HEAD
+              })
+=======
               }).then( window.location.reload())
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
          
             });
@@ -76,10 +89,18 @@ const ImageUpload = () => {
 
           });
         
+<<<<<<< HEAD
+
+      
+      
+
+      }
+=======
          
       }
      
 
+>>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
   useEffect(() => {
     (async () => {
@@ -122,7 +143,8 @@ const ImageUpload = () => {
 
 
  
-  }
+  
+}
   export default ImageUpload
 
 
