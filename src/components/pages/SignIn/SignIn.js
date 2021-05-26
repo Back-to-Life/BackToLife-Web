@@ -13,7 +13,6 @@ export default function SignIn() {
   });
   const { t, i18n } = useTranslation();
 
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   
@@ -29,6 +28,7 @@ export default function SignIn() {
   const [heroId, setId] = useState([]);
   const [indexH, setIndex] = useState([]);
   const [countU, setCount] = useState([]);
+
 
 
 
@@ -50,6 +50,7 @@ export default function SignIn() {
         "Authorization": "Bearer " + token
         
       },
+
      
       
       
@@ -94,7 +95,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="E-mail"
+                placeholder={t('Sign.email')}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +106,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="Password"
+                placeholder={t('Sign.password')}
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}

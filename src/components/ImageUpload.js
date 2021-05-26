@@ -5,9 +5,7 @@ import { RiFolderUploadFill } from 'react-icons/ri'
 import './ImageUpload.css'
 import { storage } from '../components/firebase'
 import { useTranslation } from "react-i18next";
-import Image, { Shimmer } from 'react-shimmer'
-import Loading from './pages/Loading'
-import Skeleton from 'react-loading-skeleton';
+
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -50,7 +48,6 @@ const ImageUpload = () => {
             localStorage.setItem('imageUrl',imageUrl.toString());
 
             let item = { imageUrl }
-
             console.log("new url: ", item)
 
 
@@ -66,22 +63,10 @@ const ImageUpload = () => {
               }).then( window.location.reload())
 
 
-         
             });
-
-           
-         
-
-
-
-
-            
 
           });
         
-
-      
-      
 
       }
 
