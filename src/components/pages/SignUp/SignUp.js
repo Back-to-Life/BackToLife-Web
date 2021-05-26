@@ -61,7 +61,7 @@ console.log("result", result)
           <input 
           type="text"
           className=""
-          placeholder="Name"
+          placeholder={t('Sign.name')}
           type="text" 
           name="name" 
           onChange = {(e) => setName(e.target.value)} 
@@ -75,7 +75,7 @@ console.log("result", result)
           <input 
           type="text"
           className=""
-          placeholder="E-mail"
+          placeholder={t('Sign.email')}
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)} 
@@ -88,7 +88,7 @@ console.log("result", result)
           <input 
           type="text"
           className=""
-          placeholder="Password"
+          placeholder={t('Sign.password')}
           type="password" 
           name="password" 
           onChange = {(e) => setPassword(e.target.value)} 

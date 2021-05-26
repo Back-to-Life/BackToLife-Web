@@ -59,7 +59,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="E-mail"
+                placeholder={t('Sign.email')}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -70,7 +70,7 @@ export default function SignIn() {
               <input
                 type="text"
                 className=""
-                placeholder="Password"
+                placeholder={t('Sign.password')}
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}

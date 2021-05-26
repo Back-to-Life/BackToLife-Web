@@ -42,7 +42,7 @@ console.log("result", result)
           <input 
           type="text"
           className=""
-          placeholder="E-mail"
+          placeholder={t('Sign.email')}
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)}
