@@ -5,9 +5,7 @@ import { RiFolderUploadFill } from 'react-icons/ri'
 import './ImageUpload.css'
 import { storage } from '../components/firebase'
 import { useTranslation } from "react-i18next";
-import Image, { Shimmer } from 'react-shimmer'
-import Loading from './pages/Loading'
-import Skeleton from 'react-loading-skeleton';
+
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -27,10 +25,6 @@ const ImageUpload = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
@@ -51,16 +45,9 @@ const ImageUpload = () => {
               console.log(imageUrl.toString());
 
             localStorage.setItem('imageUrl',imageUrl.toString());
-
-<<<<<<< HEAD
-
-            
-           let item = { imageUrl }
-=======
             let item = { imageUrl }
-
             console.log("new url: ", item)
->>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
+
 
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
@@ -69,38 +56,14 @@ const ImageUpload = () => {
                 headers: {
                   "Content-Type": "application/json",
                 }
-
-<<<<<<< HEAD
-              })
-=======
               }).then( window.location.reload())
->>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
-
-         
+       
             });
-
-           
-         
-
-
-
-
-            
 
           });
         
-<<<<<<< HEAD
-
-      
-      
-
       }
-=======
-         
-      }
-     
 
->>>>>>> 4f22346eda48b6ddfdc8b26dd93771b5cf19ee03
 
   useEffect(() => {
     (async () => {
