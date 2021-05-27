@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
-//import { login } from "../../../../../BackToLife-Backend/controllers/auth";
 
 export default function SignIn() {
 
@@ -16,19 +15,7 @@ export default function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   
-
-
-  // const [id, setId] = useState();
   const history = useHistory();
-
-  // id =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-
-
-  const [idH, setHid] = useState([]);
-  const [heroId, setId] = useState([]);
-  const [indexH, setIndex] = useState([]);
-  const [countU, setCount] = useState([]);
-
 
 
 
@@ -36,11 +23,9 @@ export default function SignIn() {
     let item = { email, password };
 
     console.log(item);
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWZiMDkzMDYxY2YzNGRjY2EyMzAxMiIsImlhdCI6MTYyMjA0NDgwMywiZXhwIjoxNjI0NjM2ODAzfQ.-d8Gb3Z5qgQ8D7R0aRa3wALAbi1O1edopbQRh-HglLQ"
-    
-
-    
-
+    //  let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWZiMDkzMDYxY2YzNGRjY2EyMzAxMiIsImlhdCI6MTYyMjA0NDgwMywiZXhwIjoxNjI0NjM2ODAzfQ.-d8Gb3Z5qgQ8D7R0aRa3wALAbi1O1edopbQRh-HglLQ"
+    let token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('" "')[0]
+   
 
     let result = await fetch("http://localhost:5000/login", {
       method: "POST",
