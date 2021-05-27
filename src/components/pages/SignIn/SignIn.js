@@ -23,9 +23,10 @@ export default function SignIn() {
     let item = { email, password };
 
     console.log(item);
-    //  let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWZiMDkzMDYxY2YzNGRjY2EyMzAxMiIsImlhdCI6MTYyMjA0NDgwMywiZXhwIjoxNjI0NjM2ODAzfQ.-d8Gb3Z5qgQ8D7R0aRa3wALAbi1O1edopbQRh-HglLQ"
-    let token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('" "')[0]
-   
+      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWZiMDkzMDYxY2YzNGRjY2EyMzAxMiIsImlhdCI6MTYyMjA0NDgwMywiZXhwIjoxNjI0NjM2ODAzfQ.-d8Gb3Z5qgQ8D7R0aRa3wALAbi1O1edopbQRh-HglLQ"
+    
+    //  let token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1].toString()
+    //  console.log("2",token)
 
     let result = await fetch("http://localhost:5000/login", {
       method: "POST",
@@ -40,10 +41,8 @@ export default function SignIn() {
       
       
 
-    }).then(history.push("/"));
-
-    
-
+    })
+    .then(history.push("/"));
 
 
     result = await result.json();
@@ -62,7 +61,7 @@ export default function SignIn() {
 
 
 
-    window.location.reload();
+     window.location.reload();
     
   };
   
