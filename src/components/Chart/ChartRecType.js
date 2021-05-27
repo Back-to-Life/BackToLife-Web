@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
                  labels: [t('Chart.Glass'),t('Chart.Plastic'),t('Chart.Electronic'),t('Chart.Battery'),t('Chart.Metal'),t('Chart.Organic'),t('Chart.Paper')],
                  datasets: [{
                                               label: 'Recycling Count',
-                                              data: [dataObj.Glass,dataObj.Plastic,dataObj.Electronic,dataObj.Battery,dataObj.Metal,dataObj.Organic,dataObj.Paper],
+                                              data: [dataObj.Glass, dataObj.Plastic, dataObj.Electronic, dataObj.Battery, dataObj.Metal, dataObj.Organic, dataObj.Paper],
                                               backgroundColor: [
                                                 'rgba(255, 99, 132, 0.2)',
                                                 'rgba(54, 162, 235, 0.2)',

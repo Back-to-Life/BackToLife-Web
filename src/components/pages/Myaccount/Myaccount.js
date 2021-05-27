@@ -31,7 +31,6 @@ function Myaccount() {
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
-  const [countU, setCount] = useState([]);
   const [heroId, setId] = useState([]);
   const [indexH, setIndex] = useState([]);
   const [nameUser, setNameUser] = useState([]);
@@ -43,17 +42,13 @@ function Myaccount() {
     setTimeout(()=>{
       setLoading(false)
     }, 3000);
+
     (async ()=>{
         const respHero = await fetch("http://localhost:5000/sort") //fetch user name, id and point
         const jsonHero = await respHero.json()
         setHero(jsonHero.data.names);
         setHid(jsonHero.data.ids);
         setPointH(jsonHero.data.points);
-
-        const respImg = await fetch("http://localhost:5000/users/") //fetch all users count
-        const jsonImg = await respImg.json()
-        setCount(jsonImg.count); 
-        console.log("count",countU)
 
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1] // fetch login user id, name, point
         const resId = await fetch(`http://localhost:5000/users/${idUser}`)

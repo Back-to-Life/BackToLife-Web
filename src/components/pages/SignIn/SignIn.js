@@ -37,10 +37,6 @@ export default function SignIn() {
         
       },
 
-     
-      
-      
-
     })
     .then(history.push("/"));
 
