@@ -42,7 +42,7 @@ progress[value] {
 }
 progress[value]::-webkit-progress-bar {
   margin-top: 5px;
-  margin-left: -15%;
+  margin-left: -20%;
   background-color: #fff;
   border-radius: 10px;
 }
@@ -52,7 +52,13 @@ progress[value]::-webkit-progress-value {
   border-radius: 10px;
   width: 90%;
 }
-
+.progressbar{
+  position: relative;
+  left: 140px;
+  top: -15px;
+  color: #0e425d;
+  font-weight: 700;
+}
 @media screen and (max-width: 1100px) {
   .buttons, #selector{
     width: 95%;

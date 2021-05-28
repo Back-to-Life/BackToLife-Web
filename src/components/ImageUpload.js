@@ -92,9 +92,10 @@ const ImageUpload = () => {
       <IconContext.Provider value={{ color: '#58c4bc' }}>
         <br />
           <img src={imageChange}  />  
-          <progress value={progress} max={100}/>
-        <br />
-        <br />
+          <div className="progrs">
+          <progress value={progress} max={100}/><span className="progressbar">{progress}%</span>
+          </div>
+        
         <div className="kapsayici">
           <input type="file" id="file" onChange={handleChange} hidden />
           <label htmlFor="file" id="selector">
