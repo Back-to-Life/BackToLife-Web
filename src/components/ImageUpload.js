@@ -10,14 +10,13 @@ import { useTranslation } from "react-i18next";
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
 
-  const [imgData, setImagedata] = useState([]);
   const [img, setdataImage] = useState([]);
   const [image, setImage] = useState(null);
   const [imageUrl, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
 
 
-  let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+
   const handleChange = e => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -29,7 +28,7 @@ const ImageUpload = () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
         "state_changed",
-        snapshot => {
+        snapshot => { //dosyanın yüklenme durumu için 
           const progress = Math.round(
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
           setProgress(progress);
@@ -39,7 +38,9 @@ const ImageUpload = () => {
         },
         async () => {
           storage
-            .ref("images").child(image.name).getDownloadURL()
+            .ref("images")
+            .child(image.name)
+            .getDownloadURL()
             .then(imageUrl => {
               setUrl(imageUrl);
               console.log(imageUrl.toString());
@@ -49,7 +50,7 @@ const ImageUpload = () => {
             let item = { imageUrl }
             console.log("new url: ", item)
 
-
+            let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
             let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
               {
                 method: "PUT",
@@ -70,10 +71,6 @@ const ImageUpload = () => {
 
   useEffect(() => {
     (async () => {
-      const respImg = await fetch("http://localhost:5000/users/")
-      const jsonImg = await respImg.json()
-      setImagedata(jsonImg.data.imageUrl);
-
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
       const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
@@ -91,11 +88,11 @@ const ImageUpload = () => {
     <div >
       <IconContext.Provider value={{ color: '#58c4bc' }}>
         <br />
-          
           <img src={imageChange}  />  
-          
-        <br />
-        <br />
+          <div className="progrs">
+          <progress value={progress} max={100}/><span className="progressbar">{progress}%</span>
+          </div>
+        
         <div className="kapsayici">
           <input type="file" id="file" onChange={handleChange} hidden />
           <label htmlFor="file" id="selector">

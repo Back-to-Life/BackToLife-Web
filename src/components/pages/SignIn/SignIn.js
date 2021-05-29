@@ -24,8 +24,6 @@ export default function SignIn() {
   const submit = async (e) => {
     let item = { email, password };
     console.log(item);
-    
-
 
     for (var i = 0; i < 2; i++) {
 
@@ -44,10 +42,6 @@ export default function SignIn() {
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result));
         console.log("result", result);
-
-
-
-
 
 
       }
@@ -77,6 +71,7 @@ export default function SignIn() {
         verify = await verify.json();
         console.log("verify:", verify)
 
+   
 
 
       }
@@ -87,11 +82,8 @@ export default function SignIn() {
 
 
 
-
-
-
-
-    // window.location.reload();
+     window.location.reload();
+    
 
   };
 
