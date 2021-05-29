@@ -19,8 +19,8 @@ const ProgressBar = () =>{
         <div style={{width:"200px", padding: "40px 40px 40px 40px"}}>
 
                 <CircularProgressbar
-                 value={point}
-                 text={`${point} ₺`}
+                 value={point/10}
+                 text={`${point/10} ₺`}
                  styles={buildStyles({
                     
                     strokeLinecap: 'round',
