@@ -24,9 +24,12 @@ export default function SignIn() {
   const submit = async (e) => {
     let item = { email, password };
     console.log(item);
+<<<<<<< HEAD
 
     
 
+=======
+>>>>>>> 8ce493d8326fc190f0ec67199cc85f1e8fd1fe3a
 
     for (var i = 0; i < 2; i++) {
 
@@ -44,10 +47,6 @@ export default function SignIn() {
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result));
         console.log("result", result);
-
-
-
-
 
 
       }
@@ -75,6 +74,11 @@ export default function SignIn() {
         }).then(history.push("/"))
         verify = await verify.json();
         console.log("verify:", verify)
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> 8ce493d8326fc190f0ec67199cc85f1e8fd1fe3a
 
 
       }
@@ -84,8 +88,16 @@ export default function SignIn() {
 
 
 
+<<<<<<< HEAD
      window.location.reload();
   }
+=======
+
+     window.location.reload();
+    
+
+  };
+>>>>>>> 8ce493d8326fc190f0ec67199cc85f1e8fd1fe3a
 
 
 
