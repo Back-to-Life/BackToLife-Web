@@ -24,7 +24,6 @@ const ImageUpload = () => {
     }
   };
 
-
     const handleUpload = async () => {
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
       uploadTask.on(
@@ -67,9 +66,7 @@ const ImageUpload = () => {
             });
 
           });
-        
 
-      }
 
 
   useEffect(() => {
@@ -111,7 +108,8 @@ const ImageUpload = () => {
  
   
 }
+
+
+}
+
   export default ImageUpload
-
-
-
