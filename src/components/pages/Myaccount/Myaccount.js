@@ -70,7 +70,7 @@ function Myaccount() {
       })();
     }, []);
 
-
+    
 
 
   return (
@@ -150,11 +150,8 @@ function Myaccount() {
                      {
                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
 
-                      
-
-
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
-                
+
                        :
                        <>
                          <li><img className="more" src="images/ellipsis.png" alt=""/> </li>

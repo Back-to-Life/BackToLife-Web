@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
-//import { login } from "../../../../../BackToLife-Backend/controllers/auth";
-
+import axios from "axios"
 export default function SignIn() {
 
   useEffect(() => {
@@ -15,7 +14,7 @@ export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  
+
 
 
   const history = useHistory();
@@ -24,55 +23,81 @@ export default function SignIn() {
 
   const submit = async (e) => {
     let item = { email, password };
-
     console.log(item);
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWZiMDkzMDYxY2YzNGRjY2EyMzAxMiIsImlhdCI6MTYyMjA0NDgzMiwiZXhwIjoxNjI0NjM2ODMyfQ.3GVJw8Bq5U6j-VVt7CeOf5AwuPrVLdJtDu6nWl5yLNI"
-    
-
     
 
 
-    let result = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      body: JSON.stringify(item),
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
+    for (var i = 0; i < 2; i++) {
+
+      if (!localStorage.getItem("user-info")) {
+
+        alert("I'm result")
+        let result = await fetch("http://localhost:5000/login", {
+          method: "POST",
+          body: JSON.stringify(item),
+          headers: {
+            "Content-Type": "application/json"
+
+          },
+
+        }).then(history.push("/"));
+        result = await result.json();
+        localStorage.setItem("user-info", JSON.stringify(result));
+        console.log("result", result);
+
+
+
+
+
+
+      }
+      else {
+
+        let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1].toString()
+
+
+        alert("I'm verify")
+        let myRefreshToken = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1]
+        let data = {myRefreshToken}
+
         
-      },
-
-     
-      
+        console.log(myRefreshToken)
+        
       
 
-    }).then(history.push("/"));
 
-    
+        let verify = await fetch(`http://localhost:5000/users/${idUser}/checkToken`, {
+          method: "PUT",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json"
+
+          },
+        }).then(history.push("/"))
+        verify = await verify.json();
+        console.log("verify:", verify)
 
 
 
-    result = await result.json();
-    localStorage.setItem("user-info", JSON.stringify(result));
-    let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-    
-    console.log("token: ", token)
-
-    console.log("result", result);
-    if (result.status == 200) {
-      console.log("result", result.body);
+      }
 
     }
-    
 
 
 
-    window.location.reload();
-    
+
+
+
+
+
+
+    // window.location.reload();
+
   };
-  
 
 
- 
+
+
   return (
     <>
       <div className="wrapper1">
