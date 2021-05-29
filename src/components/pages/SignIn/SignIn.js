@@ -24,6 +24,7 @@ export default function SignIn() {
   const submit = async (e) => {
     let item = { email, password };
     console.log(item);
+
     
 
 
@@ -31,7 +32,6 @@ export default function SignIn() {
 
       if (!localStorage.getItem("user-info")) {
 
-        alert("I'm result")
         let result = await fetch("http://localhost:5000/login", {
           method: "POST",
           body: JSON.stringify(item),
@@ -56,7 +56,6 @@ export default function SignIn() {
         let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1].toString()
 
 
-        alert("I'm verify")
         let myRefreshToken = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1]
         let data = {myRefreshToken}
 
@@ -78,7 +77,6 @@ export default function SignIn() {
         console.log("verify:", verify)
 
 
-
       }
 
     }
@@ -86,14 +84,8 @@ export default function SignIn() {
 
 
 
-
-
-
-
-
-    // window.location.reload();
-
-  };
+     window.location.reload();
+  }
 
 
 
