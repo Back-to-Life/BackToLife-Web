@@ -68,8 +68,8 @@ const ImageUpload = () => {
           });
 
 
-
-  useEffect(() => {
+    }
+    useEffect(() => {
     (async () => {
 
       let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
@@ -107,7 +107,7 @@ const ImageUpload = () => {
 
  
   
-}
+
 
 
 }
