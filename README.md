@@ -19,6 +19,6 @@ En- The website of the Back To Life project, which aims to ensure that users ear
 | ------------- | ------------- |
 | ![ezgif com-gif-maker (21)](https://user-images.githubusercontent.com/34038741/120107888-6bd95a00-c16b-11eb-8b61-dc8eed5431d6.gif)  | ![logout](https://user-images.githubusercontent.com/34038741/120105192-970a7c00-c160-11eb-9c42-eee261b0a2e6.gif)  |
 
-| Points   🪙       | How To Work ♻️|
+| Points  💵       | How To Work ♻️|
 | ------------- | ------------- |
 | <img width="1435" alt="Ekran Resmi 2021-05-30 14 33 23" src="https://user-images.githubusercontent.com/34038741/120105300-08e2c580-c161-11eb-8ff9-06607a7d55a6.png">  | <img width="1436" alt="Ekran Resmi 2021-05-30 14 32 59" src="https://user-images.githubusercontent.com/34038741/120105304-0c764c80-c161-11eb-876f-32c364256930.png">  |
