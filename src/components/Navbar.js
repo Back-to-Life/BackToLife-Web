@@ -36,6 +36,7 @@ function Navbar() {
     const {t, i18n} = useTranslation();
     function TranslateClick(lang) {
         i18n.changeLanguage(lang);
+        window.location.reload();
     }
 
     
