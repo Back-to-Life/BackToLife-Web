@@ -1,8 +1,8 @@
 # Back To Life Website
 
-Tr- Kullanıcıların geri dönüşüm yaparken kazanmasını amaçlayan ve bu sayede geri dönüşümü toplumun bir çok kesimine aşılamayı sağlayacak olan Back To Life projesinin websitesi React Js ile yazılmıştır. 
+**Tr-** Kullanıcıların geri dönüşüm yaparken kazanmasını amaçlayan ve bu sayede geri dönüşümü toplumun bir çok kesimine aşılamayı sağlayacak olan Back To Life projesinin websitesi React Js ile yazılmıştır. 
 
-En- The website of the Back To Life project, which aims to ensure that users earn while recycling and thus instilling recycling in many parts of the society, was written in React Js.
+**En-** The website of the Back To Life project, which aims to ensure that users earn while recycling and thus instilling recycling in many parts of the society, was written in React Js.
 
 ## Nasıl Çalışır Demo / How To Work Demo ⚙️ 
 
