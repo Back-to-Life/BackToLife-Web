@@ -16,7 +16,7 @@ const ProgressBar = () =>{
    }, []);
    
     return(
-        <div style={{width:"200px", padding: "40px 40px 40px 40px"}}>
+        <div style={{width:"230px", padding: "40px 40px 40px 40px"}}>
 
                 <CircularProgressbar
                  value={point/10}

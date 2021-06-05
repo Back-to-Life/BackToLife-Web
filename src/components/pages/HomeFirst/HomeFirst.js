@@ -17,7 +17,7 @@ function HomeFirst() {
                    
                     <div className="wrapperTextHome">
                     <div className="headerHome">
-                        {/* <h1>{t('Home.header')}</h1> */}
+                      
                         <h1><Typical
                         steps={[  t('Home.header'), 
                                    1000,
