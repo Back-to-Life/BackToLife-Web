@@ -11,6 +11,7 @@ import { Button } from './Button'
 import './Navbar.css'
 import {IconContext} from 'react-icons/lib'
 import { useTranslation } from 'react-i18next';
+import { Fade } from 'react-reveal'
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -54,34 +55,45 @@ function Navbar() {
                   <div className="menu-icon" onClick={handleClick}>
                       {click ? <FaTimes/> : <FaBars/>}
                   </div>
+                  
                   <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                      {
+                        
                          localStorage.getItem('user-info') ?
                          <>
+                         <Fade top duration={2000}>
                          <li className="nav-item">
                           <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
                               {t('Navbar.home')}
                           </Link>
-                      </li>
+                          
+                      </li></Fade>
+                      <Fade top duration={2500}>
                       <li className="nav-item">
                           <Link to='/howtowork' className='nav-links' onClick={closeMobileMenu}>
                               <VscServerProcess className="navbar-icon"/>
                               {t('Navbar.work')}
                           </Link>
                       </li>
+                      </Fade>
+                      <Fade top duration={2200}>
                       <li className="nav-item">
                           <Link to='/points' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlinePlusCircle className="navbar-icon"/>
                               {t('Navbar.points')}
                           </Link>
                       </li>
+                      </Fade>
+                      <Fade top duration={2600}>
                       <li className="nav-item">
                           <Link to='/myaccount' className='nav-links' onClick={closeMobileMenu}>
                               <CgProfile className="navbar-icon"/>
                               {t('Navbar.account')}
                           </Link>
                       </li>
+                      </Fade>
+                      <Fade top duration={2400}>
                       <li className="nav-btn">
                           {button ? (
                               <Link to='/logout' className='btn-link' >
@@ -96,27 +108,35 @@ function Navbar() {
                               </Link>
                           )}
                       </li>
+                      </Fade>
                          </>
                          :
-                         <>
+                         <> <Fade top duration={2000}>
                               <li className="nav-item">
                           <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlineHome className="navbar-icon"/>
                               {t('Navbar.home')}
                           </Link>
-                      </li>
+                          
+                         </li>
+                        </Fade>
+                        <Fade top duration={2500}>
                       <li className="nav-item">
                           <Link to='/howtowork' className='nav-links' onClick={closeMobileMenu}>
                               <VscServerProcess className="navbar-icon"/>
                               {t('Navbar.work')}
                           </Link>
                       </li>
+                      </Fade>
+                      <Fade top duration={2200}>
                       <li className="nav-item">
                           <Link to='/points' className='nav-links' onClick={closeMobileMenu}>
                               <AiOutlinePlusCircle className="navbar-icon"/>
                               {t('Navbar.points')}
                           </Link>
                       </li>
+                      </Fade>
+                      <Fade top duration={2600}>
                           <li className="nav-btn">
                           {button ? (
                               <Link to='/signup' className='btn-link'>
@@ -132,6 +152,8 @@ function Navbar() {
                               </Link>
                           )}
                       </li>
+                      </Fade>
+                      <Fade top duration={2000}>
                       <li className="nav-btn">
                           {button ? (
                               <Link to='/login' className='btn-link' >
@@ -146,12 +168,14 @@ function Navbar() {
                               </Link>
                           )}
                       </li>
+                      </Fade>
                          </>
                      } 
-                   
-                      <a className="languagebuttonTr" onClick={()=>TranslateClick('tr')}><img src="images/turkey.png" alt=""/></a>
+                    <a className="languagebuttonTr" onClick={()=>TranslateClick('tr')}><img src="images/turkey.png" alt=""/></a>
                     <a className="languagebuttonEn" onClick={()=>TranslateClick('en')}><img src="images/united-kingdom.png"></img></a>
                   </ul>
+                  
+                 
                 </div> 
            </div>
            </IconContext.Provider>
