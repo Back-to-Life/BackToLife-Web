@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Splash.css";
 import { Redirect } from "react-router-dom";
 
-function AnimatedSplash(props) {
+function AnimatedSplash() {
   return (
     <div className="splashbody">
     <div className="logo_wrapper">
