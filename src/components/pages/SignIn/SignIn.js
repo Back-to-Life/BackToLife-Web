@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
-import axios from "axios"
 export default function SignIn() {
 
   useEffect(() => {
@@ -28,6 +27,7 @@ export default function SignIn() {
 
       if (!localStorage.getItem("user-info")) {
 
+
         let result = await fetch("http://localhost:5000/login", {
           method: "POST",
           body: JSON.stringify(item),
@@ -46,6 +46,7 @@ export default function SignIn() {
       else {
 
         let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1].toString()
+
 
 
         let myRefreshToken = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1]
