@@ -23,6 +23,8 @@
     },
     "Home":{
         "header":"Back To Life!",
+        "header1":"Beraber İnşa Ediyoruz!",
+        "header2":"Biz En İyisiyiz!",
         "description": "Satın aldığınız çeşitli ürünlerin geri dönüştürürken para kazanmak istiyorsanız bize katılın!",
         "button":"Başlarken"
     },
