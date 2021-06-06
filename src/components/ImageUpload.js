@@ -24,28 +24,28 @@ const ImageUpload = () => {
     }
   };
 
-    const handleUpload = async () => {
-      const uploadTask = storage.ref(`images/${image.name}`).put(image);
-      uploadTask.on(
-        "state_changed",
-        snapshot => { //dosyanın yüklenme durumu için 
-          const progress = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-          setProgress(progress);
-        },
-        error => {
-          console.log(error);
-        },
-        async () => {
-          storage
-            .ref("images")
-            .child(image.name)
-            .getDownloadURL()
-            .then(imageUrl => {
-              setUrl(imageUrl);
-              console.log(imageUrl.toString());
+  const handleUpload = async () => {
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => { //dosyanın yüklenme durumu için 
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgress(progress);
+      },
+      error => {
+        console.log(error);
+      },
+      async () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(imageUrl => {
+            setUrl(imageUrl);
+            console.log(imageUrl.toString());
 
-            localStorage.setItem('imageUrl',imageUrl.toString());
+            localStorage.setItem('imageUrl', imageUrl.toString());
 
             let item = { imageUrl }
             console.log("new url: ", item)
@@ -60,56 +60,56 @@ const ImageUpload = () => {
                 }
 
 
-              }).then( window.location.reload())
+              }).then(window.location.reload())
 
-
-            });
 
           });
 
+      });
 
     }
+
     useEffect(() => {
     (async () => {
 
-      let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-      const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
-      const jsoImg = await resImg.json()
-      setdataImage(jsoImg.data.imageUrl);
 
-    })();
+        let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
+        const jsoImg = await resImg.json()
+        setdataImage(jsoImg.data.imageUrl);
 
-  },
-    []);
+      })();
+
+    },
+      []);
 
     var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "images/nullpp.jpeg" : img
 
-  return (
-    <div >
-      <IconContext.Provider value={{ color: '#58c4bc' }}>
-        <br />
-          <img src={imageChange}  />  
+    return (
+      <div >
+        <IconContext.Provider value={{ color: '#58c4bc' }}>
+          <br />
+          <img src={imageChange} />
           <div className="progrs">
-          <progress value={progress} max={100}/><span className="progressbar">{progress}%</span>
+            <progress value={progress} max={100} /><span className="progressbar">{progress}%</span>
           </div>
-        
-        <div className="kapsayici">
-          <input type="file" id="file" onChange={handleChange} hidden />
-          <label htmlFor="file" id="selector">
-            <MdPhotoLibrary className="smallicon" /> <span className="imgSpan">{t('Account.select')}</span></label>
-          <label className="buttons" onClick={handleUpload} align="center" >
-            <RiFolderUploadFill className="smallicon" /> <span className="imgSpan">{t('Account.upload')}</span></label>
-        </div>
-      </IconContext.Provider>
-    </div>
-  )
+
+          <div className="kapsayici">
+            <input type="file" id="file" onChange={handleChange} hidden />
+            <label htmlFor="file" id="selector">
+              <MdPhotoLibrary className="smallicon" /> <span className="imgSpan">{t('Account.select')}</span></label>
+            <label className="buttons" onClick={handleUpload} align="center" >
+              <RiFolderUploadFill className="smallicon" /> <span className="imgSpan">{t('Account.upload')}</span></label>
+          </div>
+        </IconContext.Provider>
+      </div>
+    )
 
 
- 
-  
+
 
 
 
 }
 
-  export default ImageUpload
+export default ImageUpload
