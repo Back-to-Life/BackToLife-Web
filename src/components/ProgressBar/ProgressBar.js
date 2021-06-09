@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import './ProgressBar.css'
-import {BASE_URL} from '../../../enviroments'
+import {BASE_URL} from '../../enviroments'
 
 const ProgressBar = () =>{
    
