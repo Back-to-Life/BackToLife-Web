@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import './Chart.css'
 import { useTranslation } from 'react-i18next';
+import {BASE_URL} from '../../enviroments'
 
  const DynamicChart = () => {
     const {t, i18n} = useTranslation();
@@ -11,7 +12,7 @@ import { useTranslation } from 'react-i18next';
      const Chart = () => {
 
          let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
-         axios.get(`http://localhost:5000/points/${idUser}/Points`)
+         axios.get(`${BASE_URL}/points/${idUser}/Points`)
          .then(res => {
              let dataObj = res.data.data
              setChartData({

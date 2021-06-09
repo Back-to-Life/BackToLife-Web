@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import './SignUp.css'
 import { useTranslation } from 'react-i18next';
+import {BASE_URL} from '../../../enviroments'
 
 export function SignUp () {
  useEffect(()=>{
@@ -23,7 +24,7 @@ async function signUp()
   let item = {name, email, password}
   console.log(item)
 
-  let result = await fetch("http://localhost:5000/signup", 
+  let result = await fetch(`${BASE_URL}/signup`, 
   {
     method: "POST",
     body:JSON.stringify(item),
@@ -31,20 +32,12 @@ async function signUp()
       "Content-Type":"application/json",
       "Accept":"application/json"
     }
-  
 
   }).then(history.push("/confirm"))
 
-  
-
-  
   result = await result.json()
 console.log("result", result)
 }
-
-
-
-   
 
       return (
     
@@ -98,22 +91,13 @@ console.log("result", result)
        
         
     <button className = "buttonsign"
-
     onClick={signUp}
-
-           value = "Submit"
-           >
+           value = "Submit">
              <h5>{t('Sign.signup')}</h5> 
     </button>
-  
-
               <Link className="linklogin" to="/login" >
                 {t('Sign.accountIn')}
-
-
-    </Link>
-        
-            
+              </Link>
         </form>
       </div>
        </div>

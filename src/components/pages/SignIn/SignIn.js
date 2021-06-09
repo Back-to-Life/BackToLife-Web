@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./SignIn.css";
+import {BASE_URL} from '../../../enviroments'
+
 export default function SignIn() {
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function SignIn() {
       if (!localStorage.getItem("user-info")) {
 
 
-        let result = await fetch("http://localhost:5000/login", {
+        let result = await fetch(`${BASE_URL}/login`, {
           method: "POST",
           body: JSON.stringify(item),
           headers: {
@@ -46,19 +48,10 @@ export default function SignIn() {
       else {
 
         let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1].toString()
-
-
-
         let myRefreshToken = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1]
         let data = {myRefreshToken}
 
-        
-        console.log(myRefreshToken)
-        
-      
-
-
-        let verify = await fetch(`http://localhost:5000/users/${idUser}/checkToken`, {
+        let verify = await fetch(`${BASE_URL}/users/${idUser}/checkToken`, {
           method: "PUT",
           body: JSON.stringify(data),
           headers: {
@@ -68,23 +61,10 @@ export default function SignIn() {
         }).then(history.push("/"))
         verify = await verify.json();
         console.log("verify:", verify)
-
-
-
       }
-
     }
-
-
-
-
-
      window.location.reload();
   }
-
-
-
-
   return (
     <>
       <div className="wrapper1">

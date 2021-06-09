@@ -5,7 +5,7 @@ import { RiFolderUploadFill } from 'react-icons/ri'
 import './ImageUpload.css'
 import { storage } from '../components/firebase'
 import { useTranslation } from "react-i18next";
-
+import {BASE_URL} from '../enviroments'
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -51,7 +51,7 @@ const ImageUpload = () => {
             console.log("new url: ", item)
 
             let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-            let result = fetch(`http://localhost:5000/users/${idUser}/updateUrl`,
+            let result = fetch(`${BASE_URL}/users/${idUser}/updateUrl`,
               {
                 method: "PUT",
                 body: JSON.stringify(item),
@@ -74,7 +74,7 @@ const ImageUpload = () => {
 
 
         let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-        const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
+        const resImg = await fetch(`${BASE_URL}/users/${idUser}`)
         const jsoImg = await resImg.json()
         setdataImage(jsoImg.data.imageUrl);
 

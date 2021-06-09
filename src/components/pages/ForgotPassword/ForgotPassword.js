@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './ForgotPassword.css'
 import { useTranslation } from 'react-i18next';
-
+import {BASE_URL} from '../../../enviroments'
 
 export default function ForgotPassword () {
     const {t, i18n} = useTranslation();
@@ -14,7 +14,7 @@ async function forgotPassword()
     let item = {email}
     console.log(email)
     
-  let result = await fetch("http://localhost:5000/forgotPassword", 
+  let result = await fetch(`${BASE_URL}/forgotPassword`, 
   {
     method: "POST",
     body:JSON.stringify(item),

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import './ProgressBar.css'
-
+import {BASE_URL} from '../../enviroments'
 
 const ProgressBar = () =>{
    
@@ -9,7 +9,7 @@ const ProgressBar = () =>{
    useEffect(()=>{
        (async () => {
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-        const resPoint = await fetch(`http://localhost:5000/users/${idUser}`)
+        const resPoint = await fetch(`${BASE_URL}/users/${idUser}`)
         const jsonPoint = await resPoint.json()
         setPoint(jsonPoint.data.point); 
        })();

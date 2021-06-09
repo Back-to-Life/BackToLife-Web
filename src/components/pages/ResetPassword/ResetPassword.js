@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './SignIn.css'
-
+import {BASE_URL} from '../../../enviroments'
 
 export default function ResetPassword() {
     const {t, i18n} = useTranslation();
@@ -19,7 +19,7 @@ export default function ResetPassword() {
  
     let item = { email, newPassword, resetToken }
         console.log(item)
-    let result = await fetch("http://localhost:5000/resetPassword", 
+    let result = await fetch(`${BASE_URL}/resetPassword`, 
         {
             method: "PUT",
             body:JSON.stringify(item)

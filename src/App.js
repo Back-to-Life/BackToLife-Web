@@ -13,7 +13,6 @@ import Confirm from './components/pages/EmailConfirmation/Confirm';
 import HomeThird from './components/pages/HomeThird/HomeThird';
 import ForgotPassword from './components/pages/ForgotPassword/ForgotPassword'
 import ResetPassword from './components/pages/ResetPassword/ResetPassword'
-import Protected from './components/pages/Protected';
 import Splash from './components/pages/Splash/Splash';
 
 
@@ -37,9 +36,7 @@ export default class App extends Component {
     <Switch>
    
       <Route path='/home' exact component={Home}/>
-      <Route path='/myaccount'>
-        <Protected Cmp={Myaccount}/>
-      </Route>
+      <Route path='/myaccount' exact component={Myaccount}/>
       <Route path='/howtowork' exact component={HomeThird}/>
       <Route path='/points' exact component={Points}/>
       <Route path='/signup' exact component={SignUp}/>
@@ -65,9 +62,7 @@ export default class App extends Component {
       <Switch>
      
         <Route path='/home' exact component={Home}/>
-        <Route path='/myaccount'>
-          <Protected Cmp={Myaccount}/>
-        </Route>
+        <Route path='/myaccount' exact component={Myaccount}/>
         <Route path='/howtowork' exact component={HomeThird}/>
         <Route path='/points' exact component={Points}/>
         <Route path='/signup' exact component={SignUp}/>
