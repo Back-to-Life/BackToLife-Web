@@ -104,7 +104,7 @@ function Navbar() {
                               </Link>
                           ):(
                               <Link to='/logout' className='btn-link' onClick={closeMobileMenu}>
-                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>LOG OUT</Button>
+                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'> {t('Navbar.out')}</Button>
                               </Link>
                           )}
                       </li>

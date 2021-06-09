@@ -3,9 +3,9 @@ import { withRouter, Redirect, useHistory } from "react-router";
 import { Link } from 'react-router-dom';
 import './Logout.css'
 import { useTranslation } from 'react-i18next';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-reveal'
+import {BASE_URL} from '../../../enviroments'
 
-//console.log("token:", token);
 export default function Logout() {
   const history = useHistory();
   const { t, i18n } = useTranslation();
@@ -13,13 +13,9 @@ export default function Logout() {
 
   async function logout() {
 
-    /*let token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1].toString()
-    alert(token);*/
     const token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('" "')[0]
 
-
-
-    let result = await fetch("http://localhost:5000/logout",
+    let result = await fetch(`${BASE_URL}/logout`,
       {
         method: "GET",
         headers: {

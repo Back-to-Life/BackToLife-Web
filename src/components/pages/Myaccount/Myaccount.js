@@ -12,12 +12,13 @@ import { useState, useEffect } from "react";
 import ChartRecType from "../../Chart/ChartRecType.js"
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { css } from "@emotion/react";
+import {BASE_URL} from '../../../enviroments'
 
 function Myaccount() {
   const { t, i18n } = useTranslation();
 
   const sort = async(e) => {
-  let result = await fetch("http://localhost:5000/sort", 
+  let result = await fetch(`${BASE_URL}/sort`, 
   {
     method: "GET"
   })
@@ -44,14 +45,14 @@ function Myaccount() {
     }, 3000);
 
     (async ()=>{
-        const respHero = await fetch("http://localhost:5000/sort") //fetch user name, id and point
+        const respHero = await fetch(`${BASE_URL}/sort`) //fetch user name, id and point
         const jsonHero = await respHero.json()
         setHero(jsonHero.data.names);
         setHid(jsonHero.data.ids);
         setPointH(jsonHero.data.points);
 
         let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1] // fetch login user id, name, point
-        const resId = await fetch(`http://localhost:5000/users/${idUser}`)
+        const resId = await fetch(`${BASE_URL}/users/${idUser}`)
         const jsonId = await resId.json()
         setId(idUser);
         setNameUser(jsonId.data.name)
