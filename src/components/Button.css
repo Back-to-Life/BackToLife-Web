@@ -112,3 +112,12 @@
         padding: 8px 80px;
     }
 }
+@media screen and (max-width: 400px) {
+    .btn--wide{
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+    .btn--primary{
+        margin-top: 4%;
+    }
+}

@@ -153,3 +153,19 @@
       flex-direction: column;
     }
   }
+  @media screen and (max-width: 400px) {
+    .footer-subscription-heading{
+      font-size: 20px;
+    }
+    .footer-link-items{
+      width: 130px;
+    }
+    
+    .footer-link-items h2{
+      font-size: 20px;
+    }
+    .footer-subscription{
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }

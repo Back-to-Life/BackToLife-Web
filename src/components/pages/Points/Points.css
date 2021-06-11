@@ -48,9 +48,6 @@
     margin-bottom: 5px;
     font-size: 24px;
 }
-.pricing__container-cardInfo h4{
-    font-size: 40px;
-}
 .pricing__container-cardInfo p{
     font-size: 14px;
     margin-bottom: 24px;
@@ -112,5 +109,23 @@
     }
     .pricing__container-card:hover{
         transform: none;
+    }
+}
+@media screen and (max-width:400px){
+    .pricing__heading{
+        font-size: 25px;
+    }
+    .pricing__container-card{
+        height: 350px;
+    }
+    .pricing__container-cardInfo h3{
+        font-size: 18px;
+    }
+    .pricing__container-features li{
+        font-size: 17px;
+    }
+    .icon img{
+        width: 90px;
+        margin-left: 3%;
     }
 }

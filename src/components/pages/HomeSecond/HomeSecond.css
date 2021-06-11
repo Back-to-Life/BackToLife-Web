@@ -14,7 +14,7 @@
     transform: translateY(20%);
 }
 .imgSave img{
-    max-width: 600px;
+    width: 600px;
     padding-left: 20px;
 }
 .headerSave{  
@@ -37,9 +37,16 @@
     font-size: 18px;
 }
 .wrapperTextSave{
-    max-width: 500px;
+    width: 500px;
 }
-
+@media screen and (max-width:1100px) {
+    .headerSave h1{
+        font-size: 40px;
+    }
+    .textSave {
+      width: 80%;
+    }
+}
 @media screen and (max-width:960px) {
     .containerSave{
        background: url("../../4responsive.png");
@@ -60,11 +67,29 @@
     }
 
 }
-@media screen and (max-width:1100px) {
+@media screen and (max-width:400px) {
     .headerSave h1{
-        font-size: 40px;
+        font-size: 25px;
+        
     }
-    .textSave {
-      width: 80%;
+    .textSave{
+        width: 200%;
+    }
+    .wrapperSave{
+        height: 80vh;
+    }
+    .wrapperTextSave{
+        position: relative;
+        top: 120px;
+        right: 220px;
+        width: 300px;
+    }
+    .textSave p {
+        font-size: 15px;
+    }
+    .imgSave{
+        position: relative;
+        top: -160px;
+        left: 60px;
     }
 }

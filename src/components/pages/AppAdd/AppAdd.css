@@ -88,3 +88,25 @@
         font-size: 15px;
     }
 }
+@media screen and (max-width:400px) {
+    .headerAdd h1{
+        font-size: 32px;
+    }
+    .headerAdd{
+        width: 300px;
+    }
+    .imgAdd{
+        position: relative;
+        top: 250px;
+    }
+    .imgAdd img{
+        width: 300px;
+    }
+    .wrapperText{
+        position: relative;
+        right: 280px;
+    }
+    .textAdd{
+        font-size: 17px;
+    }
+}
