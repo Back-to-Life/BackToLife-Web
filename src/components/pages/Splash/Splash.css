@@ -56,3 +56,9 @@
       background-size: cover;
     }
   }
+  @media screen  and (max-width:400px){
+    .screen{
+      background: url("Splash.png"); 
+      background-size: cover;
+    }
+  }
