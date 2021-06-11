@@ -126,3 +126,8 @@
   color: #52d0bd;
   padding-top: 10px;
 }
+@media screen and (max-width:400px){
+  .form-wrapper{
+    width: 300px;
+  }
+}

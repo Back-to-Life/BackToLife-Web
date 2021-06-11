@@ -263,9 +263,8 @@ li.slide.selected{
         right: 35px;
     }
     .nameuser{
-        position: relative;
-        left: 40px;
-        top: -32px;
+        position: absolute;
+        left: 28%;
         font-size: 16px;
     }
     .headerHero h1{
