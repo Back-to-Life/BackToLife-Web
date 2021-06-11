@@ -251,3 +251,27 @@ li.slide.selected{
     }
     
 }
+@media screen and (max-width:400px){
+    .kucukresim{
+        display: none;
+    }
+    .sort{
+        width: 250px;
+    }
+    .indexUser{
+        position: relative;
+        right: 35px;
+    }
+    .nameuser{
+        position: relative;
+        left: 40px;
+        top: -32px;
+        font-size: 16px;
+    }
+    .headerHero h1{
+        font-size: 25px;
+    }
+    .containerBigCard{
+        display: none;
+    }
+}

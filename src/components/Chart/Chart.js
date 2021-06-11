@@ -91,9 +91,9 @@ import {BASE_URL} from '../../enviroments'
          })
       
      }
-     useEffect(() => {
-         Chart();
-       }, []);
+      useEffect(() => {
+          Chart();
+        }, []);
        return(
            <div className="App">
                <h1>{t('Account.chart')}</h1>
