@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
-import {Button} from '../../Button';
 import { useTranslation } from 'react-i18next';
 
 import {
