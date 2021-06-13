@@ -13,8 +13,6 @@ export default function Logout() {
 
   async function logout() {
 
-    const token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('" "')[0]
-
     let result = await fetch(`${BASE_URL}/logout`,
       {
         method: "GET",
@@ -22,9 +20,6 @@ export default function Logout() {
           "Authorization": "Baerer " + localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1].toString()
 
         },
-
-
-
 
       }).then(localStorage.removeItem("user-info"))
       .then(history.push("/home"))
