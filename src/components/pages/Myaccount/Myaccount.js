@@ -15,20 +15,6 @@ import { css } from "@emotion/react";
 import {BASE_URL} from '../../../enviroments'
 
 function Myaccount() {
-  const { t, i18n } = useTranslation();
-
-  const sort = async(e) => {
-  let result = await fetch(`${BASE_URL}/sort`, 
-  {
-    method: "GET"
-  })
-  result = await result.json()
-
-  }
-  const override = css`
-    margin-top: 30%;
-    margin-left: -5%;
-`;
   const [hero, setHero] = useState([]);
   const [idH, setHid] = useState([]);
   const [pointH, setPointH] = useState([]);
@@ -37,6 +23,20 @@ function Myaccount() {
   const [nameUser, setNameUser] = useState([]);
   const [pointUser, setPointUser] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const { t, i18n } = useTranslation();
+
+  const sort = async(e) => {
+  let result = await fetch(`${BASE_URL}/sort`, 
+  {
+    method: "GET"
+  })
+  result = await result.json()
+  }
+  
+  const override = css`
+    margin-top: 30%;
+    margin-left: -5%;`;
 
   useEffect(()=>{
     setLoading(true)
@@ -61,13 +61,9 @@ function Myaccount() {
 
         let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0] // get user rank
         setIndex(sortUser) 
-
        
       })();
     }, []);
-
-    
-
 
   return (
 
