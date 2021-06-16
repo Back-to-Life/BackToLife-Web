@@ -14,7 +14,8 @@ const ImageUpload = () => {
   const [image, setImage] = useState(null);
   const [imageUrl, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
-
+  const [nameUser, setName] = useState([]);  
+  let idUser = localStorage.getItem("user-info").split(",")[2].split(":")[1].split('"')[1];
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -22,7 +23,7 @@ const ImageUpload = () => {
   };
 
   const handleUpload = async () => {
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = storage.ref(`images/${nameUser} -> ${idUser}`).put(image);
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -38,7 +39,7 @@ const ImageUpload = () => {
       async () => {
         storage
           .ref("images")
-          .child(image.name)
+          .child(`${nameUser} -> ${idUser}`)
           .getDownloadURL()
           .then((imageUrl) => {
             setUrl(imageUrl);
@@ -49,11 +50,7 @@ const ImageUpload = () => {
             let item = { imageUrl };
             console.log("new url: ", item);
 
-            let idUser = localStorage
-              .getItem("user-info")
-              .split(",")[2]
-              .split(":")[1]
-              .split('"')[1];
+           
             let result = fetch(`${BASE_URL}/users/${idUser}/updateUrl`, {
               method: "PUT",
               body: JSON.stringify(item),
@@ -72,14 +69,11 @@ const ImageUpload = () => {
 
   useEffect(() => {
     (async () => {
-      let idUser = localStorage
-        .getItem("user-info")
-        .split(",")[2]
-        .split(":")[1]
-        .split('"')[1];
+      
       const resImg = await fetch(`${BASE_URL}/users/${idUser}`);
       const jsoImg = await resImg.json();
       setdataImage(jsoImg.data.imageUrl);
+      setName(jsoImg.data.name)
     })();
   }, []);
 
