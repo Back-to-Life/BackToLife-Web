@@ -5,22 +5,18 @@ import "./SignIn.css";
 import {BASE_URL} from '../../../enviroments'
 
 export default function SignIn() {
+  const { t, i18n } = useTranslation();
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const history = useHistory();
 
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       history.push("/");
     }
   });
-  const { t, i18n } = useTranslation();
-
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-
-
-
-  const history = useHistory();
-
-
 
   const submit = async (e) => {
     let item = { email, password };
@@ -28,7 +24,6 @@ export default function SignIn() {
     for (var i = 0; i < 2; i++) {
 
       if (!localStorage.getItem("user-info")) {
-
 
         let result = await fetch(`${BASE_URL}/login`, {
           method: "POST",

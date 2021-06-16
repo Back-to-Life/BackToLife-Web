@@ -1,109 +1,94 @@
-import React,{useState,useEffect} from 'react';
-import { Link, useHistory} from 'react-router-dom';
-import './SignUp.css'
-import { useTranslation } from 'react-i18next';
-import {BASE_URL} from '../../../enviroments'
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import "./SignUp.css";
+import { useTranslation } from "react-i18next";
+import { BASE_URL } from "../../../enviroments";
 
-export function SignUp () {
- useEffect(()=>{
-   if(localStorage.getItem('user-info')){
-     history.push("/");
-   }
- })
+export function SignUp() {
+  const { t, i18n } = useTranslation();
 
-const {t, i18n} = useTranslation();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const [name, setName] = useState("")
-const [email, setEmail] = useState("")
-const [password, setPassword] = useState("")
+  const history = useHistory();
 
-const history = useHistory();
-
-async function signUp()
-{
-  let item = {name, email, password}
-  console.log(item)
-
-  let result = await fetch(`${BASE_URL}/signup`, 
-  {
-    method: "POST",
-    body:JSON.stringify(item),
-    headers: {
-      "Content-Type":"application/json",
-      "Accept":"application/json"
+  useEffect(() => {
+    if (localStorage.getItem("user-info")) {
+      history.push("/");
     }
+  });
 
-  }).then(history.push("/confirm"))
+  async function signUp() {
+    let item = { name, email, password };
+    console.log(item);
 
-  result = await result.json()
-console.log("result", result)
-}
+    let result = await fetch(`${BASE_URL}/signup`, {
+      method: "POST",
+      body: JSON.stringify(item),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }).then(history.push("/confirm"));
 
-      return (
-    
-     <>
+    result = await result.json();
+    console.log("result", result);
+  }
+
+  return (
+    <>
       <div className="wrapper1">
-       
-         
         <div className="form-wrapper">
+          <h1>{t("Sign.signup")}</h1>
+          <form>
+            <div className="firstName">
+              <label htmlFor="firstName"></label>
+              <input
+                type="text"
+                className=""
+                placeholder={t("Sign.name")}
+                type="text"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+            </div>
 
-        <h1>{t('Sign.signup')}</h1>
-        <form >
-         <div className="firstName">
-          <label  htmlFor="firstName"></label> 
-          <input 
-          type="text"
-          className=""
-          placeholder={t('Sign.name')}
-          type="text" 
-          name="name" 
-          onChange = {(e) => setName(e.target.value)} 
-          value =  {name}
-         
-          />
+            <div className="email">
+              <label htmlFor="email"></label>
+              <input
+                type="text"
+                className=""
+                placeholder={t("Sign.email")}
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+            </div>
+            <div className="password">
+              <label htmlFor="password"></label>
+              <input
+                type="text"
+                className=""
+                placeholder={t("Sign.password")}
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+            </div>
+
+            <button className="buttonsign" onClick={signUp} value="Submit">
+              <h5>{t("Sign.signup")}</h5>
+            </button>
+            <Link className="linklogin" to="/login">
+              {t("Sign.accountIn")}
+            </Link>
+          </form>
         </div>
-        
-        <div className="email">
-          <label   htmlFor="email"></label> 
-          <input 
-          type="text"
-          className=""
-          placeholder={t('Sign.email')}
-          type="email" 
-          name="email" 
-          onChange =  {(e) => setEmail(e.target.value)} 
-          value = {email} 
-         
-          />
-        </div>
-        <div className="password">
-          <label  htmlFor="password"></label> 
-          <input 
-          type="text"
-          className=""
-          placeholder={t('Sign.password')}
-          type="password" 
-          name="password" 
-          onChange = {(e) => setPassword(e.target.value)} 
-          value =  {password}
-          />
-        </div>
-       
-        
-    <button className = "buttonsign"
-    onClick={signUp}
-           value = "Submit">
-             <h5>{t('Sign.signup')}</h5> 
-    </button>
-              <Link className="linklogin" to="/login" >
-                {t('Sign.accountIn')}
-              </Link>
-        </form>
       </div>
-       </div>
-       </>
-   );     
-  
-  
-  
+    </>
+  );
 }
