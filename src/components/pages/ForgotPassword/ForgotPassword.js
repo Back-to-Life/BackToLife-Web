@@ -40,13 +40,13 @@ console.log("result", result)
         <div className="email">
           <label htmlFor="email"></label> 
           <input 
-          type="text"
           className=""
           placeholder={t('Sign.email')}
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)}
-         
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </div>
     <button className = "buttonsign"

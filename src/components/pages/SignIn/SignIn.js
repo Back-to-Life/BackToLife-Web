@@ -33,7 +33,8 @@ export default function SignIn() {
 
           },
 
-        }).then(history.push("/"));
+        })
+        .then(history.push("/"));
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result));
         console.log("result", result);
@@ -58,7 +59,7 @@ export default function SignIn() {
         console.log("verify:", verify)
       }
     }
-     window.location.reload();
+      window.location.reload();
   }
   return (
     <>
@@ -69,23 +70,26 @@ export default function SignIn() {
             <div className="email">
               <label htmlFor="email"></label>
               <input
-                type="text"
+
                 className=""
                 placeholder={t('Sign.email')}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               />
             </div>
             <div className="password">
               <label htmlFor="password"></label>
               <input
-                type="text"
+
                 className=""
                 placeholder={t('Sign.password')}
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
 
