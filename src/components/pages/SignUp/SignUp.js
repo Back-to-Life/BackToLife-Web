@@ -45,26 +45,27 @@ export function SignUp() {
             <div className="firstName">
               <label htmlFor="firstName"></label>
               <input
-                type="text"
                 className=""
                 placeholder={t("Sign.name")}
                 type="text"
                 name="name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                required
               />
             </div>
 
             <div className="email">
               <label htmlFor="email"></label>
               <input
-                type="text"
                 className=""
                 placeholder={t("Sign.email")}
                 type="email"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               />
             </div>
             <div className="password">
@@ -77,6 +78,7 @@ export function SignUp() {
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+                required
               />
             </div>
 

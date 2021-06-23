@@ -41,37 +41,36 @@ console.log("result", result)
         <div className="email">
           <label htmlFor="email"></label> 
           <input 
-          type="text"
+
           className=""
           placeholder="E-mail"
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)}
-         
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </div>
         <div className="password">
           <label htmlFor="password"></label> 
           <input 
-          type="text"
           className=""
           placeholder="New Password"
           type="password" 
           name="password" 
           onChange = {(e) => setNewPassword(e.target.value)}
-        
+          required
           />
         </div>
         <div className="password">
           <label htmlFor="password"></label> 
           <input 
-          type="text"
           className=""
           placeholder="Reset Token"
           type="number" 
           name="token" 
           onChange = {(e) => setResetToken(e.target.value)}
-        
+          required
           />
         </div>
     <button className="buttonsign" onClick={resetPassword}
