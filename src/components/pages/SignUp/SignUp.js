@@ -39,6 +39,7 @@ export function SignUp() {
   return (
     <>
       <div className="wrapper1">
+      <img className="ThreeDimage" src="images/Saly-39.png" alt="" />
         <div className="form-wrapper">
           <h1>{t("Sign.signup")}</h1>
           <form>

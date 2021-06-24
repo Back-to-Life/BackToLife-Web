@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import './SignIn.css'
+import './ResetPassword.css'
 import {BASE_URL} from '../../../enviroments'
 
 export default function ResetPassword() {
@@ -33,7 +33,8 @@ console.log("result", result)
   return (
     <>
     
-      <div className="wrapper1">   
+      <div className="wrapper1">
+      <img className="upperimg2" src="images/Saly-41.png" alt="" />   
         <div className="form-wrapper">
 
         <h1>{t('Sign.reset')}</h1>
