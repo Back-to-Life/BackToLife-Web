@@ -33,6 +33,7 @@ console.log("result", result)
     
      <>
       <div className="wrapper1">
+        <img className="upperimg" src="images/Saly-41.png" alt="" />
         <div className="form-wrapper">
         <h1>{t('Sign.forgotMain')}</h1>
         <form >

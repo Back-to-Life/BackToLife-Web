@@ -64,6 +64,7 @@ export default function SignIn() {
   return (
     <>
       <div className="wrapper1">
+        <img className="Tdimage" src="images/Saly-38.png" alt="" />
         <div className="form-wrapper">
           <h1>{t("Sign.signin")}</h1>
           <form>
