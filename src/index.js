@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './i18n';
 ReactDOM.render(
-  <Suspense fallback={(<div><img src="images/743.gif" alt=""/></div>)}>
+  <Suspense fallback={(<div><img style={{margin: "0 auto"}} src="images/743.gif" alt=""/></div>)}>
     <App />
     </Suspense>
 ,

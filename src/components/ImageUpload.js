@@ -70,7 +70,8 @@ const ImageUpload = () => {
     }
 
     useEffect(() => {
-      (async () => {
+    (async () => {
+
 
         let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
         const resImg = await fetch(`http://localhost:5000/users/${idUser}`)

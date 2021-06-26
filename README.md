@@ -1,68 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Back To Life Website
 
-## Available Scripts
+**Tr-** Kullanıcıların geri dönüşüm yaparken kazanmasını amaçlayan ve bu sayede geri dönüşümü toplumun bir çok kesimine aşılamayı sağlayacak olan Back To Life projesinin websitesi React Js ile yazılmıştır. 
 
-In the project directory, you can run:
+**En-** The website of the Back To Life project, which aims to ensure that users earn while recycling and thus instilling recycling in many parts of the society, was written in React Js.
 
-### `npm start`
+## Nasıl Çalışır Demo / How To Work Demo ⚙️ 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Splash 📸       | Home  🏠  |
+| ------------- | ------------- |
+| ![splash](https://user-images.githubusercontent.com/34038741/120105189-8fe36e00-c160-11eb-81a7-78e37b198bbf.gif)  |![home](https://user-images.githubusercontent.com/34038741/120105191-940f8b80-c160-11eb-8d71-50b3d754cfc5.gif)  |
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+| Sign In ➡️   | My Account  👤|
+| ------------- | ------------- |
+| ![signin](https://user-images.githubusercontent.com/34038741/120105190-9245c800-c160-11eb-8e1e-2f75d9502c32.gif)  | ![ezgif com-gif-maker (22)](https://user-images.githubusercontent.com/34038741/120107959-b8bd3080-c16b-11eb-8c21-6fe6143f1b4e.gif)  |
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Dil 🔁 | Logout ⬅️|
+| ------------- | ------------- |
+| ![ezgif com-gif-maker (21)](https://user-images.githubusercontent.com/34038741/120107888-6bd95a00-c16b-11eb-8b61-dc8eed5431d6.gif)  | ![logout](https://user-images.githubusercontent.com/34038741/120105192-970a7c00-c160-11eb-9c42-eee261b0a2e6.gif)  |
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Points  💵       | How To Work ♻️|
+| ------------- | ------------- |
+| <img width="1435" alt="Ekran Resmi 2021-05-30 14 33 23" src="https://user-images.githubusercontent.com/34038741/120105300-08e2c580-c161-11eb-8ff9-06607a7d55a6.png">  | <img width="1436" alt="Ekran Resmi 2021-05-30 14 32 59" src="https://user-images.githubusercontent.com/34038741/120105304-0c764c80-c161-11eb-876f-32c364256930.png">  |

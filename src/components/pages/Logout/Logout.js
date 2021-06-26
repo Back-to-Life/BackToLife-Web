@@ -13,23 +13,14 @@ export default function Logout() {
 
   async function logout() {
 
-    /*let token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1].toString()
-    alert(token);*/
-    const token = localStorage.getItem('user-info').split(',')[1].split(':')[1].split('" "')[0]
+    
+    let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
 
 
 
-    let result = await fetch("http://localhost:5000/logout",
+    let result = await fetch(`http://localhost:5000/${idUser}/logout`,
       {
-        method: "GET",
-        headers: {
-          "Authorization": "Baerer " + localStorage.getItem('user-info').split(',')[1].split(':')[1].split('"')[1].toString()
-
-        },
-
-
-
-
+        method: "GET"
       }).then(localStorage.removeItem("user-info"))
       .then(history.push("/home"))
     result = await result.json()
