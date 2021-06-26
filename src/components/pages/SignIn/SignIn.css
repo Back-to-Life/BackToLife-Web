@@ -139,4 +139,9 @@
   .form-wrapper{
     width: 300px;
   }
+  .Tdimage{
+    width: 200px;
+    top: 20%;
+    left: -10%;
+  }
 }
