@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import './Chart.css'
 import { useTranslation } from 'react-i18next';
+import {BASE_URL} from '../../enviroments'
 
  const DynamicChart = () => {
     const {t, i18n} = useTranslation();
@@ -13,9 +14,8 @@ import { useTranslation } from 'react-i18next';
          let count = [];
          let date = [];
          let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
-         axios.get(`http://localhost:5000/logins/${idUser}/showCounter`)
+         axios.get(`${BASE_URL}/logins/${idUser}/showCounter`)
          .then(res => {
-             console.log(res);
 
              for(const dataCount of res.data.data){
                
@@ -91,9 +91,9 @@ import { useTranslation } from 'react-i18next';
          })
       
      }
-     useEffect(() => {
-         Chart();
-       }, []);
+      useEffect(() => {
+          Chart();
+        }, []);
        return(
            <div className="App">
                <h1>{t('Account.chart')}</h1>

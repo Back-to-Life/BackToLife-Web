@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Confirm.css'
 import { useTranslation } from 'react-i18next';
-
+import {BASE_URL} from '../../../enviroments'
 
 export default function Confirm () {
 const {t, i18n} = useTranslation();
@@ -18,7 +18,7 @@ async function confirm()
   console.log(item)
 
 
-  let result = await fetch("http://localhost:5000/email-activate", 
+  let result = await fetch(`${BASE_URL}/email-activate`, 
   {
     method: "POST",
     body:JSON.stringify(item),

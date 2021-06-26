@@ -132,7 +132,7 @@ li.slide.selected{
 }
 .kucukresim img{
     margin: 0;
-    max-width: 200px;
+    width: 200px;
 }
 .gif img{
     width: 3%;
@@ -210,6 +210,10 @@ li.slide.selected{
         margin-left: 10px;
         margin-right: 10px;
     }
+    .kucukresim img{
+        width: 80%;
+        margin-left: 5%;
+    }
  
 }
 @media screen and (max-width:960px){
@@ -250,4 +254,27 @@ li.slide.selected{
         font-size: 30px;
     }
     
+}
+@media screen and (max-width:400px){
+    .kucukresim{
+        display: none;
+    }
+    .sort{
+        width: 250px;
+    }
+    .indexUser{
+        position: relative;
+        right: 35px;
+    }
+    .nameuser{
+        position: absolute;
+        left: 28%;
+        font-size: 16px;
+    }
+    .headerHero h1{
+        font-size: 25px;
+    }
+    .containerBigCard{
+        display: none;
+    }
 }

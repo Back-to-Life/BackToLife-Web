@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './ForgotPassword.css'
 import { useTranslation } from 'react-i18next';
-
+import {BASE_URL} from '../../../enviroments'
 
 export default function ForgotPassword () {
     const {t, i18n} = useTranslation();
@@ -14,7 +14,7 @@ async function forgotPassword()
     let item = {email}
     console.log(email)
     
-  let result = await fetch("http://localhost:5000/forgotPassword", 
+  let result = await fetch(`${BASE_URL}/forgotPassword`, 
   {
     method: "POST",
     body:JSON.stringify(item),
@@ -33,6 +33,7 @@ console.log("result", result)
     
      <>
       <div className="wrapper1">
+        <img className="upperimg" src="images/Saly-41.png" alt="" />
         <div className="form-wrapper">
         <h1>{t('Sign.forgotMain')}</h1>
         <form >
@@ -40,13 +41,13 @@ console.log("result", result)
         <div className="email">
           <label htmlFor="email"></label> 
           <input 
-          type="text"
           className=""
           placeholder={t('Sign.email')}
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)}
-         
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </div>
     <button className = "buttonsign"

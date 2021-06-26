@@ -72,13 +72,16 @@
   
     .imgAdd > img{
         margin-top: 30%;
-        width: 98%;
+        width: 99%;
     }
     .headerAdd h1{
         font-size: 40px;
     }
     .textAdd{
         width: 80%;
+    }
+    .wrapperText{
+        width: 65%;
     }
     .buttonApple , .buttonAndroid{
         padding: 5px 10px;
@@ -87,4 +90,33 @@
     .buttonApple a , .buttonAndroid a{
         font-size: 15px;
     }
+}
+@media screen and (max-width:400px) {
+    .headerAdd h1{
+        font-size: 32px;
+    }
+    .headerAdd{
+        width: 300px;
+    }
+    .imgAdd{
+        position: relative;
+        top: 250px;
+    }
+    .imgAdd img{
+        width: 300px;
+    }
+    .wrapperText{
+        position: relative;
+        right: 280px;
+    }
+    .textAdd{
+        width: 300px;
+        font-size: 17px;
+    }
+    .buttonApple{
+        margin-left: 10%;
+        margin-top: 5%;
+        padding: 5px 18px;
+    }
+ 
 }

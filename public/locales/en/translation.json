@@ -19,7 +19,7 @@
         "account": "My Account",
         "up": "SIGN UP",
         "in": "SIGN IN",
-        "out":"LOG OUT"
+        "out":"LOGOUT"
     },
     "Home":{
         "header":"Back To Life!",

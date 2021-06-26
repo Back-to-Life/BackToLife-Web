@@ -9,3 +9,9 @@
     font-size: 18px;
 }
 }
+@media screen and (max-width: 400px) {
+    .Username{
+        font-size: 18px;
+        text-align: center;
+    }
+    }

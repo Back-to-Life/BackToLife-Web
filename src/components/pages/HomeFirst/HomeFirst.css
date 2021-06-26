@@ -14,7 +14,7 @@
     margin-left: 10%;
 }
 .imgHome > img{
-    max-width: 600px;
+    width: 600px;
     
 }
 .headerHome{ 
@@ -29,7 +29,7 @@
 }
 .textHome{
     margin-left: 10%;
-    max-width: 440px;
+    width: 440px;
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;
@@ -41,13 +41,49 @@
 .buttonHome{
     margin-left: -10%;
 }
+@media screen and (max-width:1100px) {
+    .imgHome > img{
+        margin-top: 10%;
+        width: 500px;
+    }
+    .wrapperTextHome{
+        width: 400px;
+        
+    }
+    .textHome{
+        width: 400px;
+    }
+}
 @media screen and (max-width:960px) {
   
     .imgHome > img{
         margin-top: 10%;
-        width: 95%;
+        width: 400px;
     }
     .wrapperTextHome{
+        width: 300px;
         margin-top: 20%;
     }
+    .textHome{
+        width: 300px;
+    }
+}
+@media screen and (max-width:400px) {
+    .headerHome h1{
+        font-size: 30px;
+    }
+    .textHome{
+        width: 200px;
+        font-size: 15px;
+    }
+   .imgHome img{
+       width: 300px;
+   }
+   .imgHome{
+       position: relative;
+       top: 250px;
+       right: 280px;
+       margin: 0;
+   }
+   
 }

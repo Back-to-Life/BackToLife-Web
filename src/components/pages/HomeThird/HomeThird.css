@@ -56,3 +56,23 @@
         font-size: 40px;
     }
 }
+@media screen and (max-width:400px) {
+    .headerWork h1{
+        font-size: 30px;
+    }
+    .headerWork{
+        width: 150%;
+    }
+    .imgWork img{
+        margin-top: 0;
+        position: relative;
+        top: 300px;
+        right: 150px;
+        width: 170%;
+    }
+    .textWork{
+        width: 210%;
+        font-size: 15px;
+    }
+
+}

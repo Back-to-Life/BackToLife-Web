@@ -1,17 +1,18 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { Doughnut } from 'react-chartjs-2'
-import './Chart.css'
+import './ChartRecType.css'
 import { useTranslation } from 'react-i18next';
+import {BASE_URL} from '../../enviroments'
 
- const DynamicChart = () => {
+ const DynamicChartType = () => {
     const {t, i18n} = useTranslation();
 
      const [chartData, setChartData]  = useState({});
-     const Chart = () => {
+     const ChartType = () => {
 
          let idUser = localStorage.getItem('user-info').split(',')[4].split(':')[1].split('"')[1]
-         axios.get(`http://localhost:5000/points/${idUser}/Points`)
+         axios.get(`${BASE_URL}/points/${idUser}/Points`)
          .then(res => {
              let dataObj = res.data.data
              setChartData({
@@ -47,15 +48,16 @@ import { useTranslation } from 'react-i18next';
              console.log(err);
              
          })
-      
-     }
-     useEffect(() => {
-         Chart();
-       }, []);
+    }
+    
+      useEffect(() => {
+          ChartType();
+     }, []);
+   
        return(
            <div className="App">
                <h1>{t('Account.chartType')}</h1>
-               <div className="Bar">
+               <div className="Doughnut">
                    <Doughnut
                      data={chartData}
                      width="60%"
@@ -76,4 +78,4 @@ import { useTranslation } from 'react-i18next';
            </div>
        )
  }
- export default DynamicChart;
+ export default DynamicChartType;

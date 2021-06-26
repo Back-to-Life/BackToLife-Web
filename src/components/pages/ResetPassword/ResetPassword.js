@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import './SignIn.css'
-
+import './ResetPassword.css'
+import {BASE_URL} from '../../../enviroments'
 
 export default function ResetPassword() {
     const {t, i18n} = useTranslation();
@@ -19,7 +19,7 @@ export default function ResetPassword() {
  
     let item = { email, newPassword, resetToken }
         console.log(item)
-    let result = await fetch("http://localhost:5000/resetPassword", 
+    let result = await fetch(`${BASE_URL}/resetPassword`, 
         {
             method: "PUT",
             body:JSON.stringify(item)
@@ -33,7 +33,8 @@ console.log("result", result)
   return (
     <>
     
-      <div className="wrapper1">   
+      <div className="wrapper1">
+      <img className="upperimg2" src="images/Saly-41.png" alt="" />   
         <div className="form-wrapper">
 
         <h1>{t('Sign.reset')}</h1>
@@ -41,37 +42,36 @@ console.log("result", result)
         <div className="email">
           <label htmlFor="email"></label> 
           <input 
-          type="text"
+
           className=""
           placeholder="E-mail"
           type="email" 
           name="email" 
           onChange =  {(e) => setEmail(e.target.value)}
-         
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </div>
         <div className="password">
           <label htmlFor="password"></label> 
           <input 
-          type="text"
           className=""
           placeholder="New Password"
           type="password" 
           name="password" 
           onChange = {(e) => setNewPassword(e.target.value)}
-        
+          required
           />
         </div>
         <div className="password">
           <label htmlFor="password"></label> 
           <input 
-          type="text"
           className=""
           placeholder="Reset Token"
           type="number" 
           name="token" 
           onChange = {(e) => setResetToken(e.target.value)}
-        
+          required
           />
         </div>
     <button className="buttonsign" onClick={resetPassword}

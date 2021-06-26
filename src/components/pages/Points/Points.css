@@ -48,9 +48,6 @@
     margin-bottom: 5px;
     font-size: 24px;
 }
-.pricing__container-cardInfo h4{
-    font-size: 40px;
-}
 .pricing__container-cardInfo p{
     font-size: 14px;
     margin-bottom: 24px;
@@ -91,6 +88,7 @@
     .pricing__heading{
         margin-left: 10px;
     }
+    
 }
 @media screen and (max-width:960px){
     .pricing__container{
@@ -101,7 +99,8 @@
         width: 100%;
     }
     .pricing__container-card{
-        width: 70%;
+        width: 50%;
+        height: 380px;
         margin-bottom: 20px;
     }
     .pricing__wrapper{
@@ -112,5 +111,30 @@
     }
     .pricing__container-card:hover{
         transform: none;
+    }
+}
+@media screen and (max-width:400px){
+    .pricing__heading{
+        font-size: 25px;
+        text-align: center;
+    }
+    .pricing__container-card:nth-child(1){
+        margin-left: 30px;
+    }
+    .pricing__container-card{
+        margin-left: 30px;
+        width: 75%;
+        height: 350px;
+    }
+    .pricing__container-cardInfo h3{
+        font-size: 18px;
+        text-align: center;
+    }
+    .pricing__container-features li{
+        font-size: 17px;
+    }
+    .icon img{
+        width: 90px;
+        margin-left: 3%;
     }
 }
