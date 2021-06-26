@@ -116,6 +116,7 @@
 @media screen and (max-width:400px){
     .pricing__heading{
         font-size: 25px;
+        text-align: center;
     }
     .pricing__container-card:nth-child(1){
         margin-left: 30px;
@@ -127,6 +128,7 @@
     }
     .pricing__container-cardInfo h3{
         font-size: 18px;
+        text-align: center;
     }
     .pricing__container-features li{
         font-size: 17px;
