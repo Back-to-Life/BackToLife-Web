@@ -142,4 +142,9 @@
   .linklogin{
     right: -100px;
   }
+  .ThreeDimage{
+    width: 200px;
+    top: 15%;
+    left: 57%;
+  }
 }
