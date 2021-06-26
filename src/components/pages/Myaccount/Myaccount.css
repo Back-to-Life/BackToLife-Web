@@ -132,7 +132,7 @@ li.slide.selected{
 }
 .kucukresim img{
     margin: 0;
-    max-width: 200px;
+    width: 200px;
 }
 .gif img{
     width: 3%;
@@ -209,6 +209,10 @@ li.slide.selected{
     .sort ul{
         margin-left: 10px;
         margin-right: 10px;
+    }
+    .kucukresim img{
+        width: 80%;
+        margin-left: 5%;
     }
  
 }
