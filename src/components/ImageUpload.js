@@ -3,7 +3,7 @@ import { MdPhotoLibrary } from "react-icons/md";
 import { IconContext } from "react-icons/lib";
 import { RiFolderUploadFill } from "react-icons/ri";
 import "./ImageUpload.css";
-import { storage } from "../components/firebase";
+import { storage } from "../components/firebase/Firebaseindex";
 import { useTranslation } from "react-i18next";
 import { BASE_URL } from "../enviroments";
 
