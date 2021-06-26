@@ -67,6 +67,57 @@ const ImageUpload = () => {
     );
   };
 
+<<<<<<< HEAD
+      });
+
+    }
+
+    useEffect(() => {
+    (async () => {
+
+
+        let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
+        const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
+        const jsoImg = await resImg.json()
+        setdataImage(jsoImg.data.imageUrl);
+
+      })();
+
+    },
+      []);
+
+    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "images/nullpp.jpeg" : img
+
+    return (
+      <div >
+        <IconContext.Provider value={{ color: '#58c4bc' }}>
+          <br />
+          <img src={imageChange} />
+          <div className="progrs">
+            <progress value={progress} max={100} /><span className="progressbar">{progress}%</span>
+          </div>
+
+          <div className="kapsayici">
+            <input type="file" id="file" onChange={handleChange} hidden />
+            <label htmlFor="file" id="selector">
+              <MdPhotoLibrary className="smallicon" /> <span className="imgSpan">{t('Account.select')}</span></label>
+            <label className="buttons" onClick={handleUpload} align="center" >
+              <RiFolderUploadFill className="smallicon" /> <span className="imgSpan">{t('Account.upload')}</span></label>
+          </div>
+        </IconContext.Provider>
+      </div>
+    )
+
+
+
+
+  
+
+
+}
+
+export default ImageUpload
+=======
   useEffect(() => {
     (async () => {
       
@@ -109,3 +160,4 @@ const ImageUpload = () => {
 };
 
 export default ImageUpload;
+>>>>>>> 7fc4b62df96c85ad2fdafcb469180b0edf6261a0
