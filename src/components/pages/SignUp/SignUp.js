@@ -7,13 +7,11 @@ import { BASE_URL } from "../../../enviroments";
 
 export function SignUp() {
 
-
   const { t, i18n } = useTranslation();
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
   const history = useHistory();
 
   useEffect(() => {
@@ -38,15 +36,6 @@ export function SignUp() {
     .then(history.push("/confirm"));
     result = await result.json()
     console.log("result", result);
-
-
-    // 
-
-
-  }
- 
-  
-
 
   return (
     <>
@@ -105,8 +94,7 @@ export function SignUp() {
             <button className="buttonsign" value="Submit" onClick={signUser}>
               <h5>{t("Sign.signup")}</h5>
             </button>
-         
-
+ 
             <Link className="linklogin" to="/login">
               {t("Sign.accountIn")}
             </Link>
@@ -115,4 +103,5 @@ export function SignUp() {
       </div>
     </>
   );
+}
 }
