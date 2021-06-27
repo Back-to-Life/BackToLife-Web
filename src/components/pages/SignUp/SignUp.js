@@ -6,6 +6,12 @@ import { BASE_URL } from "../../../enviroments";
 
 
 export function SignUp() {
+
+
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+
   const { t, i18n } = useTranslation();
 
   const [name, setName] = useState("")
@@ -23,6 +29,7 @@ export function SignUp() {
 
   async function signUser() {
     let item = { name, email, password };
+
     console.log(item);
 
     let result = await fetch(`${BASE_URL}/signup`, {
@@ -36,14 +43,17 @@ export function SignUp() {
     .then(history.push("/confirm"));
     result = await result.json()
     console.log("result", result);
-  
-  }
 
+
+    // 
+
+
+ 
 
   return (
     <>
       <div className="wrapper1">
-      <img className="ThreeDimage" src="images/Saly-39.png" alt="" />
+        <img className="ThreeDimage" src="images/Saly-39.png" alt="" />
         <div className="form-wrapper">
           <h1>{t("Sign.signup")}</h1>
           <form>
@@ -87,10 +97,13 @@ export function SignUp() {
               />
             </div>
 
-            <button className="buttonsign" value="Submit" onClick={signUser}>
+
+            <button className="buttonsign" onClick={
+              sign;
+            } value="Submit" >
               <h5>{t("Sign.signup")}</h5>
             </button>
-         
+           
             <Link className="linklogin" to="/login">
               {t("Sign.accountIn")}
             </Link>
