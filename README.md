@@ -1,4 +1,5 @@
 # Back To Life Website
+https://img.shields.io/tokei/lines/github/Back-to-Life/BackToLife-Web
 
 **Tr-** Kullanıcıların geri dönüşüm yaparken kazanmasını amaçlayan ve bu sayede geri dönüşümü toplumun bir çok kesimine aşılamayı sağlayacak olan Back To Life projesinin websitesi React Js ile yazılmıştır. 
 
