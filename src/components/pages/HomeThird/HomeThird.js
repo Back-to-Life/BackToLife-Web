@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../../Button'
+import {Button} from '../../Button/Button'
 import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal';
 import './HomeThird.css'

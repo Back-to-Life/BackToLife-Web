@@ -1,5 +1,5 @@
 import React from 'react'
-import AppAdd from '../AppAdd/AppAdd';
+import HomeFourth from '../HomeFourt/HomeFourth';
 import HomeFirst from '../HomeFirst/HomeFirst';
 import HomeSecond from '../HomeSecond/HomeSecond';
 import HomeThird from '../HomeThird/HomeThird';
@@ -11,7 +11,7 @@ function Home() {
            <HomeSecond/>
            <HomeThird/>
            <Points/>
-           <AppAdd/>
+           <HomeFourth/>
         </>
     )
 }

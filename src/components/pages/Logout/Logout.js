@@ -9,15 +9,14 @@ import {BASE_URL} from '../../../enviroments'
 export default function Logout() {
   const history = useHistory();
   const { t, i18n } = useTranslation();
+
   const [modalState, setModalState] = useState(true)
 
   async function logout() {
-
     let idUser =  localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
     let result = await fetch(`${BASE_URL}/${idUser}/logout`,
       {
         method: "GET",
-
 
       }).then(localStorage.removeItem("user-info"))
       .then(history.push("/home"))
@@ -28,7 +27,6 @@ export default function Logout() {
 
   const toggleModalState = () => {
     setModalState(!modalState)
-
   }
   return (
     <>

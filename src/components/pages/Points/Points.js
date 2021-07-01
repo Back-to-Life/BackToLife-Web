@@ -18,7 +18,7 @@ function Points() {
                     <h1 className="pricing__heading">{t('Points.1')}</h1>
                    
                     < div className="pricing__container">
-                    <Link to='/' className='pricing__container-card'>
+                    <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/cam.svg'/>
@@ -32,7 +32,7 @@ function Points() {
                             
                             </div>
                         </Link>
-                        <Link to='/' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                     <img src='images/plastik.svg'/>
@@ -47,7 +47,7 @@ function Points() {
                                
                             </div>
                         </Link>
-                        <Link to='/' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/elektronik.svg'/>
@@ -61,7 +61,7 @@ function Points() {
                                
                             </div>
                         </Link>
-                        <Link to='/' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/pil.svg'/>
@@ -75,7 +75,7 @@ function Points() {
                                 
                             </div>
                         </Link>
-                        <Link to='/' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/metal.svg'/>
@@ -89,7 +89,7 @@ function Points() {
                               
                             </div>
                         </Link>
-                        <Link to='/' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/organik.svg'/>
@@ -103,7 +103,7 @@ function Points() {
                               
                             </div>
                         </Link>
-                        <Link to='/sign-up' className='pricing__container-card'>
+                        <Link to='#' className='pricing__container-card'>
                             <div className="pricing__container-cardInfo">
                                 <div className="icon">
                                 <img src='images/kağıt.svg'/>

@@ -3,9 +3,9 @@ import { MdPhotoLibrary } from "react-icons/md";
 import { IconContext } from "react-icons/lib";
 import { RiFolderUploadFill } from "react-icons/ri";
 import "./ImageUpload.css";
-import { storage } from "../components/firebase/Firebaseindex";
+import { storage } from "../../components/firebase/Firebaseindex";
 import { useTranslation } from "react-i18next";
-import { BASE_URL } from "../enviroments";
+import { BASE_URL } from "../../enviroments";
 
 const ImageUpload = () => {
   const { t, i18n } = useTranslation();
@@ -15,7 +15,9 @@ const ImageUpload = () => {
   const [imageUrl, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [nameUser, setName] = useState([]);  
+
   let idUser = localStorage.getItem("user-info").split(",")[2].split(":")[1].split('"')[1];
+  //seçilen dosyayı setler
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -50,7 +52,6 @@ const ImageUpload = () => {
             let item = { imageUrl };
             console.log("new url: ", item);
 
-           
             let result = fetch(`${BASE_URL}/users/${idUser}/updateUrl`, {
               method: "PUT",
               body: JSON.stringify(item),
@@ -66,55 +67,45 @@ const ImageUpload = () => {
       }
     );
   };
-
-    
-
-    useEffect(() => {
+  useEffect(() => {
     (async () => {
+      
+      const resImg = await fetch(`${BASE_URL}/users/${idUser}`);
+      const jsoImg = await resImg.json();
+      setdataImage(jsoImg.data.imageUrl);
+      setName(jsoImg.data.name)
+    })();
+  }, []);
 
+  var imageChange =
+    img == null || localStorage.getItem("imageUrl") == null
+      ? "images/nullpp.jpeg"
+      : img;
 
-        let idUser = localStorage.getItem('user-info').split(',')[2].split(':')[1].split('"')[1]
-        const resImg = await fetch(`http://localhost:5000/users/${idUser}`)
-        const jsoImg = await resImg.json()
-        setdataImage(jsoImg.data.imageUrl);
+  return (
+    <div>
+      <IconContext.Provider value={{ color: "#58c4bc" }}>
+        <br />
+        <img src={imageChange} />
+        <div className="progrs">
+          <progress value={progress} max={100} />
+          <span className="progressbar">{progress}%</span>
+        </div>
 
-      })();
-
-    },
-      []);
-
-    var imageChange = (img == null || localStorage.getItem('imageUrl') == null) ? "images/nullpp.jpeg" : img
-
-    return (
-      <div >
-        <IconContext.Provider value={{ color: '#58c4bc' }}>
-          <br />
-          <img src={imageChange} />
-          <div className="progrs">
-            <progress value={progress} max={100} /><span className="progressbar">{progress}%</span>
-          </div>
-
-          <div className="kapsayici">
-            <input type="file" id="file" onChange={handleChange} hidden />
-            <label htmlFor="file" id="selector">
-              <MdPhotoLibrary className="smallicon" /> <span className="imgSpan">{t('Account.select')}</span></label>
-            <label className="buttons" onClick={handleUpload} align="center" >
-              <RiFolderUploadFill className="smallicon" /> <span className="imgSpan">{t('Account.upload')}</span></label>
-          </div>
-        </IconContext.Provider>
-      </div>
-    )
-
-
-
-
-  
-
-
+        <div className="kapsayici">
+          <input type="file" id="file" onChange={handleChange} hidden />
+          <label htmlFor="file" id="selector">
+            <MdPhotoLibrary className="smallicon" />{" "}
+            <span className="imgSpan">{t("Account.select")}</span>
+          </label>
+          <label className="buttons" onClick={handleUpload} align="center">
+            <RiFolderUploadFill className="smallicon" />{" "}
+            <span className="imgSpan">{t("Account.upload")}</span>
+          </label>
+        </div>
+      </IconContext.Provider>
+    </div>
+  );
 };
 
-
-
-  
 export default ImageUpload;
-

@@ -1,8 +1,8 @@
 import React,{Component}from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './components/pages/HomePage/Home';
+import Home from './components/pages/Home/Home';
 import Myaccount from './components/pages/Myaccount/Myaccount';
 import {SignUp} from './components/pages/SignUp/SignUp.js';
 import SignIn from './components/pages/SignIn/SignIn';
@@ -29,7 +29,7 @@ export default class App extends Component {
                 path="/"
                 exact
                 render={(props) => (
-                  <Splash {...props} theme={this.props.theme} />
+                  <Splash {...props} theme={theme} />
                 )}
               />
     <Navbar/>

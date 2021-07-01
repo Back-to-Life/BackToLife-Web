@@ -1,24 +1,22 @@
 import React from 'react'
-import {Button} from '../../Button'
+import {Button} from '../../Button/Button'
 import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal';
 import './HomeFirst.css'
 import { useTranslation } from 'react-i18next';
-//import Typical from 'react-typical'
+import Typical from 'react-typical'
 
 function HomeFirst() {
     const {t, i18n} = useTranslation();
 
     return (
         <div>
-            
             <div className="containerHome">
                 <div className="wrapperHome">
-                   
                     <div className="wrapperTextHome">
                     <div className="headerHome">
                       
-                        <h1>
+                        <h1><Typical
                         steps={[  t('Home.header'), 
                                    1000,
                                    t('Home.header1'),
@@ -28,7 +26,7 @@ function HomeFirst() {
                                 ]}
                         loop={Infinity}
                         wrapper="b"
-                    </h1>
+                    /></h1>
                     </div>
                     <div className="textHome">
                     {t('Home.description')}

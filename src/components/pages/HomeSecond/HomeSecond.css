@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     background-size: cover;
-    background: url("../../4.png");
+    background: url("page2back.png");
 }
 .wrapperSave{
    display: flex;

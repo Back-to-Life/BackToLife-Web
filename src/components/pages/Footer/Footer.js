@@ -8,19 +8,19 @@ import {
   FaInstagram,
   FaYoutube,
   FaTwitter,
-  FaLinkedin
+  FaLinkedin, 
+  FaRecycle
 } from 'react-icons/fa';
-import { FaRecycle } from 'react-icons/fa';
 
 function Footer() {
   const {t, i18n} = useTranslation();
+
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
        {t('Footer.header')}
         </p>
-       
       </section>
       <div className='footer-links'>
         <div className='footer-link-wrapper'>

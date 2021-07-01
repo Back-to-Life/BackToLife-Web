@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../../Button'
+import {Button} from '../../Button/Button'
 import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal'
 import { useTranslation } from 'react-i18next';
@@ -28,10 +28,7 @@ function HomeSecond() {
                         <Button buttonSize='btn--wide' buttonColor='orange'>{t('Save.button')}</Button>
                     </Link>
                      </Fade>
-                    
                     </div>
-                    
-                    
                 </div>
            </div>
         </div>
