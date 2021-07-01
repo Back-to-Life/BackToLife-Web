@@ -4,7 +4,6 @@ import "./SignUp.css";
 import { useTranslation } from "react-i18next";
 import { BASE_URL } from "../../../enviroments";
 
-
 export function SignUp() {
   const { t, i18n } = useTranslation();
 

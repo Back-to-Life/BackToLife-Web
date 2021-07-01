@@ -67,7 +67,6 @@ const ImageUpload = () => {
       }
     );
   };
-
   useEffect(() => {
     (async () => {
       
