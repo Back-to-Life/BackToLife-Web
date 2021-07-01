@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../../Button'
+import {Button} from '../../Button/Button'
 import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal';
 import './HomeFirst.css'
@@ -11,10 +11,8 @@ function HomeFirst() {
 
     return (
         <div>
-            
             <div className="containerHome">
                 <div className="wrapperHome">
-                   
                     <div className="wrapperTextHome">
                     <div className="headerHome">
                       

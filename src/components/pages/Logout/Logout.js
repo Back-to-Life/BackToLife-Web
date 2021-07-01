@@ -9,6 +9,7 @@ import {BASE_URL} from '../../../enviroments'
 export default function Logout() {
   const history = useHistory();
   const { t, i18n } = useTranslation();
+
   const [modalState, setModalState] = useState(true)
 
   async function logout() {
@@ -26,7 +27,6 @@ export default function Logout() {
 
   const toggleModalState = () => {
     setModalState(!modalState)
-
   }
   return (
     <>

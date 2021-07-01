@@ -1,11 +1,11 @@
 import React from 'react'
-import './AppAdd.css'
+import './HomeFourth.css'
 import {FaApple} from 'react-icons/fa'
 import {FaGooglePlay} from 'react-icons/fa'
 import {Fade} from 'react-reveal';
 import { useTranslation } from 'react-i18next';
 
-function AppAdd() {
+function HomeFourth() {
     const {t, i18n} = useTranslation();
 
     return (
@@ -35,14 +35,11 @@ function AppAdd() {
                         <a href="https://www.apple.com/tr/app-store/">App Store</a>
                     </div>
                     </Fade>
-                    
                     </div>
-                    
-                    
                 </div>
            </div>
         </div>
     )
 }
 
-export default AppAdd
+export default HomeFourth

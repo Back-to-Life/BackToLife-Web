@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Myaccount.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { IconContext } from "react-icons/lib";
-import ImageUpload from "../../ImageUpload";
+import ImageUpload from "../../ImageUpload/ImageUpload";
 import Chart from "../../Chart/Chart.js";
-import DataUpload from "../../DataUpload";
+import DataUpload from "../../DataUpload/DataUpload";
 import ProgressBar from "../../ProgressBar/ProgressBar";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
 import ChartRecType from "../../Chart/ChartRecType.js"
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { css } from "@emotion/react";
@@ -58,11 +57,10 @@ function Myaccount() {
         setNameUser(jsonId.data.name)
         setPointUser(jsonId.data.point)
 
-
         let sortUser = localStorage.getItem('user-info').split(',')[3].split(':')[1].split('" "')[0].split('}')[0] // get user rank
         setIndex(sortUser) 
        
-      })();
+    })();
     }, []);
 
   return (
@@ -143,23 +141,18 @@ function Myaccount() {
                        (heroId == idH[0] || heroId == idH[1] || heroId == idH[2]) ?
 
                        <li><img className="more" src="images/ellipsis.png" alt=""/> </li> 
-
                        :
                        <>
                          <li><img className="more" src="images/ellipsis.png" alt=""/> </li>
                          <br />
-
                        <li><span className="indexUser">{indexH}-</span><span className="nameuser">{nameUser}</span><span className="pointHero">+{pointUser}p</span></li> 
                        
                        </>
                     }
-
                    </ul>
                    </div>
                   } 
-                    
                     </div>
-               
               </div>
             </div>
           </div>

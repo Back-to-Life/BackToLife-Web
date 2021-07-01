@@ -30,16 +30,12 @@ export default function SignIn() {
           body: JSON.stringify(item),
           headers: {
             "Content-Type": "application/json"
-
           },
-
         })
         .then(history.push("/"));
         result = await result.json();
         localStorage.setItem("user-info", JSON.stringify(result));
         console.log("result", result);
-
-
       }
       else {
 
@@ -71,8 +67,6 @@ export default function SignIn() {
             <div className="email">
               <label htmlFor="email"></label>
               <input
-
-                className=""
                 placeholder={t('Sign.email')}
                 type="email"
                 name="email"
@@ -84,8 +78,6 @@ export default function SignIn() {
             <div className="password">
               <label htmlFor="password"></label>
               <input
-
-                className=""
                 placeholder={t('Sign.password')}
                 type="password"
                 name="password"

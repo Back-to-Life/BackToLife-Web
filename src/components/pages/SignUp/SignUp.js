@@ -12,7 +12,6 @@ export function SignUp() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-
   const history = useHistory();
 
   useEffect(() => {
@@ -39,7 +38,6 @@ export function SignUp() {
   
   }
 
-
   return (
     <>
       <div className="wrapper1">
@@ -50,7 +48,6 @@ export function SignUp() {
             <div className="firstName">
               <label htmlFor="firstName"></label>
               <input
-                className=""
                 placeholder={t("Sign.name")}
                 type="text"
                 name="name"
@@ -59,11 +56,9 @@ export function SignUp() {
                 required
               />
             </div>
-
             <div className="email">
               <label htmlFor="email"></label>
               <input
-                className=""
                 placeholder={t("Sign.email")}
                 type="email"
                 name="email"
@@ -76,8 +71,6 @@ export function SignUp() {
             <div className="password">
               <label htmlFor="password"></label>
               <input
-                type="text"
-                className=""
                 placeholder={t("Sign.password")}
                 type="password"
                 name="password"

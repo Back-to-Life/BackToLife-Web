@@ -103,7 +103,7 @@ import {BASE_URL} from '../../enviroments'
                      width="60%"
                      height="10%"
                      options={{
-                        // maintainAspectRatio: false,
+                        
                          responsive:true,
                          scales:{
                             yAxes:{

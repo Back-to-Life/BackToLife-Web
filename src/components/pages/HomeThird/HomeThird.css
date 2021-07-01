@@ -3,7 +3,7 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: url("../../3.png");
+    background: url("page1back.png");
 }
 .wrapperWork{
    display: flex;

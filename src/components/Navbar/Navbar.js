@@ -7,7 +7,7 @@ import {CgProfile} from 'react-icons/cg'
 import {GoSignIn,GoSignOut} from 'react-icons/go'
 import {FaRegIdCard} from 'react-icons/fa'
 import { FaBars, FaTimes} from 'react-icons/fa'
-import { Button } from './Button'
+import { Button } from '../Button/Button'
 import './Navbar.css'
 import {IconContext} from 'react-icons/lib'
 import { useTranslation } from 'react-i18next';
@@ -15,17 +15,17 @@ import { Fade } from 'react-reveal'
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [button, setButton]=useState(true);
+    const [button, setButton]=useState(false);
     
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
-        if(window.innerWidth <=960){
-            setButton(false);
+        if(window.innerWidth <= 960){
+            setButton(true);
         }
         else{
-            setButton(true);
+            setButton(false);
         }
     }
     useEffect(() => {
@@ -39,16 +39,12 @@ function Navbar() {
         i18n.changeLanguage(lang);
         window.location.reload();
     }
-
-    
-    
     return (
         <>
         <IconContext.Provider value={{color:'#fc9583'}}>
            <div className="navbar">
               <div className="navbar-container container">
                   <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-
                       <img src="images/icon.png" alt="" />
                       {t('Navbar.icon')}
                   </Link>
