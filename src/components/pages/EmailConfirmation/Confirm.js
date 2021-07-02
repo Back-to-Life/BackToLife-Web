@@ -71,6 +71,7 @@ async function confirm()
           name="password" 
           onChange = {(e) => setPassword(e.target.value)} 
           value =  {password}
+          minlength="6"
           />
         </div>
        

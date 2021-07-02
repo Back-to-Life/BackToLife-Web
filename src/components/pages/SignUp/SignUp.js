@@ -76,6 +76,7 @@ export function SignUp() {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 required
+                minlength="6"
               />
             </div>
 

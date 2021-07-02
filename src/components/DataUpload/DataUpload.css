@@ -9,6 +9,11 @@
     font-size: 18px;
 }
 }
+@media screen and (max-width: 960px) {
+    .Username{
+        font-size: 25px;
+    }
+    }
 @media screen and (max-width: 400px) {
     .Username{
         font-size: 18px;
