@@ -139,12 +139,13 @@ function Navbar() {
                                  
                                   <Button buttonStyle='btn--outline'>
                                   <FaRegIdCard className="navbar-icon"/>
-                                  {t('Navbar.up')}</Button>
+                                 {t('Navbar.up')}
+                                  </Button>
 
                               </Link>
                           ):(
                               <Link to='/signup' className='btn-link' onClick={closeMobileMenu}>
-                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>SIGN UP</Button>
+                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'> {t('Navbar.up')}</Button>
                               </Link>
                           )}
                       </li>
@@ -160,7 +161,7 @@ function Navbar() {
                               </Link>
                           ):(
                               <Link to='/login' className='btn-link' onClick={closeMobileMenu}>
-                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'>SIGN IN</Button>
+                                  <Button buttonStyle='btn--outline' buttonSize='btn-mobile'> {t('Navbar.in')}</Button>
                               </Link>
                           )}
                       </li>
