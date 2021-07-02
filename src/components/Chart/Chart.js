@@ -107,9 +107,12 @@ import {BASE_URL} from '../../enviroments'
                          responsive:true,
                          scales:{
                             yAxes:{
+                             
                                 ticks:{
-                                    beginAtZero: true
-                                }
+                                    beginAtZero: true,
+                                    scaleStartValue: 0,
+                                },
+                            
                             }
                          }
                      }}

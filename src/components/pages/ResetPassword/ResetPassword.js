@@ -53,6 +53,7 @@ export default function ResetPassword() {
           name="password" 
           onChange = {(e) => setNewPassword(e.target.value)}
           required
+          minlength="6"
           />
         </div>
         <div className="password">
@@ -63,6 +64,7 @@ export default function ResetPassword() {
           name="token" 
           onChange = {(e) => setResetToken(e.target.value)}
           required
+          minlength="6"
           />
         </div>
          <button className="buttonsign" onClick={resetPassword}

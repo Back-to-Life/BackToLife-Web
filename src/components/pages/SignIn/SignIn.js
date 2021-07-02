@@ -83,6 +83,7 @@ export default function SignIn() {
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minlength="6"
               />
             </div>
 
