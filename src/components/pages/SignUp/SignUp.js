@@ -3,13 +3,13 @@ import { Link, useHistory } from "react-router-dom";
 import "./SignUp.css";
 import { useTranslation } from "react-i18next";
 import { BASE_URL } from "../../../enviroments";
-
+import Confirm from "../EmailConfirmation/Confirm";
 export function SignUp() {
   const { t, i18n } = useTranslation();
 
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const history = useHistory();
 
@@ -18,6 +18,7 @@ export function SignUp() {
       history.push("/");
     }
   });
+  const [showResults, setShowResults] = React.useState(false);
 
   async function signUser() {
     let item = { name, email, password };
@@ -28,19 +29,41 @@ export function SignUp() {
       body: JSON.stringify(item),
       headers: {
         "Content-Type": "application/json",
-         "Accept": "application/json",
+        Accept: "application/json",
       },
-    })
-    .then(history.push("/confirm"));
-    result = await result.json()
+    }).then(history.push(setShowResults(true)));
+    result = await result.json();
     console.log("result", result);
-  
   }
 
+  const [randomCode, setToken] = useState("");
+
+  async function confirm() {
+    let item2 = { name, email, password, randomCode };
+    console.log(item2);
+
+    let result2 = await fetch(`${BASE_URL}/email-activate`, {
+      method: "POST",
+      body: JSON.stringify(item2),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000)
+      )
+      .then(history.push("/home"));
+
+    result2 = await result2.json();
+    console.log("result", result2);
+  }
   return (
     <>
       <div className="wrapper1">
-      <img className="ThreeDimage" src="images/Saly-39.png" alt="" />
+        <img className="ThreeDimage" src="images/Saly-39.png" alt="" />
         <div className="form-wrapper">
           <h1>{t("Sign.signup")}</h1>
           <form>
@@ -80,10 +103,19 @@ export function SignUp() {
               />
             </div>
 
-            <button className="buttonsign" value="Submit" onClick={signUser}>
-              <h5>{t("Sign.signup")}</h5>
-            </button>
-         
+            {showResults ? <Confirm /> : null}
+
+            {showResults ? null : (
+              <button className="buttonsign" value="Submit" onClick={signUser}>
+                <h5>{t("Sign.signup")}</h5>
+              </button>
+            )}
+            {showResults ? (
+              <button className="buttonsign" onClick={confirm} value="Confirm">
+                <h5>{t("Sign.Confirm")} </h5>
+              </button>
+            ) : null}
+
             <Link className="linklogin" to="/login">
               {t("Sign.accountIn")}
             </Link>
